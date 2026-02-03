@@ -1,34 +1,56 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface SearchFormProps {
-  onSearch: (title: string, limit: number, from?: string, to?: string) => void;
+  // Search only fetches preview for the given title
+  onSearch: (title: string) => void;
+  // Load fetches the revision series (and can also refresh preview)
+  onLoad: (title: string, limit: number, from?: string, to?: string) => void;
   disabled?: boolean;
 }
 
-export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, disabled }) => {
+export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, onLoad, disabled }) => {
   const [title, setTitle] = useState('Earth');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [limit, setLimit] = useState(300);
 
+  const toIso = (d: Date) => d.toISOString().split('T')[0];
+
+  // Auto-load when both from/to are set (debounced by microtask to allow paired updates)
+  useEffect(() => {
+    if (from && to) {
+      onLoad(title, limit, from, to);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [from, to]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearch(title, limit, from || undefined, to || undefined);
+    onLoad(title, limit, from || undefined, to || undefined);
+  };
+
+  const handleSearchClick = () => {
+    onSearch(title);
   };
 
   const setLastDays = (days: number) => {
     if (days === 0) {
       setFrom('');
       setTo('');
+      // immediate load for all-time with current title/limit
+      onLoad(title, limit, undefined, undefined);
       return;
     }
     const today = new Date();
     const start = new Date(today);
     start.setDate(today.getDate() - days);
-    
-    const toIso = (d: Date) => d.toISOString().split('T')[0];
-    setFrom(toIso(start));
-    setTo(toIso(today));
+
+    const f = toIso(start);
+    const t = toIso(today);
+    setFrom(f);
+    setTo(t);
+    // also trigger load immediately
+    onLoad(title, limit, f, t);
   };
 
   return (
@@ -80,13 +102,23 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, disabled }) =>
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={disabled}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 disabled:bg-blue-300 transition-colors"
-        >
-          {disabled ? 'Loading...' : 'Load'}
-        </button>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={handleSearchClick}
+            disabled={disabled}
+            className="px-4 py-2 bg-gray-200 text-gray-900 rounded-md shadow hover:bg-gray-300 disabled:bg-gray-200 transition-colors"
+          >
+            Search
+          </button>
+          <button
+            type="submit"
+            disabled={disabled}
+            className="px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 disabled:bg-blue-300 transition-colors"
+          >
+            {disabled ? 'Loading...' : 'Load'}
+          </button>
+        </div>
       </form>
 
       <div className="flex gap-2 flex-wrap text-sm">

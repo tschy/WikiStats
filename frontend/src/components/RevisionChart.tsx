@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
+import { format } from 'date-fns';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { RevisionSeries } from '../lib/types';
 
@@ -30,12 +31,16 @@ ChartJS.register(
 
 interface RevisionChartProps {
   series: RevisionSeries;
+  // Called when user completes a zoom/pan and visible X-range expands (zoom-out)
+  onViewRangeChange?: (from: Date, to: Date) => void;
 }
 
-export const RevisionChart: React.FC<RevisionChartProps> = ({ series }) => {
+export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRangeChange }) => {
   const chartRef = useRef<any>(null);
+  const getChartInstance = () => (chartRef.current?.chart ?? chartRef.current) as any | null;
+  const prevRangeRef = useRef<{ min: number; max: number } | null>(null);
 
-  const data = {
+  const data = useMemo(() => ({
     datasets: [
       {
         label: 'Size (bytes)',
@@ -58,9 +63,34 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series }) => {
         yAxisID: 'yDelta',
       },
     ],
+  }), [series]);
+
+  const lastSpanRef = useRef<number | null>(null);
+  const debouncedCallRef = useRef<number | null>(null);
+
+  const emitIfZoomOut = (chart: any) => {
+    if (!chart) return;
+    const x = chart.scales?.x;
+    if (!x) return;
+    const min = x.min as number;
+    const max = x.max as number;
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return;
+    const span = max - min;
+    const prev = lastSpanRef.current;
+    lastSpanRef.current = span;
+
+    // consider zoom-out if span increased by >5%
+    const zoomedOut = prev == null || span > prev * 1.05;
+    if (!zoomedOut || !onViewRangeChange) return;
+
+    // debounce a bit to avoid bursts when dragging
+    if (debouncedCallRef.current) window.clearTimeout(debouncedCallRef.current);
+    debouncedCallRef.current = window.setTimeout(() => {
+      onViewRangeChange(new Date(min), new Date(max));
+    }, 150);
   };
 
-  const options: ChartOptions<'line'> = {
+  const options: ChartOptions<'line'> = useMemo(() => ({
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
@@ -74,16 +104,14 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series }) => {
       tooltip: {
         callbacks: {
           title: (items: any) => {
-            const x = items?.[0]?.parsed?.x;
+            const x = items?.[0]?.parsed?.x as number | undefined;
             return x ? new Date(x).toLocaleString() : 'Revision';
           },
         }
       },
       zoom: {
-        pan: {
-          enabled: true,
-          modifierKey: 'shift',
-          mode: 'x',
+        limits: {
+          x: { max: Date.now() },
         },
         zoom: {
           wheel: { enabled: true },
@@ -95,17 +123,58 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series }) => {
             backgroundColor: 'rgba(120,120,120,0.15)',
           },
           mode: 'x',
+          onZoomComplete: ({ chart }) => emitIfZoomOut(chart),
+        },
+        pan: {
+          enabled: true,
+          modifierKey: 'shift',
+          mode: 'x',
+          limits: {
+            x: { max: Date.now() },
+          },
+          onPanComplete: ({ chart }) => emitIfZoomOut(chart),
         },
       },
     },
     scales: {
       x: {
         type: 'time',
+        suggestedMax: Date.now(),
         time: {
-          unit: 'day',
+          // Let the adapter choose an appropriate unit; customize tick labels below
+          unit: false as any,
+          displayFormats: {
+            year: 'yyyy',
+            month: 'MMM yyyy',
+            week: 'dd MMM yyyy',
+            day: 'dd MMM yyyy',
+            hour: 'dd MMM yyyy HH:mm',
+          },
         },
         ticks: {
           maxTicksLimit: 8,
+          callback: (value: any, _index: number, ticks: any) => {
+            // value is a timestamp in ms when using time scale
+            const chart = getChartInstance();
+            const scale = chart?.scales?.x;
+            const min = scale?.min as number | undefined;
+            const max = scale?.max as number | undefined;
+            const v = typeof value === 'number' ? value : Number(value);
+            if (!min || !max || !Number.isFinite(v)) return '' + value;
+            
+            const span = max - min;
+            const day = 24 * 60 * 60 * 1000;
+            const month = 30 * day;
+            const year = 365 * day;
+
+            // Heuristic to check if the same year appears multiple times in the visible ticks
+            const yearsInTicks = new Set(ticks.map((t: any) => new Date(t.value).getFullYear()));
+            const showMonth = ticks.length > yearsInTicks.size;
+
+            if (span > 2 * year && !showMonth) return format(v, 'yyyy');
+            if (span > 2 * month || showMonth) return format(v, 'MMM yyyy');
+            return format(v, 'dd MMM yyyy');
+          },
         },
       },
       ySize: {
@@ -130,11 +199,60 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series }) => {
         },
       },
     },
-  };
+  }), []);
+
+  useEffect(() => {
+    const chart = getChartInstance();
+    if (chart && series && series.points.length) {
+      try {
+        const firstTs = new Date(series.points[0].timestamp).getTime();
+        const lastTs = new Date(series.points[series.points.length - 1].timestamp).getTime();
+        const now = Date.now();
+
+        // Update data
+        chart.data.datasets[0].data = series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.size }));
+        chart.data.datasets[1].data = series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.delta }));
+
+        // Clamp future in plugin limits and scale
+        if (chart.options?.plugins?.zoom) {
+          chart.options.plugins.zoom.limits = chart.options.plugins.zoom.limits || {} as any;
+          chart.options.plugins.zoom.limits.x = { ...(chart.options.plugins.zoom.limits.x || {}), max: now } as any;
+          if (chart.options.plugins.zoom.pan) {
+            chart.options.plugins.zoom.pan.limits = chart.options.plugins.zoom.pan.limits || {} as any;
+            chart.options.plugins.zoom.pan.limits.x = { ...(chart.options.plugins.zoom.pan.limits.x || {}), max: now } as any;
+          }
+        }
+        if (chart.options?.scales?.x) {
+          chart.options.scales.x.suggestedMax = now as any;
+          if ((chart.options.scales.x as any).max == null || (chart.options.scales.x as any).max > now) {
+            (chart.options.scales.x as any).max = now;
+          }
+        }
+
+        // If coverage expanded (zoom-out fetch appended points), auto-fit the x-axis to new bounds
+        const prev = prevRangeRef.current;
+        const expanded = !prev || firstTs < prev.min || lastTs > prev.max;
+        if (expanded) {
+          if (typeof chart.resetZoom === 'function') {
+            chart.resetZoom();
+          } else if (chart.options?.scales?.x) {
+            chart.options.scales.x.min = firstTs as any;
+            chart.options.scales.x.max = Math.min(lastTs, now) as any;
+          }
+        }
+
+        chart.update('none');
+        prevRangeRef.current = { min: firstTs, max: Math.min(lastTs, now) };
+      } catch (e) {
+        console.warn('Chart update failed:', e);
+      }
+    }
+  }, [series]);
 
   const handleResetZoom = () => {
-    if (chartRef.current) {
-      chartRef.current.resetZoom();
+    const chart = getChartInstance();
+    if (chart && typeof chart.resetZoom === 'function') {
+      chart.resetZoom();
     }
   };
 
@@ -149,7 +267,12 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series }) => {
         </button>
       </div>
       <div className="flex-grow">
-        <Line ref={chartRef} options={options} data={data} />
+        <Line
+          key={`${series.title}-${series.points.length}-${series.points[0]?.timestamp || ''}-${series.points[series.points.length-1]?.timestamp || ''}`}
+          ref={chartRef}
+          options={options}
+          data={data}
+        />
       </div>
     </div>
   );
