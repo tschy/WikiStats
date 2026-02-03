@@ -37,3 +37,32 @@ kotlin {
 tasks.test {
     useJUnitPlatform()
 }
+
+// Frontend (Vite/React) integration
+
+val frontendDir = file("frontend")
+
+// Build frontend with Vite and copy assets into the build resources so Spring serves them
+if (frontendDir.exists()) {
+    tasks.register<org.gradle.api.tasks.Exec>("frontendNpmCi") {
+        workingDir = frontendDir
+        commandLine = listOf("npm", "ci")
+    }
+
+    tasks.register<org.gradle.api.tasks.Exec>("frontendBuild") {
+        dependsOn("frontendNpmCi")
+        workingDir = frontendDir
+        commandLine = listOf("npm", "run", "build")
+    }
+
+    tasks.register<org.gradle.api.tasks.Copy>("copyFrontendDist") {
+        dependsOn("frontendBuild")
+        from(frontendDir.resolve("dist"))
+        into(layout.buildDirectory.dir("resources/main/static"))
+    }
+
+    // Ensure resources include the built frontend
+    tasks.named("processResources") {
+        dependsOn("copyFrontendDist")
+    }
+}
