@@ -1,10 +1,10 @@
-package org.example
+package wikistats
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.example.wikistats.dtos.WikipediaApi
+import wikistats.dtos.WikipediaApi
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -12,7 +12,8 @@ import wikistats.dtos.RevisionDto
 import wikistats.dtos.RevisionsResponseDto
 import kotlin.time.Duration.Companion.milliseconds
 
-fun main() {
+// Renamed from `main` to avoid having 2 entry points in the project.
+fun runWikipediaFetchDemo() {
     val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()

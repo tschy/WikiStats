@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WikiStats</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <style>
+    body { font-family: sans-serif; max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+    form { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
+    label { display: flex; flex-direction: column; gap: 6px; }
+    input { padding: 8px; min-width: 280px; }
+    button { padding: 9px 14px; }
+    #status { margin: 12px 0; color: #333; white-space: pre-wrap; }
+    #chartWrap { height: 380px; }
+  </style>
+</head>
+<body>
+  <h1>WikiStats</h1>
+
+  <form id="form">
+    <label>
+      Wikipedia page title
+      <input id="title" value="Earth" />
+    </label>
+
+    <label>
+      Limit
+      <input id="limit" type="number" value="300" min="1" max="5000" />
+    </label>
+
+    <button type="submit">Load</button>
+  </form>
+
+  <div id="status"></div>
+
+  <div id="chartWrap">
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const canvas = document.getElementById("chart");
+
+    const fmt = new Intl.NumberFormat(undefined);
+
+    let chart;
+
+    async function fetchSeries(title, limit) {
+      const url = new URL("/api/revisions", window.location.origin);
+      url.searchParams.set("title", title);
+      url.searchParams.set("limit", String(limit));
+
+      const res = await fetch(url.toString());
+      const text = await res.text();
+      if (!res.ok) throw new Error(`HTTP ${res.status}\n${text}`);
+      return JSON.parse(text);
+    }
+
+    function render(series) {
+      const labels = series.points.map(p => new Date(p.timestamp).toLocaleString());
+      const sizes = series.points.map(p => p.size);
+      const deltas = series.points.map(p => p.delta);
+
+      if (!chart) {
+        chart = new Chart(canvas, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              { label: "Size (bytes)", data: sizes, borderWidth: 2, pointRadius: 0, tension: 0.15, yAxisID: "ySize" },
+              { label: "Delta (bytes)", data: deltas, borderWidth: 1, pointRadius: 0, tension: 0.15, yAxisID: "yDelta" }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: "index", intersect: false },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  title: (items) => {
+                    // Same timestamp for both datasets at this index
+                    const i = items[0]?.dataIndex ?? 0;
+                    const iso = series.points[i]?.timestamp;
+                    return iso ? new Date(iso).toLocaleString() : "Revision";
+                  },
+                  label: (ctx) => {
+                    const dsLabel = ctx.dataset.label || "";
+                    const val = ctx.parsed.y;
+
+                    if (dsLabel.startsWith("Size")) {
+                      return `Size: ${fmt.format(val)} bytes (total page size after this revision)`;
+                    }
+                    if (dsLabel.startsWith("Delta")) {
+                      const sign = val > 0 ? "+" : "";
+                      return `Delta: ${sign}${fmt.format(val)} bytes (change vs previous revision)`;
+                    }
+                    return `${dsLabel}: ${fmt.format(val)}`;
+                  }
+                }
+              },
+              legend: { display: true }
+            },
+            scales: {
+              x: { ticks: { maxTicksLimit: 8 } },
+              ySize: { type: "linear", position: "left", title: { display: true, text: "Size" } },
+              yDelta: { type: "linear", position: "right", title: { display: true, text: "Delta" }, grid: { drawOnChartArea: false } }
+            }
+          }
+        });
+      } else {
+        chart.data.labels = labels;
+        chart.data.datasets[0].data = sizes;
+        chart.data.datasets[1].data = deltas;
+        chart.update();
+      }
+    }
+
+    async function load(title, limit) {
+      statusEl.textContent = "Loading…";
+      const series = await fetchSeries(title, limit);
+      render(series);
+      statusEl.textContent = `Loaded ${series.points.length} revisions for "${series.title}". Hover the graph for details.`;
+    }
+
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      load(
+        document.getElementById("title").value.trim(),
+        Number(document.getElementById("limit").value)
+      ).catch(err => statusEl.textContent = String(err));
+    });
+
+    load("Earth", 300).catch(err => statusEl.textContent = String(err));
+  </script>
+</body>
+</html>
