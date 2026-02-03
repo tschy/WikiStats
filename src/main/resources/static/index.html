@@ -15,6 +15,8 @@
     button { padding: 9px 14px; }
     #status { margin: 12px 0; color: #333; white-space: pre-wrap; }
     #chartWrap { height: 380px; }
+
+    /* ... existing code ... */
   </style>
 </head>
 <body>
@@ -27,6 +29,16 @@
     </label>
 
     <label>
+      From
+      <input id="from" type="date" />
+    </label>
+
+    <label>
+      To
+      <input id="to" type="date" />
+    </label>
+
+    <label>
       Limit
       <input id="limit" type="number" value="300" min="1" max="5000" />
     </label>
@@ -36,6 +48,17 @@
 
   <div id="status"></div>
 
+  <div id="preview">
+    <div id="previewInner">
+      <img id="previewImg" alt="" />
+      <div>
+        <h2 id="previewTitle"></h2>
+        <div id="previewMeta"></div>
+        <div id="previewExtract"></div>
+      </div>
+    </div>
+  </div>
+
   <div id="chartWrap">
     <canvas id="chart"></canvas>
   </div>
@@ -44,19 +67,85 @@
     const statusEl = document.getElementById("status");
     const canvas = document.getElementById("chart");
 
+    const previewEl = document.getElementById("preview");
+    const previewImg = document.getElementById("previewImg");
+    const previewTitle = document.getElementById("previewTitle");
+    const previewMeta = document.getElementById("previewMeta");
+    const previewExtract = document.getElementById("previewExtract");
+
     const fmt = new Intl.NumberFormat(undefined);
 
     let chart;
 
-    async function fetchSeries(title, limit) {
+    function toIsoDate(d) {
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    // Default: last 30 days
+    const today = new Date();
+    const fromDefault = new Date(today);
+    fromDefault.setDate(today.getDate() - 30);
+
+    document.getElementById("from").value = toIsoDate(fromDefault);
+    document.getElementById("to").value = toIsoDate(today);
+
+    async function fetchSeries(title, limit, from, to) {
       const url = new URL("/api/revisions", window.location.origin);
       url.searchParams.set("title", title);
       url.searchParams.set("limit", String(limit));
+
+      if (from) url.searchParams.set("from", from);
+      if (to) url.searchParams.set("to", to);
 
       const res = await fetch(url.toString());
       const text = await res.text();
       if (!res.ok) throw new Error(`HTTP ${res.status}\n${text}`);
       return JSON.parse(text);
+    }
+
+    async function fetchPreview(title) {
+      const url = new URL("/api/preview", window.location.origin);
+      url.searchParams.set("title", title);
+
+      const res = await fetch(url.toString());
+      const text = await res.text();
+      if (!res.ok) throw new Error(`HTTP ${res.status}\n${text}`);
+      return JSON.parse(text);
+    }
+
+    function renderPreview(p) {
+      if (!p || (!p.extract && !p.thumbnailUrl && !p.pageUrl)) {
+        previewEl.style.display = "none";
+        return;
+      }
+
+      previewEl.style.display = "block";
+
+      if (p.thumbnailUrl) {
+        previewImg.src = p.thumbnailUrl;
+        previewImg.style.display = "block";
+      } else {
+        previewImg.removeAttribute("src");
+        previewImg.style.display = "none";
+      }
+
+      previewMeta.textContent = p.description || "";
+      previewExtract.textContent = (p.extract || "").slice(0, 340) + ((p.extract || "").length > 340 ? "…" : "");
+
+      previewTitle.innerHTML = "";
+      if (p.pageUrl) {
+        const a = document.createElement("a");
+        a.href = p.pageUrl;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = p.title || "Open on Wikipedia";
+        previewTitle.appendChild(a);
+      } else {
+        previewTitle.textContent = p.title || "";
+      }
     }
 
     function render(series) {
@@ -121,7 +210,21 @@
 
     async function load(title, limit) {
       statusEl.textContent = "Loading…";
-      const series = await fetchSeries(title, limit);
+
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+
+      const [preview, series] = await Promise.all([
+        fetchPreview(title).catch(err => {
+          previewEl.style.display = "none";
+          console.warn("Preview failed:", err);
+          return null;
+        }),
+        fetchSeries(title, limit, from, to)
+      ]);
+
+      if (preview) renderPreview(preview);
+
       render(series);
       statusEl.textContent = `Loaded ${series.points.length} revisions for "${series.title}". Hover the graph for details.`;
     }
