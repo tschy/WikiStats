@@ -1,0 +1,37 @@
+┌───────────────────────────────────────────────┐
+│                  Browser                      │
+│   index.html (JS) + Chart.js + UI controls    │
+└───────────────┬───────────────────────────────┘
+                │ 1) GET /api/revisions?title&limit&from&to
+                │ 2) GET /api/preview?title
+                ▼
+┌───────────────────────────────────────────────┐
+│            Spring Boot (your app)             │
+│                                               │
+│  RevisionController                            │
+│   - /api/revisions  ──calls──▶ RevisionService │
+│   - /api/preview    ──calls──▶                 │
+│                                               │
+│  RevisionService                               │
+│   - fetchSeries(...)    (history + filtering)  │
+│   - fetchPreview(...)   (summary mapping)      │
+└───────────────┬───────────────────────────────┘
+                │ calls via Retrofit clients (injected by Spring)
+                ▼
+┌───────────────────────────────────────────────┐
+│              Retrofit HTTP clients            │
+│                                               │
+│  WikipediaApi (base: /w/rest.php/)            │
+│   - getPageHistory(title)                     │
+│   - getPageHistoryByUrl(olderUrl)             │
+│                                               │
+│  WikipediaRestV1Api (base: /api/rest_v1/)     │
+│   - getSummary(title)                         │
+└───────────────┬───────────────────────────────┘
+                │ HTTP requests out to Wikipedia
+                ▼
+┌───────────────────────────────────────────────┐
+│                  Wikipedia                    │
+│  /w/rest.php/... history endpoints            │
+│  /api/rest_v1/... summary endpoint            │
+└───────────────────────────────────────────────┘

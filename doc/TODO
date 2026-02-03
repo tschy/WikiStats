@@ -1,0 +1,31 @@
+Wir machen etwas mit Daten/Metriken von Wikimedia/Wikipedia
+
+
+Bsp. Graph fuer Revision history bestimmter Seiten
+
+plot: Wann welche Aenderungen vorgenommen wurden an einem Artikel
+mit Eingabe/Abfrage von aussen (Angabe der Artikel)
+
+
+ okhttp log. exception handler, we need the response body oder in der konfiguration mitteilen, was on error passieren soll
+
+
+
+revisions zw. 20 und mehr, mit schleife rueber gehen und alle holen
+
+
+https://api.wikimedia.org/wiki/Core_REST_API/Reference/Revisions/Get_page_history
+
+https://api.wikimedia.org/wiki/Special:AppManagement
+
+https://api.wikimedia.org/wiki/Core_REST_API
+
+https://api.wikimedia.org/wiki/API_catalog
+
+curl -v "https://api.wikimedia.org/core/v1/wikipedia/en/page/Earth/history?filter=bot&older_than=981126172"
+
+
+curl https://en.wikipedia.org/core/v1/wikipedia/en/page/Earth/history?filter=bot
+
+
+https://claude.ai/chat/c3474232-6373-48c2-b22b-6a72b2774483

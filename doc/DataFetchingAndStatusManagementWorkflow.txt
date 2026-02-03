@@ -1,0 +1,110 @@
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                         BROWSER (UI)                                         │
+│                                                                                              │
+│  ┌───────────────────────────────┐                                                           │
+│  │            FORM               │   user types / clicks Load                                │
+│  │  title | from | to | limit    │──────────────────────────────┐                            │
+│  └───────────────────────────────┘                              │                            │
+│                                                                 ▼                            │
+│  ┌───────────────────────────────┐                     ┌───────────────────────────────┐    │
+│  │          JS "load()"          │                     │     status DIV (#status)      │    │
+│  │  - reads inputs               │                     │  "Loading…" / errors / done   │    │
+│  │  - starts 2 fetches in parallel│───────────────┐     └───────────────────────────────┘    │
+│  └───────────────────────────────┘               │                                           │
+│                                                  │ Promise.all([ preview, series ])          │
+│                                                  │                                           │
+│                    ┌─────────────────────────────┴─────────────────────────────┐             │
+│                    │                                                           │             │
+│                    ▼                                                           ▼             │
+│  ┌───────────────────────────────────────┐                   ┌───────────────────────────────────────┐
+│  │ fetchPreview(title)                    │                   │ fetchSeries(title, limit, from, to)  │
+│  │ builds URL: /api/preview?title=...     │                   │ builds URL: /api/revisions?...        │
+│  └───────────────────────┬───────────────┘                   └───────────────────────┬───────────────┘
+│                          │                                                           │
+│                          │ HTTP GET                                                   │ HTTP GET
+│                          ▼                                                           ▼
+└──────────────────────────┼───────────────────────────────────────────────────────────┼───────────────┘
+                           │                                                           │
+                           ▼                                                           ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   YOUR SERVER (Spring Boot)                                  │
+│                                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ RevisionController.kt  (@RestController, base="/api")                                   │  │
+│  │                                                                                        │  │
+│  │   /preview   ───────────────▶ preview(title)                                           │  │
+│  │                           calls service.fetchPreview(title)                             │  │
+│  │                                                                                        │  │
+│  │   /revisions ───────────────▶ revisions(title, limit, from, to)                        │  │
+│  │                           calls service.fetchSeries(title, limit, from, to)            │  │
+│  └───────────────────────────────────────────┬────────────────────────────────────────────┘  │
+│                                              │                                                │
+│                                              ▼                                                │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ RevisionService.kt  (@Service)                                                          │  │
+│  │                                                                                        │  │
+│  │  fetchPreview(title)                                                                    │  │
+│  │     ┌──────────────────────────────────────────────────────────────────────────────┐   │  │
+│  │     │ calls: WikipediaRestV1Api.getSummary(title)                                  │   │  │
+│  │     │ returns: Call<WikipediaSummaryDto>                                           │   │  │
+│  │     └──────────────────────────────────────────────────────────────────────────────┘   │  │
+│  │             │ .execute()                                                               │  │
+│  │             ▼                                                                          │  │
+│  │      WikipediaSummaryDto  (WikipediaSummaryDto.kt)                                      │  │
+│  │             │ map fields                                                                │  │
+│  │             ▼                                                                          │  │
+│  │      ArticlePreview  (returned as JSON to browser)                                      │  │
+│  │                                                                                        │  │
+│  │  fetchSeries(title, limit, from, to)                                                    │  │
+│  │     ┌──────────────────────────────────────────────────────────────────────────────┐   │  │
+│  │     │ calls: WikipediaApi.getPageHistory(title)                                     │   │  │
+│  │     │ returns: Call<RevisionsResponseDto>                                          │   │  │
+│  │     └──────────────────────────────────────────────────────────────────────────────┘   │  │
+│  │             │                                                                           │  │
+│  │             ▼                                                                           │  │
+│  │        LOOP (pagination + filtering)                                                     │  │
+│  │        ┌────────────────────────────────────────────────────────────────────────────┐  │  │
+│  │        │ next.execute() -> RevisionsResponseDto (RevisionsResponseDto.kt)            │  │  │
+│  │        │   - iterate RevisionDto list                                                │  │  │
+│  │        │   - parse timestamp                                                         │  │  │
+│  │        │   - if outside [from,to] => skip                                             │  │  │
+│  │        │   - map RevisionDto -> RevisionPoint                                         │  │  │
+│  │        │ olderUrl = body.older                                                        │  │  │
+│  │        │ if olderUrl exists => next = WikipediaApi.getPageHistoryByUrl(olderUrl)     │  │  │
+│  │        └────────────────────────────────────────────────────────────────────────────┘  │  │
+│  │             │                                                                           │  │
+│  │             ▼                                                                           │  │
+│  │      RevisionSeries (returned as JSON to browser)                                       │  │
+│  └───────────────────────────────────────────┬────────────────────────────────────────────┘  │
+│                                              │ uses injected Retrofit clients                │
+└──────────────────────────────────────────────┼────────────────────────────────────────────────┘
+                                               │
+                                               ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                     HTTP CLIENTS (created in WikipediaClientConfig.kt)                        │
+│                                                                                              │
+│  WikipediaClientConfig.kt                                                                    │
+│    builds: Retrofit + OkHttpClient + MoshiConverterFactory                                   │
+│                                                                                              │
+│  ┌──────────────────────────────────────────────┐      ┌───────────────────────────────────┐│
+│  │ WikipediaApi.kt                               │      │ WikipediaRestV1Api.kt             ││
+│  │  getPageHistory(title)                        │      │  getSummary(title)                ││
+│  │  getPageHistoryByUrl(olderUrl)                │      │                                   ││
+│  └───────────────┬──────────────────────────────┘      └───────────────┬───────────────────┘│
+│                  │ HTTPS (OkHttp)                                        │ HTTPS (OkHttp)    │
+│                  ▼                                                       ▼                  │
+│     ┌───────────────────────────────────────────┐         ┌────────────────────────────────┐│
+│     │ Wikipedia (external)                       │         │ Wikipedia (external)           ││
+│     │  /w/rest.php/v1/page/{title}/history       │         │  /api/rest_v1/page/summary/... ││
+│     │  returns JSON -> Moshi -> RevisionsResponse│         │  returns JSON -> Moshi -> Summary││
+│     └───────────────────────────────────────────┘         └────────────────────────────────┘│
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+                                               │
+                                               ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   BACK IN THE BROWSER (UI)                                   │
+│                                                                                              │
+│  preview JSON  -> renderPreview(...) -> updates preview DOM (#preview...)                     │
+│  series  JSON  -> render(...)       -> Chart.js draws/updates canvas#chart                    │
+│  status text updated to "Loaded N revisions..."                                               │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘

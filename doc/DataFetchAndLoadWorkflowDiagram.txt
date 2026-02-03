@@ -1,0 +1,119 @@
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                         BROWSER (UI)                                         │
+│                                                                                              │
+│  ┌───────────────────────────────┐                                                           │
+│  │            FORM               │   user types / clicks Load                                │
+│  │  title | from | to | limit    │──────────────────────────────┐                            │
+│  └───────────────────────────────┘                              │                            │
+│                                                                 ▼                            │
+│  ┌───────────────────────────────┐                     ┌───────────────────────────────┐    │
+│  │          JS "load()"          │                     │     status DIV (#status)      │    │
+│  │  - reads inputs               │                     │  "Loading…" / errors / done   │    │
+│  │  - starts 2 fetches in parallel│───────────────┐     └───────────────────────────────┘    │
+│  └───────────────────────────────┘               │                                           │
+│                                                  │ Promise.all([ preview, series ])          │
+│                                                  │                                           │
+│                    ┌─────────────────────────────┴─────────────────────────────┐             │
+│                    │                                                           │             │
+│                    ▼                                                           ▼             │
+│  ┌───────────────────────────────────────┐                   ┌───────────────────────────────────────┐
+│  │ fetchPreview(title)                    │                   │ fetchSeries(title, limit, from, to)  │
+│  │ builds URL: /api/preview?title=...     │                   │ builds URL: /api/revisions?...        │
+│  └───────────────────────┬───────────────┘                   └───────────────────────┬───────────────┘
+│                          │                                                           │
+│                          │ HTTP GET                                                   │ HTTP GET
+│                          ▼                                                           ▼
+└──────────────────────────┼───────────────────────────────────────────────────────────┼───────────────┘
+                           │                                                           │
+                           ▼                                                           ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   YOUR SERVER (Spring Boot)                                  │
+│                                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ src/main/kotlin/wikistats/RevisionController.kt  (@RestController, /api)                │  │
+│  │                                                                                        │  │
+│  │   GET /api/preview    -> preview(@RequestParam title)                                  │  │
+│  │                         returns RevisionService.ArticlePreview                          │  │
+│  │                         calls: service.fetchPreview(title)                             │  │
+│  │                                                                                        │  │
+│  │   GET /api/revisions  -> revisions(title, limit, from, to)                             │  │
+│  │                         returns RevisionService.RevisionSeries                          │  │
+│  │                         calls: service.fetchSeries(title, limit, from, to)             │  │
+│  └───────────────────────────────────────┬────────────────────────────────────────────────┘  │
+│                                          │                                                    │
+│                                          ▼                                                    │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ src/main/kotlin/wikistats/RevisionService.kt  (@Service)                                │  │
+│  │                                                                                        │  │
+│  │  (A) fetchPreview(title)                                                               │  │
+│  │      restV1Api.getSummary(title).execute()                                              │  │
+│  │            │                                                                           │  │
+│  │            ▼                                                                           │  │
+│  │      WikipediaSummaryDto  (src/main/kotlin/wikistats/dtos/WikipediaSummaryDto.kt)      │  │
+│  │            │  mapped to                                                                │  │
+│  │            ▼                                                                           │  │
+│  │      ArticlePreview (title, description, extract, thumbnailUrl, pageUrl)               │  │
+│  │                                                                                        │  │
+│  │  (B) fetchSeries(title, limit, from, to)                                               │  │
+│  │      api.getPageHistory(title)  -> Call<RevisionsResponseDto>                           │  │
+│  │      while need more points:                                                           │  │
+│  │        next.execute() -> RevisionsResponseDto                                           │  │
+│  │          - iterate RevisionDto list                                                     │  │
+│  │          - filter timestamps between from/to                                            │  │
+│  │          - map RevisionDto -> RevisionPoint                                             │  │
+│  │        olderUrl = body.older                                                            │  │
+│  │        if olderUrl exists: api.getPageHistoryByUrl(olderUrl)                            │  │
+│  │      returns RevisionSeries(title, points[])                                            │  │
+│  │                                                                                        │  │
+│  │      DTOs used:                                                                        │  │
+│  │        src/main/kotlin/wikistats/dtos/RevisionsResponseDto.kt                           │  │
+│  │        (RevisionsResponseDto / RevisionDto / UserDto)                                   │  │
+│  └───────────────────────────────────────┬────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────┼───────────────────────────────────────────────────┘
+                                           │ calls Retrofit interfaces
+                                           ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                               OUTBOUND HTTP (Retrofit + OkHttp)                              │
+│                                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ src/main/kotlin/wikistats/WikipediaClientConfig.kt  (@Configuration)                    │  │
+│  │                                                                                        │  │
+│  │   builds Retrofit clients with:                                                        │  │
+│  │     - OkHttpClient + HttpLoggingInterceptor                                             │  │
+│  │     - Moshi + KotlinJsonAdapterFactory                                                  │  │
+│  │     - MoshiConverterFactory                                                             │  │
+│  │                                                                                        │  │
+│  │   and creates implementations for:                                                      │  │
+│  │     src/main/kotlin/wikistats/dtos/WikipediaApi.kt                                      │  │
+│  │     src/main/kotlin/wikistats/dtos/WikipediaRestV1Api.kt                                │  │
+│  └───────────────────────────────────────┬────────────────────────────────────────────────┘  │
+│                                          │ Retrofit calls (generated impl)                   │
+│                    ┌─────────────────────┴──────────────────────┐                            │
+│                    │                                            │                            │
+│                    ▼                                            ▼                            │
+│  ┌───────────────────────────────────────┐        ┌────────────────────────────────────────┐ │
+│  │ wikistats.dtos.WikipediaApi.kt        │        │ wikistats.dtos.WikipediaRestV1Api.kt   │ │
+│  │                                       │        │                                        │ │
+│  │ getPageHistory(@Path title)           │        │ getSummary(@Path title)                │ │
+│  │   -> Call<RevisionsResponseDto>       │        │   -> Call<WikipediaSummaryDto>        │ │
+│  │ getPageHistoryByUrl(@Url url)         │        │                                        │ │
+│  │   -> Call<RevisionsResponseDto>       │        │                                        │ │
+│  └───────────────────────┬───────────────┘        └───────────────────────┬────────────────┘ │
+│                          │ OkHttp executes HTTPS                            │ OkHttp executes │
+│                          ▼                                                  ▼                 │
+│     ┌──────────────────────────────────────────────┐   ┌───────────────────────────────────┐ │
+│     │ Wikipedia (history API)                       │   │ Wikipedia (summary API)           │ │
+│     │ https://en.wikipedia.org/w/rest.php/...       │   │ https://en.wikipedia.org/api/...  │ │
+│     │ returns JSON -> Moshi -> RevisionsResponseDto │   │ returns JSON -> Moshi -> Summary  │ │
+│     └──────────────────────────────────────────────┘   └───────────────────────────────────┘ │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+                                           │
+                                           │ JSON results returned to controller
+                                           ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   BACK TO BROWSER (UI)                                       │
+│                                                                                              │
+│  /api/preview JSON  ──► renderPreview(...) updates preview DOM                                │
+│  /api/revisions JSON ──► render(...) creates/updates Chart.js on <canvas>                     │
+│  status text updated to "Loaded N revisions..."                                              │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘

@@ -1,0 +1,97 @@
+                                      (build / run)
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  ./gradlew bootRun  (Gradle build tool)                                       │
+│  - resolves dependencies                                                     │
+│  - compiles Kotlin                                                           │
+│  - starts the app                                                            │
+└───────────────────────────────────────────────┬──────────────────────────────┘
+                                                │ launches main()
+                                                v
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  src/main/kotlin/wikistats/WikiStatsApplication.kt                            │
+│                                                                              │
+│  fun main(args) = runApplication<WikiStatsApplication>(*args)                 │
+│                                                                              │
+│  Spring Boot starts (FRAMEWORK):                                              │
+│  - creates application context (DI container)                                 │
+│  - scans @Configuration / @Service / @RestController                          │
+│  - starts embedded web server                                                 │
+└───────────────────────────────────────────────┬──────────────────────────────┘
+                                                │ creates beans / injects deps
+                                                v
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  src/main/kotlin/wikistats/WikipediaClientConfig.kt  (@Configuration)         │
+│                                                                              │
+│  @Bean wikipediaApi(): WikipediaApi                                           │
+│    Retrofit + OkHttp + Moshi  → creates implementation of:                   │
+│      src/main/kotlin/wikistats/dtos/WikipediaApi.kt                           │
+│                                                                              │
+│  @Bean wikipediaRestV1Api(): WikipediaRestV1Api                               │
+│    Retrofit + OkHttp + Moshi  → creates implementation of:                   │
+│      src/main/kotlin/wikistats/dtos/WikipediaRestV1Api.kt                     │
+└───────────────────────────────────────────────┬──────────────────────────────┘
+                                                │ injects into services/controllers
+                                                v
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  src/main/kotlin/wikistats/RevisionController.kt  (@RestController)           │
+│                                                                              │
+│  GET /api/revisions  ──calls──▶  RevisionService.fetchSeries(...)             │
+│  GET /api/preview    ──calls──▶  RevisionService.fetchPreview(...)            │
+└───────────────────────────────────────────────┬──────────────────────────────┘
+                                                │
+                                                v
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  src/main/kotlin/wikistats/RevisionService.kt  (@Service)                     │
+│                                                                              │
+│  fetchSeries(title, limit, from, to):                                         │
+│    uses injected wikipediaApi: WikipediaApi                                   │
+│      - getPageHistory(title)                                                  │
+│      - getPageHistoryByUrl(olderUrl)  (pagination)                            │
+│    parses timestamps, filters by date range, maps to RevisionPoint list       │
+│                                                                              │
+│  fetchPreview(title):                                                         │
+│    uses injected restV1Api: WikipediaRestV1Api                                │
+│      - getSummary(title)                                                      │
+│    maps WikipediaSummaryDto → ArticlePreview                                  │
+└───────────────────────────────────────────────┬──────────────────────────────┘
+                                                │ calls libraries (you control flow)
+                                                v
+
+                     (Libraries, not frameworks: your code calls them)
+
+┌──────────────────────────────────────────┐    ┌──────────────────────────────┐
+│ Retrofit                                 │───▶│ OkHttp                        │───▶  HTTPS to Wikipedia
+│ - generates HTTP client from interfaces  │    │ - executes requests           │
+│ - uses converter for JSON                │    │ - logging interceptor          │
+└──────────────────────────────────────────┘    └──────────────────────────────┘
+                │
+                └──────────────▶  ┌───────────────────────────────────────────┐
+                                  │ Moshi                                     │
+                                  │ - JSON ↔ Kotlin DTOs                       │
+                                  │ - used via MoshiConverterFactory           │
+                                  └───────────────────────────────────────────┘
+
+DTOs (data shapes used for JSON parsing / mapping)
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ src/main/kotlin/wikistats/dtos/RevisionsResponseDto.kt                        │
+│ - RevisionsResponseDto / RevisionDto / UserDto                                │
+│                                                                              │
+│ src/main/kotlin/wikistats/dtos/WikipediaSummaryDto.kt                         │
+│ - WikipediaSummaryDto (+ nested DTOs)                                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+──────────────────────────────────────────── Frontend side ───────────────────────────────────────────
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ src/main/resources/static/index.html                                          │
+│                                                                              │
+│ Browser JS sends requests to your Spring controller:                          │
+│   - GET /api/preview?title=...                                                │
+│   - GET /api/revisions?title=...&limit=...&from=...&to=...                    │
+│                                                                              │
+│ Then renders:                                                                 │
+│   - preview card DOM updates                                                  │
+│   - chart via Chart.js on <canvas id="chart">                                 │
+└──────────────────────────────────────────────────────────────────────────────┘

@@ -1,0 +1,123 @@
+
+                    W I K I S T A T S   (with real files/classes)
+
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ Build / Run                                                              │
+  │                                                                          │
+  │   ./gradlew bootRun                                                      │
+  │   (Gradle)                                                               │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ launches JVM
+                                  v
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ src/main/kotlin/wikistats/WikiStatsApplication.kt                         │
+  │                                                                          │
+  │   fun main(...) = runApplication<WikiStatsApplication>(*args)             │
+  │                                                                          │
+  │   Spring Boot starts (framework): scans annotations + starts web server   │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ creates beans / dependency injection
+                                  v
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ src/main/kotlin/wikistats/WikipediaClientConfig.kt  (@Configuration)      │
+  │                                                                          │
+  │   @Bean wikipediaApi(): WikipediaApi                                      │
+  │      Retrofit.create(wikistats.dtos.WikipediaApi)                         │
+  │      uses: OkHttpClient + Moshi + MoshiConverterFactory                   │
+  │                                                                          │
+  │   @Bean wikipediaRestV1Api(): WikipediaRestV1Api                          │
+  │      Retrofit.create(wikistats.dtos.WikipediaRestV1Api)                   │
+  │      uses: OkHttpClient + Moshi + MoshiConverterFactory                   │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ injected into RevisionService + Controller
+                                  v
+
+──────────────────────────────────────────── Runtime request flow ─────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ Browser                                                                   │
+  │ src/main/resources/static/index.html                                      │
+  │                                                                          │
+  │   JS generates requests:                                                  │
+  │     GET /api/preview?title=...                                            │
+  │     GET /api/revisions?title=...&limit=...&from=...&to=...                │
+  │                                                                          │
+  │   and renders:                                                            │
+  │     Chart.js draws chart on <canvas id="chart">                           │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ HTTP to your app
+                                  v
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ src/main/kotlin/wikistats/RevisionController.kt  (@RestController)        │
+  │                                                                          │
+  │   GET /api/preview   -> preview(title)                                   │
+  │         calls: RevisionService.fetchPreview(title)                        │
+  │                                                                          │
+  │   GET /api/revisions  -> revisions(title, limit, from, to)               │
+  │         calls: RevisionService.fetchSeries(title, limit, from, to)        │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ calls (your code)
+                                  v
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ src/main/kotlin/wikistats/RevisionService.kt  (@Service)                  │
+  │                                                                          │
+  │  A) fetchPreview(title):                                                  │
+  │     calls: wikistats.dtos.WikipediaRestV1Api.getSummary(title)            │
+  │       returns: Call<WikipediaSummaryDto>                                  │
+  │     executes HTTP + maps WikipediaSummaryDto -> ArticlePreview             │
+  │                                                                          │
+  │     DTO used:                                                            │
+  │       src/main/kotlin/wikistats/dtos/WikipediaSummaryDto.kt               │
+  │                                                                          │
+  │  B) fetchSeries(title, limit, from, to):                                  │
+  │     calls: wikistats.dtos.WikipediaApi.getPageHistory(title)              │
+  │       returns: Call<RevisionsResponseDto>                                 │
+  │     then loops using pagination:                                          │
+  │       calls: WikipediaApi.getPageHistoryByUrl(olderUrl)                   │
+  │     filters by (from,to), maps RevisionDto -> RevisionPoint               │
+  │     returns RevisionSeries                                                │
+  │                                                                          │
+  │     DTO used:                                                            │
+  │       src/main/kotlin/wikistats/dtos/RevisionsResponseDto.kt              │
+  │       (RevisionsResponseDto / RevisionDto / UserDto)                      │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ calls libraries (Retrofit stack)
+                                  v
+
+────────────────────────────────────── Retrofit stack (created in config) ─────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ wikistats.WikipediaApi   (interface)                                      │
+  │   - getPageHistory(title): Call<RevisionsResponseDto>                      │
+  │   - getPageHistoryByUrl(url): Call<RevisionsResponseDto>                   │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ implemented by Retrofit
+                                  v
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ retrofit2.Retrofit  (from WikipediaClientConfig.kt)                        │
+  │   - generates client implementation for WikipediaApi / WikipediaRestV1Api  │
+  │   - uses OkHttpClient to execute requests                                  │
+  │   - uses MoshiConverterFactory to parse JSON                               │
+  └───────────────────────────────┬──────────────────────────────────────────┘
+                                  │ uses
+                 ┌────────────────┴─────────────────┐
+                 v                                  v
+      ┌──────────────────────────────┐   ┌──────────────────────────────────┐
+      │ okhttp3.OkHttpClient          │   │ com.squareup.moshi.Moshi          │
+      │  + HttpLoggingInterceptor     │   │  + KotlinJsonAdapterFactory       │
+      │  (does HTTP)                  │   │  (JSON -> DTOs)                   │
+      └───────────────┬──────────────┘   └──────────────────────────────────┘
+                      │ HTTPS calls out
+                      v
+      ┌──────────────────────────────────────────────────────────────────────┐
+      │ Wikipedia (external)                                                  │
+      │  - History:  https://en.wikipedia.org/w/rest.php/v1/page/.../history   │
+      │  - Summary:  https://en.wikipedia.org/api/rest_v1/page/summary/...     │
+      └──────────────────────────────────────────────────────────────────────┘
+
+──────────────────────────────────────────── Back to the browser ───────────────────────────────────────
+
+  Spring MVC serializes your return values (RevisionSeries / ArticlePreview) to JSON
+  and sends them back to index.html, where:
+    - renderPreview(...) updates the preview DOM
+    - render(...) creates/updates Chart.js on the canvas

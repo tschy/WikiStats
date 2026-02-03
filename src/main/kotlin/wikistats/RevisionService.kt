@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service
 import retrofit2.Call
 import wikistats.dtos.RevisionDto
 import wikistats.dtos.RevisionsResponseDto
-import wikistats.dtos.WikipediaApi
+import wikistats.WikipediaApi
 import wikistats.dtos.WikipediaRestV1Api
 import java.time.Instant
 import java.time.LocalDate

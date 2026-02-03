@@ -1,0 +1,111 @@
+                        ┌───────────────────────────────────────────┐
+                        │            1) HTML STRUCTURE              │
+                        └───────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                index.html (DOM)                               │
+│                                                                              │
+│  ┌─────────────────────────────── form#form ───────────────────────────────┐ │
+│  │  title input   from(date)   to(date)   limit(number)   [ Load ]         │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌──────────────┐     ┌──────────────────────── preview card ─────────────┐ │
+│  │ div#status   │     │ div#preview (hidden until data exists)            │ │
+│  │ messages     │     │  img#previewImg  h2#previewTitle                  │ │
+│  └──────────────┘     │  #previewMeta     #previewExtract                 │ │
+│                        └──────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌────────────────────────────── chart area ───────────────────────────────┐ │
+│  │ div#chartWrap                                                           │ │
+│  │   └── canvas#chart  ← Chart.js draws pixels here                        │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+
+                        ┌───────────────────────────────────────────┐
+                        │          2) JS STARTUP (page load)         │
+                        └───────────────────────────────────────────┘
+
+      Browser loads HTML
+              │
+              ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ <script> (your JS runs)                                                      │
+│                                                                              │
+│  A) Cache DOM references (getElementById...)                                 │
+│     statusEl, previewEl, previewImg, previewTitle, ... canvas                │
+│                                                                              │
+│  B) Set default dates                                                        │
+│     from = today - 30 days                                                   │
+│     to   = today                                                             │
+│                                                                              │
+│  C) Kick off initial load                                                     │
+│     load("Earth", 300)                                                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+
+                        ┌───────────────────────────────────────────┐
+                        │     3) USER ACTION (click Load/submit)     │
+                        └───────────────────────────────────────────┘
+
+┌───────────────┐       submit event         ┌─────────────────────────────────┐
+│ User clicks   │ ─────────────────────────▶ │ form#form listener              │
+│   [Load]      │                           │  e.preventDefault()             │
+└───────────────┘                           │  load(title, limit)             │
+                                            └─────────────────────────────────┘
+
+
+
+                        ┌───────────────────────────────────────────┐
+                        │        4) load(...) DOES THE WORK          │
+                        └───────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ load(title, limit)                                                           │
+│                                                                              │
+│  1) statusEl.textContent = "Loading…"                                         │
+│                                                                              │
+│  2) Read current date inputs                                                  │
+│     from = fromInput.value   (YYYY-MM-DD or empty)                            │
+│     to   = toInput.value     (YYYY-MM-DD or empty)                            │
+│                                                                              │
+│  3) Start TWO network calls in parallel (Promise.all)                         │
+│                                                                              │
+│      ┌───────────────────────────────────┐     ┌───────────────────────────┐ │
+│      │ fetchPreview(title)               │     │ fetchSeries(title,limit,   │ │
+│      │  builds URL:                      │     │            from,to)        │ │
+│      │   /api/preview?title=...          │     │  builds URL:               │ │
+│      │  fetch(...)                       │     │   /api/revisions?...       │ │
+│      └───────────────┬───────────────────┘     └───────────────┬───────────┘ │
+│                      │                                           │             │
+│                      ▼                                           ▼             │
+│           HTTP to your server                          HTTP to your server    │
+│                                                                              │
+│  4) When responses arrive:                                                    │
+│      preview JSON → renderPreview(preview)                                    │
+│      series  JSON → render(series)                                            │
+│                                                                              │
+│  5) statusEl = "Loaded N revisions..."                                        │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+
+                        ┌───────────────────────────────────────────┐
+                        │     5) RENDERING = DOM updates + canvas     │
+                        └───────────────────────────────────────────┘
+
+┌───────────────────────────────┐           ┌──────────────────────────────────┐
+│ renderPreview(previewJson)    │           │ render(seriesJson)                │
+│                               │           │                                  │
+│ if missing data → hide card   │           │ labels = timestamps               │
+│ else:                         │           │ sizes  = points.size             │
+│  - show #preview              │           │ deltas = points.delta            │
+│  - set img src (thumbnailUrl) │           │                                  │
+│  - set title text/link        │           │ if chart doesn't exist:           │
+│  - set description + extract  │           │   chart = new Chart(canvas, ...)  │
+└───────────────┬───────────────┘           │ else: update chart.data + update()│
+                │                           └───────────────┬──────────────────┘
+                ▼                                           ▼
+      Updates DOM nodes                                Draws pixels on canvas

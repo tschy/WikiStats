@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import wikistats.dtos.WikipediaApi
+import wikistats.WikipediaApi
 import wikistats.dtos.WikipediaRestV1Api
 
 @Configuration

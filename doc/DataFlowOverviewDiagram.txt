@@ -1,0 +1,72 @@
+                              ┌──────────────────────────────┐
+                              │            Gradle             │
+                              │  (build tool, not runtime)    │
+                              │  - resolves deps              │
+                              │  - compiles                   │
+                              │  - runs bootRun               │
+                              └──────────────┬───────────────┘
+                                             │ starts
+                                             v
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                         Spring Boot / Spring MVC (FRAMEWORK)                  │
+│             "Framework = calls your code / controls program flow"             │
+│                                                                               │
+│   ┌──────────────────────────────┐        ┌────────────────────────────────┐  │
+│   │  Embedded Web Server         │        │  Spring DI Container            │  │
+│   │  (Tomcat via Spring Boot)    │        │  - creates beans                │  │
+│   │  - accepts HTTP requests     │        │  - wires dependencies           │  │
+│   └──────────────┬───────────────┘        └───────────────┬────────────────┘  │
+│                  │                                        │                   │
+│                  │ HTTP request arrives                    │ injects           │
+│                  v                                        v                   │
+│        ┌───────────────────────┐                 ┌────────────────────────┐  │
+│        │ Your Controller        │  calls service  │ Your Service            │  │
+│        │ (API endpoints)        │───────────────▶ │ (business logic)        │  │
+│        └───────────────────────┘                 └─────────────┬──────────┘  │
+│                                                                │ calls        │
+└────────────────────────────────────────────────────────────────┼──────────────┘
+                                                                 │
+                                                                 v
+                     "Libraries = you call them / you control flow"
+        ┌─────────────────────────────────────────────────────────────────┐
+        │                         Retrofit (LIBRARY)                       │
+        │  - you define interfaces (endpoints)                             │
+        │  - Retrofit generates an implementation                           │
+        │  - your service decides when to call it                           │
+        └──────────────────────────────┬───────────────────────────────────┘
+                                       │ uses
+                                       v
+        ┌─────────────────────────────────────────────────────────────────┐
+        │                          OkHttp (LIBRARY)                        │
+        │  - actually sends HTTP requests                                  │
+        │  - interceptors / logging / timeouts                             │
+        └──────────────────────────────┬───────────────────────────────────┘
+                                       │ HTTP over the internet
+                                       v
+        ┌─────────────────────────────────────────────────────────────────┐
+        │                     Wikipedia APIs (EXTERNAL)                    │
+        └──────────────────────────────┬───────────────────────────────────┘
+                                       │ returns JSON
+                                       v
+        ┌─────────────────────────────────────────────────────────────────┐
+        │                          Moshi (LIBRARY)                         │
+        │  - JSON  ↔  Kotlin DTOs                                           │
+        │  - used by Retrofit via converter                                │
+        └──────────────────────────────┬───────────────────────────────────┘
+                                       │ parsed objects
+                                       v
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                 Spring returns JSON response back to the browser              │
+└───────────────────────────────────────────────────────────────────────────────┘
+                                       │
+                                       v
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                              Browser UI (Frontend)                            │
+│  Your JS calls your backend endpoints, then renders:                           │
+│                                                                               │
+│   ┌──────────────────────────┐        ┌───────────────────────────────────┐   │
+│   │ Your JS / HTML            │  calls │ Chart.js (LIBRARY)                │   │
+│   │ - fetch('/api/...')       │──────▶ │ - draws charts on <canvas>        │   │
+│   │ - updates DOM             │        │ - you call new Chart(...)         │   │
+│   └──────────────────────────┘        └───────────────────────────────────┘   │
+└───────────────────────────────────────────────────────────────────────────────┘
