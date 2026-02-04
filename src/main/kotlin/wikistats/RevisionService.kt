@@ -1,7 +1,10 @@
 package wikistats
 
+import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
+import org.springframework.web.server.ResponseStatusException
 import retrofit2.Call
+import retrofit2.Response
 import wikistats.dtos.RevisionDto
 import wikistats.dtos.RevisionsResponseDto
 import wikistats.WikipediaApi
@@ -56,13 +59,7 @@ class RevisionService(
         var reachedFromBoundary = false
 
         while (points.size < safeLimit && !reachedFromBoundary) {
-            val resp = next.execute()
-            if (!resp.isSuccessful) {
-                val err = resp.errorBody()?.string()
-                error("Wikipedia HTTP ${resp.code()} ${resp.message()}\n${err ?: "(no error body)"}")
-            }
-
-            val body = resp.body() ?: error("Empty Wikipedia response body")
+            val body = executeWithRetry(next)
 
             for (rev: RevisionDto in body.revisions) {
                 if (points.size >= safeLimit) break
@@ -106,13 +103,7 @@ class RevisionService(
     }
 
     fun fetchPreview(title: String): ArticlePreview {
-        val resp = restV1Api.getSummary(title).execute()
-        if (!resp.isSuccessful) {
-            val err = resp.errorBody()?.string()
-            error("Wikipedia summary HTTP ${resp.code()} ${resp.message()}\n${err ?: "(no error body)"}")
-        }
-
-        val body = resp.body() ?: error("Empty Wikipedia summary response body")
+        val body = executeWithRetry(restV1Api.getSummary(title))
 
         return ArticlePreview(
             title = body.title,
@@ -121,5 +112,57 @@ class RevisionService(
             thumbnailUrl = body.thumbnail?.source,
             pageUrl = body.contentUrls?.desktop?.page
         )
+    }
+
+    private fun <T> executeWithRetry(initialCall: Call<T>, maxAttempts: Int = 3): T {
+        var attempt = 0
+        var call: Call<T> = initialCall
+        var lastError: String? = null
+        while (attempt < maxAttempts) {
+            attempt++
+            try {
+                val resp: Response<T> = call.execute()
+                if (resp.isSuccessful) {
+                    return resp.body() ?: throw ResponseStatusException(HttpStatus.BAD_GATEWAY, "Empty Wikipedia response body")
+                }
+                val code = resp.code()
+                val errBody = resp.errorBody()?.string()
+                lastError = "Wikipedia HTTP $code ${resp.message()}\n${errBody ?: "(no error body)"}"
+                // Retry on 429/503 with backoff; otherwise propagate
+                if (code == 429 || code == 503) {
+                    val retryAfterSeconds = resp.headers()["Retry-After"]?.toLongOrNull()
+                    val backoffMillis = retryAfterSeconds?.times(1000)
+                        ?: (500L * attempt * attempt)
+                    try {
+                        Thread.sleep(backoffMillis.coerceAtMost(5000))
+                    } catch (_: InterruptedException) {
+                        // ignore
+                    }
+                    call = call.clone()
+                    continue
+                } else {
+                    val status = when (code) {
+                        in 400..499 -> HttpStatus.valueOf(code)
+                        in 500..599 -> HttpStatus.BAD_GATEWAY
+                        else -> HttpStatus.BAD_GATEWAY
+                    }
+                    throw ResponseStatusException(status, lastError)
+                }
+            } catch (e: ResponseStatusException) {
+                throw e
+            } catch (e: Exception) {
+                lastError = e.message ?: e.toString()
+                // retry network exceptions a couple times
+                if (attempt < maxAttempts) {
+                    try { Thread.sleep(300L * attempt) } catch (_: InterruptedException) {}
+                    call = call.clone()
+                    continue
+                } else {
+                    throw ResponseStatusException(HttpStatus.BAD_GATEWAY, lastError)
+                }
+            }
+        }
+        // Exhausted attempts: treat as Too Many Requests if lastError came from 429/503 else Bad Gateway
+        throw ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, lastError ?: "Upstream error")
     }
 }

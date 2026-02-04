@@ -33,9 +33,14 @@ interface RevisionChartProps {
   series: RevisionSeries;
   // Called when user completes a zoom/pan and visible X-range expands (zoom-out)
   onViewRangeChange?: (from: Date, to: Date) => void;
+  isAtStart?: boolean;
 }
 
-export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRangeChange }) => {
+export const RevisionChart: React.FC<RevisionChartProps> = ({ 
+  series, 
+  onViewRangeChange,
+  isAtStart
+}) => {
   const chartRef = useRef<any>(null);
   const getChartInstance = () => (chartRef.current?.chart ?? chartRef.current) as any | null;
   const prevRangeRef = useRef<{ min: number; max: number } | null>(null);
@@ -76,12 +81,8 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRang
     const max = x.max as number;
     if (!Number.isFinite(min) || !Number.isFinite(max)) return;
     const span = max - min;
-    const prev = lastSpanRef.current;
-    lastSpanRef.current = span;
-
-    // consider zoom-out if span increased by >5%
-    const zoomedOut = prev == null || span > prev * 1.05;
-    if (!zoomedOut || !onViewRangeChange) return;
+    
+    if (!onViewRangeChange) return;
 
     // debounce a bit to avoid bursts when dragging
     if (debouncedCallRef.current) window.clearTimeout(debouncedCallRef.current);
@@ -93,6 +94,7 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRang
   const options: ChartOptions<'line'> = useMemo(() => ({
     responsive: true,
     maintainAspectRatio: false,
+    animation: { duration: 600, easing: 'easeOutCubic' },
     interaction: {
       mode: 'index' as const,
       intersect: false,
@@ -209,11 +211,15 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRang
         const lastTs = new Date(series.points[series.points.length - 1].timestamp).getTime();
         const now = Date.now();
 
+        // Preserve current viewport (prevents left/right snapping on data append)
+        const currentMin = chart.scales?.x?.min as number | undefined;
+        const currentMax = chart.scales?.x?.max as number | undefined;
+
         // Update data
         chart.data.datasets[0].data = series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.size }));
         chart.data.datasets[1].data = series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.delta }));
 
-        // Clamp future in plugin limits and scale
+        // Clamp future only via plugin limits (do not force x.max on the scale)
         if (chart.options?.plugins?.zoom) {
           chart.options.plugins.zoom.limits = chart.options.plugins.zoom.limits || {} as any;
           chart.options.plugins.zoom.limits.x = { ...(chart.options.plugins.zoom.limits.x || {}), max: now } as any;
@@ -222,26 +228,16 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRang
             chart.options.plugins.zoom.pan.limits.x = { ...(chart.options.plugins.zoom.pan.limits.x || {}), max: now } as any;
           }
         }
+        // Do not mutate scales.x.min/max except to restore the user viewport
         if (chart.options?.scales?.x) {
-          chart.options.scales.x.suggestedMax = now as any;
-          if ((chart.options.scales.x as any).max == null || (chart.options.scales.x as any).max > now) {
-            (chart.options.scales.x as any).max = now;
-          }
+          // suggestedMax is fine to hint the adapter, but avoid hard clamping
+          (chart.options.scales.x as any).suggestedMax = now as any;
+          if (Number.isFinite(currentMin)) (chart.options.scales.x as any).min = currentMin as any;
+          if (Number.isFinite(currentMax)) (chart.options.scales.x as any).max = currentMax as any;
         }
 
-        // If coverage expanded (zoom-out fetch appended points), auto-fit the x-axis to new bounds
-        const prev = prevRangeRef.current;
-        const expanded = !prev || firstTs < prev.min || lastTs > prev.max;
-        if (expanded) {
-          if (typeof chart.resetZoom === 'function') {
-            chart.resetZoom();
-          } else if (chart.options?.scales?.x) {
-            chart.options.scales.x.min = firstTs as any;
-            chart.options.scales.x.max = Math.min(lastTs, now) as any;
-          }
-        }
-
-        chart.update('none');
+        // Keep user's current view; new data becomes available without jumping
+        chart.update();
         prevRangeRef.current = { min: firstTs, max: Math.min(lastTs, now) };
       } catch (e) {
         console.warn('Chart update failed:', e);
@@ -258,7 +254,10 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRang
 
   return (
     <div className="flex flex-col h-full space-y-2">
-      <div className="flex justify-end">
+      <div className="flex justify-between items-center">
+        <div className="text-xs text-gray-500">
+          {isAtStart && <span>• Earliest history reached</span>}
+        </div>
         <button
           onClick={handleResetZoom}
           className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded border transition-colors"
@@ -268,7 +267,6 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({ series, onViewRang
       </div>
       <div className="flex-grow">
         <Line
-          key={`${series.title}-${series.points.length}-${series.points[0]?.timestamp || ''}-${series.points[series.points.length-1]?.timestamp || ''}`}
           ref={chartRef}
           options={options}
           data={data}

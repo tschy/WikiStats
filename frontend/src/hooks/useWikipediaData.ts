@@ -1,11 +1,30 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { RevisionSeries, ArticlePreviewData } from '../lib/types';
+
+let zoomCooldownUntil = 0; // ms timestamp to throttle after 429
+
+export function getZoomCooldownUntil() {
+  return zoomCooldownUntil;
+}
 
 export function useWikipediaData() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [cooldownSeconds, setCooldownSeconds] = useState<number | null>(null);
   const [series, setSeries] = useState<RevisionSeries | null>(null);
   const [preview, setPreview] = useState<ArticlePreviewData | null>(null);
+
+  useEffect(() => {
+    let timer: number;
+    if (cooldownSeconds !== null && cooldownSeconds > 0) {
+      timer = window.setInterval(() => {
+        setCooldownSeconds(prev => (prev !== null && prev > 0 ? prev - 1 : null));
+      }, 1000);
+    } else if (cooldownSeconds === 0) {
+      setCooldownSeconds(null);
+    }
+    return () => clearInterval(timer);
+  }, [cooldownSeconds]);
 
   const fetchPreview = useCallback(async (title: string) => {
     setLoading(true);
@@ -27,7 +46,12 @@ export function useWikipediaData() {
     }
   }, []);
 
-  const fetchSeries = useCallback(async (title: string, limit: number, from?: string, to?: string, append: boolean = false) => {
+  const fetchSeries = useCallback(async (title: string, limit: number, from?: string, to?: string, append: boolean = false): Promise<RevisionSeries | null> => {
+    const now = Date.now();
+    if (zoomCooldownUntil > now) {
+      return null;
+    }
+
     setLoading(true);
     setError(null);
     try {
@@ -38,8 +62,18 @@ export function useWikipediaData() {
       if (to) seriesUrl.searchParams.set('to', to);
       const res = await fetch(seriesUrl.toString());
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Failed to fetch revisions: ${res.status} ${text}`);
+        // Handle rate limit gracefully
+        if (res.status === 429) {
+          const retryAfter = res.headers.get('Retry-After');
+          const retrySeconds = retryAfter ? Number(retryAfter) : 2;
+          zoomCooldownUntil = Date.now() + (retrySeconds * 1000);
+          setCooldownSeconds(retrySeconds);
+          setError(`Rate limited by Wikipedia. Cooling down...`);
+        } else {
+          const text = await res.text();
+          throw new Error(`Failed to fetch revisions: ${res.status} ${text}`);
+        }
+        return null;
       }
       const data: RevisionSeries = await res.json();
       if (append && series) {
@@ -55,15 +89,19 @@ export function useWikipediaData() {
         
         combinedPoints.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
         
-        setSeries({
+        const merged: RevisionSeries = {
           ...data,
           points: combinedPoints
-        });
+        };
+        setSeries(merged);
+        return merged;
       } else {
         setSeries(data);
+        return data;
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
+      return null;
     } finally {
       setLoading(false);
     }
@@ -85,5 +123,5 @@ export function useWikipediaData() {
     }
   }, [fetchPreview, fetchSeries]);
 
-  return { loading, error, series, preview, fetchPreview, fetchSeries, fetchData };
+  return { loading, error, cooldownSeconds, series, preview, fetchPreview, fetchSeries, fetchData };
 }

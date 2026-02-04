@@ -16,17 +16,19 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, onLoad, disabl
 
   const toIso = (d: Date) => d.toISOString().split('T')[0];
 
-  // Auto-load when both from/to are set (debounced by microtask to allow paired updates)
-  useEffect(() => {
-    if (from && to) {
-      onLoad(title, limit, from, to);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [from, to]);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onLoad(title, limit, from || undefined, to || undefined);
+  };
+
+  const handleDateChange = (type: 'from' | 'to', value: string) => {
+    if (type === 'from') {
+      setFrom(value);
+      if (value && to) onLoad(title, limit, value, to);
+    } else {
+      setTo(value);
+      if (from && value) onLoad(title, limit, from, value);
+    }
   };
 
   const handleSearchClick = () => {
@@ -72,7 +74,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, onLoad, disabl
           <input
             type="date"
             value={from}
-            onChange={(e) => setFrom(e.target.value)}
+            onChange={(e) => handleDateChange('from', e.target.value)}
             className="px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             disabled={disabled}
           />
@@ -83,7 +85,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, onLoad, disabl
           <input
             type="date"
             value={to}
-            onChange={(e) => setTo(e.target.value)}
+            onChange={(e) => handleDateChange('to', e.target.value)}
             className="px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             disabled={disabled}
           />
