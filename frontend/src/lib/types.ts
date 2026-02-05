@@ -9,6 +9,7 @@ export interface RevisionPoint {
 export interface RevisionSeries {
   title: string;
   points: RevisionPoint[];
+  olderCursor?: string | null;
 }
 
 export interface ArticlePreviewData {

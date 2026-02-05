@@ -17,9 +17,12 @@ class RevisionController(
         @RequestParam title: String,
         @RequestParam(required = false, defaultValue = "300") limit: Int,
         @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) from: LocalDate?,
-        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) to: LocalDate?
-    ): RevisionService.RevisionSeries =
-        service.fetchSeries(title = title, limit = limit, from = from, to = to)
+        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) to: LocalDate?,
+        @RequestParam(required = false) cursor: String?
+    ): RevisionService.RevisionSeries {
+        println("[API] /revisions title=\"$title\" limit=$limit from=$from to=$to cursor=${if (cursor.isNullOrBlank()) "null" else "set"}")
+        return service.fetchSeries(title = title, limit = limit, from = from, to = to, cursor = cursor)
+    }
 
     @GetMapping("/preview")
     fun preview(

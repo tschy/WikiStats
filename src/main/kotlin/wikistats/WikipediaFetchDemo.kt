@@ -4,13 +4,9 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import wikistats.WikipediaApi
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import wikistats.dtos.RevisionDto
-import wikistats.dtos.RevisionsResponseDto
-import kotlin.time.Duration.Companion.milliseconds
+import wikistats.dtos.MediaWikiRevisionDto
 
 // Renamed from `main` to avoid having 2 entry points in the project.
 fun runWikipediaFetchDemo() {
@@ -21,7 +17,6 @@ fun runWikipediaFetchDemo() {
     val logging = HttpLoggingInterceptor { message ->
         println("[HTTP] $message")
     }.apply {
-        // Consider BODY while debugging; HEADERS is fine once stable.
         level = HttpLoggingInterceptor.Level.HEADERS
     }
 
@@ -30,23 +25,27 @@ fun runWikipediaFetchDemo() {
         .build()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl("https://en.wikipedia.org/w/rest.php/")
+        .baseUrl("https://en.wikipedia.org/w/")
         .client(okHttpClient)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
-    val api = retrofit.create(WikipediaApi::class.java)
+    val api = retrofit.create(MediaWikiApi::class.java)
 
     val title = "Earth"
 
-    val allRevisions = mutableListOf<RevisionDto>()
+    val allRevisions = mutableListOf<MediaWikiRevisionDto>()
     val seenIds = HashSet<Long>(4096)
 
-    var nextCall: Call<RevisionsResponseDto> = api.getPageHistory(title)
+    var continueToken: String? = null
     var page = 0
 
     while (true) {
-        val response = nextCall.execute()
+        val response = api.getRevisions(
+            title = title,
+            limit = 500,
+            continueToken = continueToken
+        ).execute()
 
         if (!response.isSuccessful) {
             val err = response.errorBody()?.string()
@@ -54,17 +53,15 @@ fun runWikipediaFetchDemo() {
         }
 
         val body = response.body() ?: error("Empty response body")
+        val revisions = body.query?.pages?.firstOrNull()?.revisions ?: emptyList()
 
-        for (rev in body.revisions) {
-            val userLabel = rev.user?.name ?: "(unknown)"
-            val userId = rev.user?.id
-            val comment = rev.comment ?: ""
-
-            println("revId=${rev.id} user=$userLabel userId=${userId ?: "-"} comment=$comment")
+        for (rev in revisions) {
+            val userLabel = rev.user ?: "(unknown)"
+            println("revId=${rev.revid} user=$userLabel")
         }
 
-        val addedThisPage = body.revisions.count { rev ->
-            if (seenIds.add(rev.id)) {
+        val addedThisPage = revisions.count { rev ->
+            if (seenIds.add(rev.revid)) {
                 allRevisions.add(rev)
                 true
             } else {
@@ -73,18 +70,14 @@ fun runWikipediaFetchDemo() {
         }
 
         page += 1
-        println("page=$page received=${body.revisions.size} added=$addedThisPage older=${body.older}")
+        continueToken = body.`continue`?.rvcontinue
+        println("page=$page received=${revisions.size} added=$addedThisPage continue=$continueToken")
 
-        val olderUrl = body.older
-        if (olderUrl.isNullOrBlank()) break
-
-        nextCall = api.getPageHistoryByUrl(olderUrl)
-
-        // Be polite to the API; adjust as needed.
-        Thread.sleep(150.milliseconds.inWholeMilliseconds)
+        if (continueToken.isNullOrBlank()) break
+        Thread.sleep(150)
     }
 
     println("Total unique revisions fetched: ${allRevisions.size}")
-    println("Newest fetched revision id: ${allRevisions.firstOrNull()?.id}")
-    println("Oldest fetched revision id: ${allRevisions.lastOrNull()?.id}")
+    println("Newest fetched revision id: ${allRevisions.firstOrNull()?.revid}")
+    println("Oldest fetched revision id: ${allRevisions.lastOrNull()?.revid}")
 }

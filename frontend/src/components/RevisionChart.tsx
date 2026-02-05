@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -34,22 +34,61 @@ interface RevisionChartProps {
   // Called when user completes a zoom/pan and visible X-range expands (zoom-out)
   onViewRangeChange?: (from: Date, to: Date) => void;
   isAtStart?: boolean;
+  backgroundLoading?: boolean;
+  startReason?: 'wikipedia' | 'page' | null;
+  earliestLoaded?: string | null;
+  olderCursor?: string | null;
+  onFetchOlder?: () => void;
+  lockViewport?: boolean;
+  freezeData?: boolean;
+  onUserInteract?: () => void;
+  clampToDataMin?: boolean;
+  fixedMin?: number;
+  fixedMax?: number;
 }
 
 export const RevisionChart: React.FC<RevisionChartProps> = ({ 
   series, 
   onViewRangeChange,
-  isAtStart
+  isAtStart,
+  backgroundLoading,
+  startReason,
+  earliestLoaded,
+  olderCursor,
+  onFetchOlder,
+  lockViewport,
+  freezeData,
+  onUserInteract,
+  clampToDataMin,
+  fixedMin,
+  fixedMax
 }) => {
   const chartRef = useRef<any>(null);
+  const chartWrapRef = useRef<HTMLDivElement | null>(null);
   const getChartInstance = () => (chartRef.current?.chart ?? chartRef.current) as any | null;
-  const prevRangeRef = useRef<{ min: number; max: number } | null>(null);
+  const [renderSeries, setRenderSeries] = useState<RevisionSeries>(series);
+
+  useEffect(() => {
+    // Freeze rendered data while background loading/prefetch to avoid flicker.
+    if (!freezeData) {
+      setRenderSeries(series);
+    }
+  }, [series, freezeData]);
+
+  const wikipediaStart = new Date('2001-01-15').getTime();
+  const dataMin = renderSeries.points.length > 0
+    ? Math.min(...renderSeries.points.map(p => new Date(p.timestamp).getTime()))
+    : wikipediaStart;
+
+  // for limits, clamp the min to wikipedia start, but only if there’s data
+  const xMinLimit = clampToDataMin ? dataMin : (olderCursor ? wikipediaStart : dataMin);
+
 
   const data = useMemo(() => ({
     datasets: [
       {
         label: 'Size (bytes)',
-        data: series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.size })),
+        data: renderSeries.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.size })),
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
         borderWidth: 2,
@@ -59,7 +98,7 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
       },
       {
         label: 'Delta (bytes)',
-        data: series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.delta })),
+        data: renderSeries.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.delta })),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
         borderWidth: 1,
@@ -68,9 +107,8 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
         yAxisID: 'yDelta',
       },
     ],
-  }), [series]);
+  }), [renderSeries]);
 
-  const lastSpanRef = useRef<number | null>(null);
   const debouncedCallRef = useRef<number | null>(null);
 
   const emitIfZoomOut = (chart: any) => {
@@ -80,13 +118,13 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
     const min = x.min as number;
     const max = x.max as number;
     if (!Number.isFinite(min) || !Number.isFinite(max)) return;
-    const span = max - min;
-    
+    console.log(`[CHART] view min=${new Date(min).toISOString()} max=${new Date(max).toISOString()} lock=${lockViewport ? '1' : '0'}`);
     if (!onViewRangeChange) return;
 
     // debounce a bit to avoid bursts when dragging
     if (debouncedCallRef.current) window.clearTimeout(debouncedCallRef.current);
     debouncedCallRef.current = window.setTimeout(() => {
+      if (onUserInteract) onUserInteract();
       onViewRangeChange(new Date(min), new Date(max));
     }, 150);
   };
@@ -111,9 +149,11 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
           },
         }
       },
+
+
       zoom: {
         limits: {
-          x: { max: Date.now() },
+            x: { min: xMinLimit, max: Date.now() }
         },
         zoom: {
           wheel: { enabled: true },
@@ -132,7 +172,7 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
           modifierKey: 'shift',
           mode: 'x',
           limits: {
-            x: { max: Date.now() },
+           x: { min: xMinLimit, max: Date.now() },
           },
           onPanComplete: ({ chart }) => emitIfZoomOut(chart),
         },
@@ -141,7 +181,10 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
     scales: {
       x: {
         type: 'time',
+        min: fixedMin as any,
+        max: fixedMax as any,
         suggestedMax: Date.now(),
+        suggestedMin: olderCursor ? undefined : dataMin,
         time: {
           // Let the adapter choose an appropriate unit; customize tick labels below
           unit: false as any,
@@ -201,49 +244,7 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
         },
       },
     },
-  }), []);
-
-  useEffect(() => {
-    const chart = getChartInstance();
-    if (chart && series && series.points.length) {
-      try {
-        const firstTs = new Date(series.points[0].timestamp).getTime();
-        const lastTs = new Date(series.points[series.points.length - 1].timestamp).getTime();
-        const now = Date.now();
-
-        // Preserve current viewport (prevents left/right snapping on data append)
-        const currentMin = chart.scales?.x?.min as number | undefined;
-        const currentMax = chart.scales?.x?.max as number | undefined;
-
-        // Update data
-        chart.data.datasets[0].data = series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.size }));
-        chart.data.datasets[1].data = series.points.map(p => ({ x: new Date(p.timestamp).getTime(), y: p.delta }));
-
-        // Clamp future only via plugin limits (do not force x.max on the scale)
-        if (chart.options?.plugins?.zoom) {
-          chart.options.plugins.zoom.limits = chart.options.plugins.zoom.limits || {} as any;
-          chart.options.plugins.zoom.limits.x = { ...(chart.options.plugins.zoom.limits.x || {}), max: now } as any;
-          if (chart.options.plugins.zoom.pan) {
-            chart.options.plugins.zoom.pan.limits = chart.options.plugins.zoom.pan.limits || {} as any;
-            chart.options.plugins.zoom.pan.limits.x = { ...(chart.options.plugins.zoom.pan.limits.x || {}), max: now } as any;
-          }
-        }
-        // Do not mutate scales.x.min/max except to restore the user viewport
-        if (chart.options?.scales?.x) {
-          // suggestedMax is fine to hint the adapter, but avoid hard clamping
-          (chart.options.scales.x as any).suggestedMax = now as any;
-          if (Number.isFinite(currentMin)) (chart.options.scales.x as any).min = currentMin as any;
-          if (Number.isFinite(currentMax)) (chart.options.scales.x as any).max = currentMax as any;
-        }
-
-        // Keep user's current view; new data becomes available without jumping
-        chart.update();
-        prevRangeRef.current = { min: firstTs, max: Math.min(lastTs, now) };
-      } catch (e) {
-        console.warn('Chart update failed:', e);
-      }
-    }
-  }, [series]);
+  }), [dataMin, xMinLimit, fixedMin, fixedMax, olderCursor]);
 
   const handleResetZoom = () => {
     const chart = getChartInstance();
@@ -252,20 +253,72 @@ export const RevisionChart: React.FC<RevisionChartProps> = ({
     }
   };
 
+  useEffect(() => {
+    const el = chartWrapRef.current;
+    if (!el) return;
+    const handler = (e: WheelEvent) => {
+      // Always prevent page scroll when wheel is used over the chart area.
+      e.preventDefault();
+    };
+    el.addEventListener('wheel', handler, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', handler);
+    };
+  }, [lockViewport]);
+
   return (
     <div className="flex flex-col h-full space-y-2">
       <div className="flex justify-between items-center">
         <div className="text-xs text-gray-500">
-          {isAtStart && <span>• Earliest history reached</span>}
+          {isAtStart && (
+            <span>
+              • {startReason === 'wikipedia' ? 'Reached Wikipedia start (2001-01-15)' : 'Reached page start'}
+            </span>
+          )}
+          {!isAtStart && backgroundLoading && (
+            <span className="inline-flex items-center gap-1.5 text-blue-600">
+              <span className="w-3 h-3 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></span>
+              Fetching older history...
+            </span>
+          )}
+          {earliestLoaded && (
+            <span>• Earliest loaded: {earliestLoaded}</span>
+          )}
+          {earliestLoaded && (
+            <span>
+              • Older revisions:{' '}
+              {olderCursor
+                ? 'available'
+                : (Date.parse(earliestLoaded) > new Date('2001-01-20').getTime() ? 'unknown' : 'none')}
+            </span>
+          )}
         </div>
-        <button
-          onClick={handleResetZoom}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onFetchOlder}
+            disabled={!olderCursor || backgroundLoading}
+            className="text-xs px-2 py-1 bg-white hover:bg-gray-50 rounded border transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Fetch Older
+          </button>
+          <button
+          onClick={() => {
+            if (onUserInteract) onUserInteract();
+            handleResetZoom();
+          }}
           className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded border transition-colors"
         >
           Reset Zoom
         </button>
+        </div>
       </div>
-      <div className="flex-grow">
+      <div
+        ref={chartWrapRef}
+        className="flex-grow"
+        onWheelCapture={(e) => {
+          e.preventDefault();
+        }}
+      >
         <Line
           ref={chartRef}
           options={options}

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { RevisionSeries, ArticlePreviewData } from '../lib/types';
 
 let zoomCooldownUntil = 0; // ms timestamp to throttle after 429
@@ -13,6 +13,11 @@ export function useWikipediaData() {
   const [cooldownSeconds, setCooldownSeconds] = useState<number | null>(null);
   const [series, setSeries] = useState<RevisionSeries | null>(null);
   const [preview, setPreview] = useState<ArticlePreviewData | null>(null);
+  const seriesRef = useRef<RevisionSeries | null>(null);
+
+  useEffect(() => {
+    seriesRef.current = series;
+  }, [series]);
 
   useEffect(() => {
     let timer: number;
@@ -46,20 +51,23 @@ export function useWikipediaData() {
     }
   }, []);
 
-  const fetchSeries = useCallback(async (title: string, limit: number, from?: string, to?: string, append: boolean = false): Promise<RevisionSeries | null> => {
+  const fetchSeries = useCallback(async (title: string, limit: number, from?: string, to?: string, append: boolean = false, cursor?: string, options?: { silent?: boolean }): Promise<RevisionSeries | null> => {
     const now = Date.now();
     if (zoomCooldownUntil > now) {
       return null;
     }
 
-    setLoading(true);
-    setError(null);
+    if (!options?.silent) {
+      setLoading(true);
+      setError(null);
+    }
     try {
       const seriesUrl = new URL('/api/revisions', window.location.origin);
       seriesUrl.searchParams.set('title', title);
       seriesUrl.searchParams.set('limit', String(limit));
       if (from) seriesUrl.searchParams.set('from', from);
       if (to) seriesUrl.searchParams.set('to', to);
+      if (cursor) seriesUrl.searchParams.set('cursor', cursor);
       const res = await fetch(seriesUrl.toString());
       if (!res.ok) {
         // Handle rate limit gracefully
@@ -76,10 +84,11 @@ export function useWikipediaData() {
         return null;
       }
       const data: RevisionSeries = await res.json();
-      if (append && series) {
+      const currentSeries = seriesRef.current;
+      if (append && currentSeries) {
         // Merge points and sort by timestamp
-        const combinedPoints = [...series.points];
-        const existingIds = new Set(series.points.map(p => p.id));
+        const combinedPoints = [...currentSeries.points];
+        const existingIds = new Set(currentSeries.points.map(p => p.id));
         
         for (const p of data.points) {
           if (!existingIds.has(p.id)) {
@@ -91,7 +100,9 @@ export function useWikipediaData() {
         
         const merged: RevisionSeries = {
           ...data,
-          points: combinedPoints
+          points: combinedPoints,
+          // Respect explicit null from API to indicate no older data.
+          olderCursor: data.olderCursor ?? null
         };
         setSeries(merged);
         return merged;
@@ -100,12 +111,16 @@ export function useWikipediaData() {
         return data;
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
+      if (!options?.silent) {
+        setError(err instanceof Error ? err.message : String(err));
+      }
       return null;
     } finally {
-      setLoading(false);
+      if (!options?.silent) {
+        setLoading(false);
+      }
     }
-  }, [series]);
+  }, []);
 
   // Backward-compatible combined fetch
   const fetchData = useCallback(async (title: string, limit: number, from?: string, to?: string) => {

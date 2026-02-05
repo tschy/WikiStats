@@ -8,26 +8,26 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import wikistats.WikipediaApi
+import wikistats.MediaWikiApi
 import wikistats.dtos.WikipediaRestV1Api
 
 @Configuration
 class WikipediaClientConfig {
 
     @Bean
-    fun wikipediaApi(): WikipediaApi = wikipediaApi("https://en.wikipedia.org/w/rest.php/")
+    fun wikipediaApi(): MediaWikiApi = wikipediaApi("https://en.wikipedia.org/w/")
 
     @Bean
     fun wikipediaRestV1Api(): WikipediaRestV1Api =
         wikipediaRestV1Api("https://en.wikipedia.org/api/rest_v1/")
 
-    private fun wikipediaApi(url: String): WikipediaApi {
+    private fun wikipediaApi(url: String): MediaWikiApi {
         val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
 
         val logging = HttpLoggingInterceptor { msg -> println("[HTTP] $msg") }
-            .apply { level = HttpLoggingInterceptor.Level.BASIC }
+            .apply { level = HttpLoggingInterceptor.Level.BODY }
 
         val okHttp = OkHttpClient.Builder()
             .addInterceptor(logging)
@@ -39,7 +39,7 @@ class WikipediaClientConfig {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
 
-        return retrofit.create(WikipediaApi::class.java)
+        return retrofit.create(MediaWikiApi::class.java)
     }
 
     private fun wikipediaRestV1Api(url: String): WikipediaRestV1Api {
@@ -63,4 +63,3 @@ class WikipediaClientConfig {
         return retrofit.create(WikipediaRestV1Api::class.java)
     }
 }
-

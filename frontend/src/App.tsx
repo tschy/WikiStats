@@ -22,8 +22,18 @@ const App: React.FC = () => {
   const [from, setFrom] = useState<string | undefined>(undefined);
   const [to, setTo] = useState<string | undefined>(undefined);
   const [isAtStart, setIsAtStart] = useState(false);
+  const [startReason, setStartReason] = useState<'wikipedia' | 'page' | null>(null);
+  const [autoFetchEnabled] = useState(true);
+  const [userInteracted, setUserInteracted] = useState(false);
+  const [viewRange, setViewRange] = useState<{ min: number; max: number } | null>(null);
+  const latestSeriesRef = React.useRef(series);
+  const prefetchTokenRef = React.useRef(0);
+  const prefetchRunningRef = React.useRef(false);
+  const lastPrefetchTitleRef = React.useRef<string | null>(null);
 
   const [isBackgroundLoading, setIsBackgroundLoading] = useState(false);
+  const [isPrefetching, setIsPrefetching] = useState(false);
+  const [prefetchStarted, setPrefetchStarted] = useState(false);
 
   useEffect(() => {
     // initial load: do a search and load default range
@@ -44,11 +54,97 @@ const App: React.FC = () => {
     setLimit(l);
     setFrom(f);
     setTo(tt);
+    setUserInteracted(false);
+    setPrefetchStarted(false);
     setIsAtStart(false);
+    setStartReason(null);
     fetchSeries(t, l, f, tt);
     // also refresh preview in background
     fetchPreview(t);
   };
+
+  useEffect(() => {
+    latestSeriesRef.current = series;
+  }, [series]);
+
+  useEffect(() => {
+    if (!series?.points?.length) return;
+    if (prefetchRunningRef.current) return;
+    if (lastPrefetchTitleRef.current === series.title) return;
+    lastPrefetchTitleRef.current = series.title;
+
+    const token = ++prefetchTokenRef.current;
+    let cancelled = false;
+
+    const sleep = (ms: number) => new Promise(res => setTimeout(res, ms));
+
+    const run = async () => {
+      prefetchRunningRef.current = true;
+      setIsPrefetching(true);
+      setPrefetchStarted(true);
+      let latest = latestSeriesRef.current;
+      let pages = 0;
+      const maxPages = 2000; // safety cap for full history prefetch
+      const TARGET_START = new Date('2001-01-15T00:00:00Z').getTime();
+      let lastEarliest = latest?.points?.[0] ? new Date(latest.points[0].timestamp).getTime() : Number.POSITIVE_INFINITY;
+      try {
+        while (!cancelled && token === prefetchTokenRef.current) {
+          latest = latestSeriesRef.current;
+          const cursor = latest?.olderCursor ?? null;
+          const cd = getZoomCooldownUntil();
+          if (cd > Date.now()) {
+            await sleep(Math.min(1000, cd - Date.now()));
+            continue;
+          }
+          const earliest = latest?.points?.[0] ? new Date(latest.points[0].timestamp).getTime() : Number.POSITIVE_INFINITY;
+          if (!Number.isFinite(earliest)) break;
+          if (earliest <= TARGET_START) break;
+
+          const fetchLimit = Math.min(5000, Math.max(2000, limit));
+          console.log(`[PREFETCH] earliest=${new Date(earliest).toISOString()} cursor=${cursor ? 'set' : 'null'} limit=${fetchLimit}`);
+          let result = null as typeof latest | null;
+          if (cursor) {
+            result = await fetchSeries(title, fetchLimit, undefined, undefined, true, cursor, { silent: true });
+          } else {
+            const windowTo = new Date(earliest - 24 * 60 * 60 * 1000);
+            const windowFrom = new Date(TARGET_START);
+            const f = toIsoDate(windowFrom);
+            const t = toIsoDate(windowTo);
+            console.log(`[PREFETCH] fallback date window from=${f} to=${t}`);
+            result = await fetchSeries(title, fetchLimit, f, t, true, undefined, { silent: true });
+          }
+          if (cancelled || token !== prefetchTokenRef.current) {
+            break;
+          }
+          if (!result) {
+            await sleep(500);
+            continue;
+          }
+          latestSeriesRef.current = result;
+          pages += 1;
+          const newEarliest = new Date(result.points[0].timestamp).getTime();
+          if (newEarliest <= TARGET_START) break;
+          if (newEarliest >= lastEarliest && !result.olderCursor) break;
+          lastEarliest = newEarliest;
+          if (pages >= maxPages) break;
+          await sleep(350);
+        }
+      } finally {
+        prefetchRunningRef.current = false;
+        if (!cancelled && token === prefetchTokenRef.current) {
+          setIsPrefetching(false);
+        }
+      }
+    };
+
+    run();
+
+    return () => {
+      cancelled = true;
+      prefetchTokenRef.current++;
+      setIsPrefetching(false);
+    };
+  }, [series?.title, series?.points?.length, limit, fetchSeries, title]);
 
   const currentCoverage = useMemo(() => {
     if (!series || !series.points.length) return null as null | { min: number; max: number };
@@ -57,12 +153,26 @@ const App: React.FC = () => {
     return { min, max };
   }, [series]);
 
+  useEffect(() => {
+    if (!series?.points?.length) return;
+    if (viewRange) return;
+    const min = new Date(series.points[0].timestamp).getTime();
+    const max = new Date(series.points[series.points.length - 1].timestamp).getTime();
+    setViewRange({ min, max });
+  }, [series, viewRange]);
+
   const lastZoomFetchRef = React.useRef<number>(0);
   const TOL = 12 * 60 * 60 * 1000; // 12h tolerance
-  const MAX_FILL_STEPS = 3; // safety cap
+  const MAX_FILL_STEPS = 20; // safety cap
   const handleViewRangeChange = async (fromDate: Date, toDate: Date) => {
+    setViewRange({ min: fromDate.getTime(), max: toDate.getTime() });
+    const WIKI_START = new Date('2001-01-15T00:00:00Z').getTime();
+    const WIKI_START_PAD = WIKI_START + (24 * 60 * 60 * 1000);
     const viewMin = fromDate.getTime();
     const viewMax = toDate.getTime();
+    const clampedViewMin = Math.max(viewMin, WIKI_START);
+    const clampedViewMax = Math.min(viewMax, Date.now());
+    if (clampedViewMax <= clampedViewMin) return;
 
     // throttle sequences to 1s
     const nowTs = Date.now();
@@ -71,8 +181,8 @@ const App: React.FC = () => {
 
     // If no data yet, do an initial wider fetch
     if (!currentCoverage) {
-      const f = toIsoDate(fromDate);
-      const t = toIsoDate(new Date(Math.min(toDate.getTime(), Date.now())));
+      const f = toIsoDate(new Date(clampedViewMin));
+      const t = toIsoDate(new Date(clampedViewMax));
       const initialLimit = Math.max(limit, 1500);
       setFrom(f); setTo(t); setLimit(initialLimit);
       console.log(`[DEBUG] Zoom-out (no coverage) fetch: from=${f}, to=${t}, limit=${initialLimit}`);
@@ -81,13 +191,15 @@ const App: React.FC = () => {
     }
 
     // Check if view crosses current coverage edges
-    const needsLeft = viewMin < currentCoverage.min - TOL;
-    const needsRight = viewMax > currentCoverage.max + TOL;
+    const needsLeft = clampedViewMin < currentCoverage.min - TOL;
+    const needsRight = clampedViewMax > currentCoverage.max + TOL;
     if (!needsLeft && !needsRight) return;
 
     setIsBackgroundLoading(true);
     // Fill-to-view loop: fetch up to MAX_FILL_STEPS chunks
     let steps = 0;
+    let latestSeries = series;
+    let currentLimit = limit;
     while (steps < MAX_FILL_STEPS) {
       // Respect rate limit cool-down
       const cd = getZoomCooldownUntil();
@@ -95,34 +207,60 @@ const App: React.FC = () => {
       if (cd > now) break;
 
       // Recompute coverage each iteration from latest series
-      const s = series;
+      const s = latestSeries;
       if (!s || !s.points.length) break;
       const covMin = new Date(s.points[0].timestamp).getTime();
       const covMax = new Date(s.points[s.points.length - 1].timestamp).getTime();
 
-      const needL = viewMin < covMin - TOL;
-      const needR = viewMax > covMax + TOL;
+      const needL = clampedViewMin < covMin - TOL;
+      const needR = clampedViewMax > covMax + TOL;
       if (!needL && !needR) break; // covered
 
-      const clampedToDate = new Date(Math.min(viewMax, Date.now()));
-      const f = toIsoDate(new Date(needL ? viewMin : covMin));
-      const t = toIsoDate(clampedToDate);
+      const cursor = needL ? (latestSeries?.olderCursor ?? undefined) : undefined;
 
-      const span = viewMax - viewMin;
+      const windowFrom = needL
+        ? new Date(clampedViewMin)
+        : new Date(Math.max(covMax, clampedViewMin));
+      const windowTo = needL
+        ? new Date(Math.min(covMin, clampedViewMax))
+        : new Date(clampedViewMax);
+
+      if (!cursor && windowTo.getTime() <= windowFrom.getTime()) break;
+
+      const windowSpan = Math.max(1, windowTo.getTime() - windowFrom.getTime());
       const currentSpan = covMax - covMin || 1;
-      const scaledLimit = Math.min(5000, Math.max(limit, Math.ceil(limit * (span / currentSpan) * 1.4)));
+      const density = s.points.length / currentSpan;
+      const estimatedNeeded = Math.ceil(windowSpan * density * 1.2);
+      const cursorMin = cursor ? 2000 : 1200;
+      const scaledLimit = Math.min(5000, Math.max(currentLimit, Math.max(cursorMin, estimatedNeeded)));
 
-      setFrom(f); setTo(t);
-      if (scaledLimit !== limit) setLimit(scaledLimit);
-      console.log(`[DEBUG] Fill-to-view fetch[${steps+1}]: from=${f}, to=${t}, limit=${scaledLimit}`);
-      const result = await fetchSeries(title, scaledLimit, f, t, true);
+      let f: string | undefined = undefined;
+      let t: string | undefined = undefined;
+      if (!cursor) {
+        f = toIsoDate(windowFrom);
+        t = toIsoDate(windowTo);
+        setFrom(f); setTo(t);
+      }
+      if (scaledLimit !== currentLimit) {
+        currentLimit = scaledLimit;
+        setLimit(scaledLimit);
+      }
+      console.log(`[DEBUG] Fill-to-view fetch[${steps+1}]: from=${f ?? 'cursor'}, to=${t ?? 'cursor'}, limit=${scaledLimit}`);
+      const result = await fetchSeries(title, scaledLimit, f, t, true, cursor);
+      if (result) latestSeries = result;
       
       // If we asked for older data (needL) but didn't get any new points, we reached the start
       if (needL && result) {
         const newCovMin = new Date(result.points[0].timestamp).getTime();
-        if (newCovMin >= covMin) {
+        if (newCovMin <= WIKI_START_PAD) {
           setIsAtStart(true);
-          break; 
+          setStartReason('wikipedia');
+          break;
+        }
+        if (!result.olderCursor && newCovMin >= covMin) {
+          setIsAtStart(true);
+          setStartReason('page');
+          break;
         }
       }
       
@@ -130,6 +268,56 @@ const App: React.FC = () => {
     }
     setIsBackgroundLoading(false);
   };
+
+  const earliestLoaded = useMemo(() => {
+    if (!series?.points?.length) return null;
+    const ts = new Date(series.points[0].timestamp).getTime();
+    if (!Number.isFinite(ts)) return null;
+    return new Date(ts).toISOString().split('T')[0];
+  }, [series]);
+
+  const handleFetchOlder = async () => {
+    if (!series?.olderCursor || isBackgroundLoading) return;
+    setIsBackgroundLoading(true);
+    let steps = 0;
+    let latest = series;
+    let currentLimit = limit;
+    const TARGET_START = new Date('2001-01-15T00:00:00Z').getTime();
+    let lastEarliest = new Date(latest.points[0].timestamp).getTime();
+    while (steps < 50) {
+      const cursor = latest?.olderCursor ?? null;
+      if (!cursor) {
+        setIsAtStart(true);
+        setStartReason('page');
+        break;
+      }
+      const cdLoop = getZoomCooldownUntil();
+      if (cdLoop > Date.now()) break;
+      const fetchLimit = Math.min(5000, Math.max(2000, currentLimit));
+      const result = await fetchSeries(title, fetchLimit, undefined, undefined, true, cursor, { silent: true });
+      if (result) latest = result;
+      if (!latest.points.length) break;
+      const earliest = new Date(latest.points[0].timestamp).getTime();
+      if (earliest >= lastEarliest) break;
+      lastEarliest = earliest;
+      if (earliest <= TARGET_START) {
+        setIsAtStart(true);
+        setStartReason('wikipedia');
+        break;
+      }
+      if (!result?.olderCursor && earliest >= lastEarliest) {
+        setIsAtStart(true);
+        setStartReason('page');
+        break;
+      }
+      steps++;
+    }
+    setIsBackgroundLoading(false);
+  };
+
+  useEffect(() => {
+    // no background prefetch
+  }, []);
 
   return (
     <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6 bg-slate-50 min-h-screen">
@@ -178,8 +366,19 @@ const App: React.FC = () => {
             {series ? (
               <RevisionChart 
                 series={series} 
-                onViewRangeChange={handleViewRangeChange} 
+                onViewRangeChange={autoFetchEnabled && userInteracted ? handleViewRangeChange : undefined} 
                 isAtStart={isAtStart}
+                startReason={startReason}
+                backgroundLoading={isBackgroundLoading}
+                earliestLoaded={earliestLoaded}
+                olderCursor={series?.olderCursor ?? null}
+                onFetchOlder={handleFetchOlder}
+                lockViewport={isBackgroundLoading}
+                freezeData={prefetchStarted && !userInteracted}
+                onUserInteract={() => setUserInteracted(true)}
+                clampToDataMin={!autoFetchEnabled && !(series?.olderCursor)}
+                fixedMin={isBackgroundLoading ? viewRange?.min : undefined}
+                fixedMax={isBackgroundLoading ? viewRange?.max : undefined}
               />
             ) : (
               <div className="h-full flex items-center justify-center border-2 border-dashed border-slate-100 rounded-lg bg-slate-50 text-slate-400">
