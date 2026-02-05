@@ -33,6 +33,10 @@ kotlin {
     jvmToolchain(17)
 }
 
+springBoot {
+    mainClass.set("wikistats.WikiStatsApplicationKt")
+}
+
 // Add this:
 tasks.test {
     useJUnitPlatform()
