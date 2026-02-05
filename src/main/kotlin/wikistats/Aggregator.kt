@@ -7,7 +7,6 @@ import java.time.Period
 
 class Aggregator {
     fun aggregate(revisions: List<RevisionPoint>, period: Period): List<Stats> {
-
-
+        return emptyList()
     }
 }

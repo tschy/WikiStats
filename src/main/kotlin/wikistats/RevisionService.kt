@@ -48,7 +48,7 @@ class RevisionService(
     private val cacheTtlMillis: Long = 6 * 60 * 60 * 1000L
 
     fun fetchSeries(title: String, limit: Int, from: LocalDate? = null, to: LocalDate? = null, cursor: String? = null): RevisionSeries {
-        val safeLimit = limit.coerceIn(1, 5000)
+        val safeLimit = limit.coerceIn(1, 500000)
 
         val (fromInstant, toInstant) = if (from != null && to != null) {
             require(!to.isBefore(from)) { "`to` must be the same as or after `from`" }
