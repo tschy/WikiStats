@@ -9,9 +9,12 @@ import org.springframework.stereotype.Service
 import org.springframework.web.server.ResponseStatusException
 import retrofit2.Call
 import retrofit2.Response
-import wikistats.dtos.MediaWikiRevisionDto
-import wikistats.dtos.MediaWikiRevisionsResponse
+import wikistats.dtos.mediawiki.MediaWikiRevisionDto
+import wikistats.dtos.mediawiki.MediaWikiRevisionsResponse
 import wikistats.dtos.WikipediaRestV1Api
+import wikistats.dtos.frontend.ArticlePreview
+import wikistats.dtos.frontend.RevisionPoint
+import wikistats.dtos.frontend.RevisionSeries
 import java.nio.file.Files
 import java.nio.file.Path
 import java.security.MessageDigest
@@ -43,28 +46,6 @@ class RevisionService(
             Types.newParameterizedType(CacheEntry::class.java, MediaWikiRevisionsResponse::class.java)
         )
     private val cacheTtlMillis: Long = 6 * 60 * 60 * 1000L
-
-    data class RevisionPoint(
-        val id: Long,
-        val timestamp: Instant,
-        val size: Int,
-        val delta: Int,
-        val user: String?
-    )
-
-    data class RevisionSeries(
-        val title: String,
-        val points: List<RevisionPoint>,
-        val olderCursor: String? = null
-    )
-
-    data class ArticlePreview(
-        val title: String,
-        val description: String?,
-        val extract: String?,
-        val thumbnailUrl: String?,
-        val pageUrl: String?
-    )
 
     fun fetchSeries(title: String, limit: Int, from: LocalDate? = null, to: LocalDate? = null, cursor: String? = null): RevisionSeries {
         val safeLimit = limit.coerceIn(1, 5000)

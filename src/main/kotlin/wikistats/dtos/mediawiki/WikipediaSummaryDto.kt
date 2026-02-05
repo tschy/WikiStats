@@ -1,4 +1,4 @@
-package wikistats.dtos
+package wikistats.dtos.mediawiki
 
 import com.squareup.moshi.Json
 

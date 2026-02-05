@@ -1,4 +1,4 @@
-package wikistats.dtos
+package wikistats.dtos.mediawiki
 
 data class MediaWikiRevisionsResponse(
     val batchcomplete: Boolean? = null,

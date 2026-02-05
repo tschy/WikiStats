@@ -4,7 +4,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
-import wikistats.dtos.MediaWikiRevisionsResponse
+import wikistats.dtos.mediawiki.MediaWikiRevisionsResponse
 
 interface MediaWikiApi {
     @Headers("User-Agent: MyApp/1.0")

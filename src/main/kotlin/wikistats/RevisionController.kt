@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import wikistats.dtos.frontend.ArticlePreview
+import wikistats.dtos.frontend.RevisionSeries
 import java.time.LocalDate
 
 @RestController
@@ -19,7 +21,7 @@ class RevisionController(
         @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) from: LocalDate?,
         @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) to: LocalDate?,
         @RequestParam(required = false) cursor: String?
-    ): RevisionService.RevisionSeries {
+    ): RevisionSeries {
         println("[API] /revisions title=\"$title\" limit=$limit from=$from to=$to cursor=${if (cursor.isNullOrBlank()) "null" else "set"}")
         return service.fetchSeries(title = title, limit = limit, from = from, to = to, cursor = cursor)
     }
@@ -27,6 +29,6 @@ class RevisionController(
     @GetMapping("/preview")
     fun preview(
         @RequestParam title: String
-    ): RevisionService.ArticlePreview =
+    ): ArticlePreview =
         service.fetchPreview(title)
 }
