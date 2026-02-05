@@ -30,7 +30,7 @@ class WikipediaClientConfig {
             .apply { level = HttpLoggingInterceptor.Level.BODY }
 
         val okHttp = OkHttpClient.Builder()
-            .addInterceptor(logging)
+//            .addInterceptor(logging)
             .build()
 
         val retrofit = Retrofit.Builder()
