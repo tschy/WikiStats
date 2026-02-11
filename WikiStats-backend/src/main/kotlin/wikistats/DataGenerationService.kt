@@ -6,7 +6,6 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.springframework.stereotype.Service
 import wikistats.dtos.Stats
 import wikistats.dtos.frontend.ArticlePreview
-import java.nio.file.Path
 import kotlin.io.path.createDirectories
 import kotlin.io.path.writeText
 
@@ -60,12 +59,7 @@ class DataGenerationService(
     }
 }
 
-private fun defaultOutputDir(): Path {
-    val backendDir = Path.of(System.getProperty("user.dir"))
-    return backendDir.resolveSibling("WikiStats-frontend")
-        .resolve("public")
-        .resolve("data")
-}
+private fun defaultOutputDir() = frontendDataDir()
 
 private fun slugify(title: String): String {
     val normalized = title.trim().replace("\\s+".toRegex(), "_")
