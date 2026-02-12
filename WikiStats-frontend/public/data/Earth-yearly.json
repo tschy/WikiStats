@@ -1,0 +1,9107 @@
+[
+  {
+    "intervalStart": "2009-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "RJHall",
+        "count": 43,
+        "delta": 2426
+      },
+      {
+        "user": "Cybercobra",
+        "count": 9,
+        "delta": -134
+      },
+      {
+        "user": "RaptorHunter",
+        "count": 6,
+        "delta": 351
+      },
+      {
+        "user": "Xqbot",
+        "count": 6,
+        "delta": 99
+      },
+      {
+        "user": "Drbogdan",
+        "count": 3,
+        "delta": 15
+      },
+      {
+        "user": "Tpbradbury",
+        "count": 3,
+        "delta": -379
+      },
+      {
+        "user": "Autonova",
+        "count": 2,
+        "delta": 587
+      },
+      {
+        "user": "Viriditas",
+        "count": 2,
+        "delta": 79
+      },
+      {
+        "user": "TXiKiBoT",
+        "count": 2,
+        "delta": 37
+      },
+      {
+        "user": "VolkovBot",
+        "count": 2,
+        "delta": 21
+      },
+      {
+        "user": "Words in the Wind",
+        "count": 2,
+        "delta": 4
+      },
+      {
+        "user": "Yobot",
+        "count": 2,
+        "delta": -8
+      },
+      {
+        "user": "Thiagoreis leon",
+        "count": 2,
+        "delta": -25
+      },
+      {
+        "user": "Addihockey10",
+        "count": 1,
+        "delta": 133472
+      },
+      {
+        "user": "Materialscientist",
+        "count": 1,
+        "delta": 132857
+      },
+      {
+        "user": "Tranletuhan",
+        "count": 1,
+        "delta": 276
+      },
+      {
+        "user": "Logan",
+        "count": 1,
+        "delta": 264
+      },
+      {
+        "user": "Ian.bjorn",
+        "count": 1,
+        "delta": 82
+      },
+      {
+        "user": "Citation bot 1",
+        "count": 1,
+        "delta": 56
+      },
+      {
+        "user": "Christian75",
+        "count": 1,
+        "delta": 41
+      },
+      {
+        "user": "Mohehab",
+        "count": 1,
+        "delta": 29
+      },
+      {
+        "user": "Computerfan",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "SlowPhoton",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "Brigman",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Citation bot",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Basharh",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "EmausBot",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "MacedonianBoy",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "باسم",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Crosswire",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Robbot",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Charlesdrakew",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Kmoksy",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "FoxBot",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Antodav2007",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Brandmeister",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Skycaptain95",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Mikenorton",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rapture2018",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Adrignola",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Airplaneman",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "FrescoBot",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "TFOWR",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "CommonsDelinker",
+        "count": 1,
+        "delta": -203
+      },
+      {
+        "user": "ClamDip",
+        "count": 1,
+        "delta": -240
+      },
+      {
+        "user": "Michael Podgorski",
+        "count": 1,
+        "delta": -132857
+      },
+      {
+        "user": "RemTar",
+        "count": 1,
+        "delta": -133472
+      }
+    ]
+  },
+  {
+    "intervalStart": "2010-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "RJHall",
+        "count": 30,
+        "delta": 2630
+      },
+      {
+        "user": "Drbogdan",
+        "count": 12,
+        "delta": 1170
+      },
+      {
+        "user": "Cybercobra",
+        "count": 9,
+        "delta": 196
+      },
+      {
+        "user": "Rjwilmsi",
+        "count": 8,
+        "delta": 172
+      },
+      {
+        "user": "Headbomb",
+        "count": 8,
+        "delta": -245
+      },
+      {
+        "user": "Woodstone",
+        "count": 7,
+        "delta": -414
+      },
+      {
+        "user": "Hans Dunkelberg",
+        "count": 6,
+        "delta": 17
+      },
+      {
+        "user": "Ckatz",
+        "count": 6,
+        "delta": -908
+      },
+      {
+        "user": "Materialscientist",
+        "count": 6,
+        "delta": -3721
+      },
+      {
+        "user": "SkyMachine",
+        "count": 5,
+        "delta": -57
+      },
+      {
+        "user": "Meco",
+        "count": 4,
+        "delta": 274
+      },
+      {
+        "user": "RjwilmsiBot",
+        "count": 4,
+        "delta": 71
+      },
+      {
+        "user": "WikitanvirBot",
+        "count": 4,
+        "delta": 36
+      },
+      {
+        "user": "ChuispastonBot",
+        "count": 4,
+        "delta": 28
+      },
+      {
+        "user": "Anachronist",
+        "count": 4,
+        "delta": -19
+      },
+      {
+        "user": "Seano300",
+        "count": 3,
+        "delta": 648
+      },
+      {
+        "user": "Dabit100",
+        "count": 3,
+        "delta": 503
+      },
+      {
+        "user": "Heaney555z",
+        "count": 3,
+        "delta": 110
+      },
+      {
+        "user": "Idioma-bot",
+        "count": 3,
+        "delta": 85
+      },
+      {
+        "user": "Xqbot",
+        "count": 3,
+        "delta": 1
+      },
+      {
+        "user": "JorisvS",
+        "count": 3,
+        "delta": 0
+      },
+      {
+        "user": "Kkevinn6",
+        "count": 3,
+        "delta": -39
+      },
+      {
+        "user": "Serendipodous",
+        "count": 3,
+        "delta": -988
+      },
+      {
+        "user": "ClueBot NG",
+        "count": 2,
+        "delta": 263609
+      },
+      {
+        "user": "Plastikspork",
+        "count": 2,
+        "delta": 661
+      },
+      {
+        "user": "Mabellapishoo",
+        "count": 2,
+        "delta": 579
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 2,
+        "delta": 558
+      },
+      {
+        "user": "XRiamux",
+        "count": 2,
+        "delta": 332
+      },
+      {
+        "user": "Lanthanum-138",
+        "count": 2,
+        "delta": 273
+      },
+      {
+        "user": "Netrapt",
+        "count": 2,
+        "delta": 253
+      },
+      {
+        "user": "Trongphu",
+        "count": 2,
+        "delta": 200
+      },
+      {
+        "user": "Cmglee",
+        "count": 2,
+        "delta": 161
+      },
+      {
+        "user": "EmausBot",
+        "count": 2,
+        "delta": 31
+      },
+      {
+        "user": "KamikazeBot",
+        "count": 2,
+        "delta": 25
+      },
+      {
+        "user": "A Quest For Knowledge",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Hawkania",
+        "count": 2,
+        "delta": -1
+      },
+      {
+        "user": "Yobot",
+        "count": 2,
+        "delta": -1
+      },
+      {
+        "user": "A. Parrot",
+        "count": 2,
+        "delta": -2
+      },
+      {
+        "user": "PS3ninja",
+        "count": 2,
+        "delta": -8
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 2,
+        "delta": -40
+      },
+      {
+        "user": "Gingermint",
+        "count": 2,
+        "delta": -65
+      },
+      {
+        "user": "Citation bot",
+        "count": 2,
+        "delta": -221
+      },
+      {
+        "user": "Colonel Warden",
+        "count": 2,
+        "delta": -246
+      },
+      {
+        "user": "FrescoBot",
+        "count": 2,
+        "delta": -411
+      },
+      {
+        "user": "Originalwana",
+        "count": 1,
+        "delta": 982
+      },
+      {
+        "user": "Randomblue",
+        "count": 1,
+        "delta": 691
+      },
+      {
+        "user": "Legajoe",
+        "count": 1,
+        "delta": 677
+      },
+      {
+        "user": "Wer900",
+        "count": 1,
+        "delta": 449
+      },
+      {
+        "user": "Josve05a",
+        "count": 1,
+        "delta": 294
+      },
+      {
+        "user": "Nimur",
+        "count": 1,
+        "delta": 174
+      },
+      {
+        "user": "Cadiomals",
+        "count": 1,
+        "delta": 138
+      },
+      {
+        "user": "JHunterJ",
+        "count": 1,
+        "delta": 127
+      },
+      {
+        "user": "Martin.Budden",
+        "count": 1,
+        "delta": 97
+      },
+      {
+        "user": "Lpele",
+        "count": 1,
+        "delta": 82
+      },
+      {
+        "user": "Harrypotter1219",
+        "count": 1,
+        "delta": 75
+      },
+      {
+        "user": "VLADIMIR Skokan",
+        "count": 1,
+        "delta": 68
+      },
+      {
+        "user": "Nagualdesign",
+        "count": 1,
+        "delta": 46
+      },
+      {
+        "user": "Rumping",
+        "count": 1,
+        "delta": 45
+      },
+      {
+        "user": "Tomthecool",
+        "count": 1,
+        "delta": 39
+      },
+      {
+        "user": "UBERxL33T",
+        "count": 1,
+        "delta": 39
+      },
+      {
+        "user": "Saros136",
+        "count": 1,
+        "delta": 35
+      },
+      {
+        "user": "Xiongnuchanyu",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "AutoMe",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Mightymights",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Sarpasarpeti101",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Skier Dude",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Jorge 2701",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "Lambiam",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "RobertG",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Jakob Russian",
+        "count": 1,
+        "delta": 21
+      },
+      {
+        "user": "Murmurer",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Thijs!bot",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "Bolatbek",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Rezabot",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Ripchip Bot",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Cdnjay",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "DEagleBot",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Driftwood87",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "ZéroBot",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Torchiest",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Chris the speller",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Movses-bot",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Bgedwards7",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "Pluma",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Saturdayseven",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "RockMagnetist",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Harej",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Bosonic dressing",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "INick3",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Timl",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Colinmartin74",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Kbk",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "SwiftlyTilt",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "DrSaturn",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Joefromrandb",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "KS700",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Liamwillco",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "NeilN",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Presidentman",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Vsmith",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "AlexiusHoratius",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "IRelayer",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Sophie means wisdom",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Auntof6",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "GrouchoBot",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Sochwa",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "FoxBot",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Lightbot",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Rracecarr",
+        "count": 1,
+        "delta": -9
+      },
+      {
+        "user": "Tbhotch",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "John",
+        "count": 1,
+        "delta": -76
+      },
+      {
+        "user": "CommonsDelinker",
+        "count": 1,
+        "delta": -81
+      },
+      {
+        "user": "Kaldari",
+        "count": 1,
+        "delta": -155
+      },
+      {
+        "user": "PAR",
+        "count": 1,
+        "delta": -579
+      },
+      {
+        "user": "रामा",
+        "count": 1,
+        "delta": -663
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 1,
+        "delta": -677
+      },
+      {
+        "user": "Dougdrums",
+        "count": 1,
+        "delta": -131738
+      },
+      {
+        "user": "Esotallica",
+        "count": 1,
+        "delta": -131871
+      }
+    ]
+  },
+  {
+    "intervalStart": "2011-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Cpiral",
+        "count": 18,
+        "delta": 416
+      },
+      {
+        "user": "Marmenta",
+        "count": 17,
+        "delta": -3367
+      },
+      {
+        "user": "An678ko",
+        "count": 13,
+        "delta": -114
+      },
+      {
+        "user": "RJHall",
+        "count": 12,
+        "delta": 279
+      },
+      {
+        "user": "Cadiomals",
+        "count": 10,
+        "delta": 555
+      },
+      {
+        "user": "Cybercobra",
+        "count": 8,
+        "delta": 284
+      },
+      {
+        "user": "Polo",
+        "count": 6,
+        "delta": -16
+      },
+      {
+        "user": "Tholme",
+        "count": 6,
+        "delta": -280
+      },
+      {
+        "user": "Rjwilmsi",
+        "count": 6,
+        "delta": -375
+      },
+      {
+        "user": "Vsmith",
+        "count": 5,
+        "delta": 20372
+      },
+      {
+        "user": "Bloodofox",
+        "count": 5,
+        "delta": 3453
+      },
+      {
+        "user": "SkyMachine",
+        "count": 4,
+        "delta": -11
+      },
+      {
+        "user": "JorisvS",
+        "count": 4,
+        "delta": -13
+      },
+      {
+        "user": "Materialscientist",
+        "count": 4,
+        "delta": -684
+      },
+      {
+        "user": "Bryan hafidz",
+        "count": 3,
+        "delta": 57
+      },
+      {
+        "user": "Mickman1234",
+        "count": 3,
+        "delta": 49
+      },
+      {
+        "user": "Nathan Johnson",
+        "count": 3,
+        "delta": -2
+      },
+      {
+        "user": "Katydidit",
+        "count": 2,
+        "delta": 402
+      },
+      {
+        "user": "Snotbot",
+        "count": 2,
+        "delta": 392
+      },
+      {
+        "user": "Florian Blaschke",
+        "count": 2,
+        "delta": 358
+      },
+      {
+        "user": "H870rce",
+        "count": 2,
+        "delta": 205
+      },
+      {
+        "user": "JusBer88",
+        "count": 2,
+        "delta": 143
+      },
+      {
+        "user": "Citation bot",
+        "count": 2,
+        "delta": 114
+      },
+      {
+        "user": "R'n'B",
+        "count": 2,
+        "delta": 111
+      },
+      {
+        "user": "JSquish",
+        "count": 2,
+        "delta": 104
+      },
+      {
+        "user": "Headbomb",
+        "count": 2,
+        "delta": 80
+      },
+      {
+        "user": "EmausBot",
+        "count": 2,
+        "delta": 30
+      },
+      {
+        "user": "EagerToddler39",
+        "count": 2,
+        "delta": 24
+      },
+      {
+        "user": "TheGeneralUser",
+        "count": 2,
+        "delta": 14
+      },
+      {
+        "user": "PoqVaUSA",
+        "count": 2,
+        "delta": 8
+      },
+      {
+        "user": "Sun Creator",
+        "count": 2,
+        "delta": 7
+      },
+      {
+        "user": "Brews ohare",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Zetterberg40",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Rreagan007",
+        "count": 2,
+        "delta": -5
+      },
+      {
+        "user": "Sparkie82",
+        "count": 2,
+        "delta": -117
+      },
+      {
+        "user": "Double sharp",
+        "count": 2,
+        "delta": -146
+      },
+      {
+        "user": "Σ",
+        "count": 2,
+        "delta": -496
+      },
+      {
+        "user": "Stevenb431",
+        "count": 2,
+        "delta": -136714
+      },
+      {
+        "user": "Skamecrazy123",
+        "count": 1,
+        "delta": 136850
+      },
+      {
+        "user": "Joemeng967",
+        "count": 1,
+        "delta": 562
+      },
+      {
+        "user": "Bigzteve",
+        "count": 1,
+        "delta": 263
+      },
+      {
+        "user": "ST11",
+        "count": 1,
+        "delta": 248
+      },
+      {
+        "user": "Six Sided Pun Vows",
+        "count": 1,
+        "delta": 248
+      },
+      {
+        "user": "Dan Gluck",
+        "count": 1,
+        "delta": 204
+      },
+      {
+        "user": "Drbogdan",
+        "count": 1,
+        "delta": 192
+      },
+      {
+        "user": "StephenHudson",
+        "count": 1,
+        "delta": 190
+      },
+      {
+        "user": "AK63",
+        "count": 1,
+        "delta": 149
+      },
+      {
+        "user": "RockMagnetist",
+        "count": 1,
+        "delta": 128
+      },
+      {
+        "user": "TheKurgan",
+        "count": 1,
+        "delta": 96
+      },
+      {
+        "user": "Corn cheese",
+        "count": 1,
+        "delta": 92
+      },
+      {
+        "user": "Originalwana",
+        "count": 1,
+        "delta": 86
+      },
+      {
+        "user": "M.O.X",
+        "count": 1,
+        "delta": 81
+      },
+      {
+        "user": "Undead Herle King",
+        "count": 1,
+        "delta": 75
+      },
+      {
+        "user": "Thedropsoffire",
+        "count": 1,
+        "delta": 72
+      },
+      {
+        "user": "REfreakk55",
+        "count": 1,
+        "delta": 71
+      },
+      {
+        "user": "Spacepotato",
+        "count": 1,
+        "delta": 68
+      },
+      {
+        "user": "Back2reality07",
+        "count": 1,
+        "delta": 61
+      },
+      {
+        "user": "Escarbot",
+        "count": 1,
+        "delta": 59
+      },
+      {
+        "user": "Serendipodous",
+        "count": 1,
+        "delta": 59
+      },
+      {
+        "user": "Hibernian",
+        "count": 1,
+        "delta": 57
+      },
+      {
+        "user": "Gabby0725",
+        "count": 1,
+        "delta": 42
+      },
+      {
+        "user": "Ecpiandy",
+        "count": 1,
+        "delta": 41
+      },
+      {
+        "user": "Buddhaamaatya",
+        "count": 1,
+        "delta": 33
+      },
+      {
+        "user": "Maqivi",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 1,
+        "delta": 31
+      },
+      {
+        "user": "Ego White Tray",
+        "count": 1,
+        "delta": 29
+      },
+      {
+        "user": "Oneiros",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "Woohookitty",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "MKar",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Thingg",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "Scooter20",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Scwlong",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "AvocatoBot",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Tom.Reding",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "FoxBot",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Xqbot",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "IVAN3MAN",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Lionfish0",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Idioma-bot",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Yobot",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Bgm2011",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "Noformation",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "John of Reading",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Daledavey",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Helpful Pixie Bot",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Irockz",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "TjBot",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Silesianus",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Wise 7",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Frietjes",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "A. Parrot",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "ChrisGualtieri",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Jfkduihv",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Paul H.",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Ptbotgourou",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "CapitalR",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Lowellian",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Magioladitis",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Mattmatt1987",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Ckatz",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Eshlare",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "HiLo48",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Koavf",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Wavelength",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "BOMBINI",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "FrescoBot",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Rich Farmbrough",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Violettsureme",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Rursus",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Nightscream",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "Rracecarr",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Woodstone",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Brandmeister",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "DoctorKubla",
+        "count": 1,
+        "delta": -30
+      },
+      {
+        "user": "MarcGarver",
+        "count": 1,
+        "delta": -42
+      },
+      {
+        "user": "Graham87",
+        "count": 1,
+        "delta": -52
+      },
+      {
+        "user": "Anachronist",
+        "count": 1,
+        "delta": -71
+      },
+      {
+        "user": "Eyesighter",
+        "count": 1,
+        "delta": -123
+      },
+      {
+        "user": "Niobrara",
+        "count": 1,
+        "delta": -173
+      },
+      {
+        "user": "DrKay",
+        "count": 1,
+        "delta": -218
+      },
+      {
+        "user": "Sjbrown",
+        "count": 1,
+        "delta": -221
+      },
+      {
+        "user": "Hut 8.5",
+        "count": 1,
+        "delta": -392
+      },
+      {
+        "user": "Maniesansdelire",
+        "count": 1,
+        "delta": -20479
+      }
+    ]
+  },
+  {
+    "intervalStart": "2012-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Fotaun",
+        "count": 23,
+        "delta": 3322
+      },
+      {
+        "user": "Paine Ellsworth",
+        "count": 13,
+        "delta": 308
+      },
+      {
+        "user": "Praemonitus",
+        "count": 12,
+        "delta": -261
+      },
+      {
+        "user": "Ckatz",
+        "count": 8,
+        "delta": -667
+      },
+      {
+        "user": "Pine",
+        "count": 7,
+        "delta": 785
+      },
+      {
+        "user": "Student7",
+        "count": 6,
+        "delta": 765
+      },
+      {
+        "user": "Drbogdan",
+        "count": 6,
+        "delta": 336
+      },
+      {
+        "user": "Jwratner1",
+        "count": 5,
+        "delta": 493
+      },
+      {
+        "user": "Reatlas",
+        "count": 5,
+        "delta": 378
+      },
+      {
+        "user": "JorisvS",
+        "count": 4,
+        "delta": 10
+      },
+      {
+        "user": "Marvin le Martian",
+        "count": 3,
+        "delta": 578
+      },
+      {
+        "user": "Materialscientist",
+        "count": 3,
+        "delta": 561
+      },
+      {
+        "user": "ALL NAMES R GONE",
+        "count": 3,
+        "delta": 426
+      },
+      {
+        "user": "Peteruetz",
+        "count": 3,
+        "delta": 26
+      },
+      {
+        "user": "Jfkduihv",
+        "count": 3,
+        "delta": 19
+      },
+      {
+        "user": "Mikenorton",
+        "count": 3,
+        "delta": 19
+      },
+      {
+        "user": "Joeinwiki",
+        "count": 3,
+        "delta": 15
+      },
+      {
+        "user": "Cgx8253",
+        "count": 3,
+        "delta": -2
+      },
+      {
+        "user": "Cherkash",
+        "count": 3,
+        "delta": -112
+      },
+      {
+        "user": "Tdadamemd",
+        "count": 2,
+        "delta": 614
+      },
+      {
+        "user": "Aunva6",
+        "count": 2,
+        "delta": 280
+      },
+      {
+        "user": "Cpiral",
+        "count": 2,
+        "delta": 195
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 2,
+        "delta": 124
+      },
+      {
+        "user": "Anrnusna",
+        "count": 2,
+        "delta": 31
+      },
+      {
+        "user": "FrysUniverse",
+        "count": 2,
+        "delta": 14
+      },
+      {
+        "user": "Stilgar27",
+        "count": 2,
+        "delta": 5
+      },
+      {
+        "user": "Inglok",
+        "count": 2,
+        "delta": 3
+      },
+      {
+        "user": "Woodstone",
+        "count": 2,
+        "delta": 3
+      },
+      {
+        "user": "Martarius",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Rjwilmsi",
+        "count": 2,
+        "delta": -18
+      },
+      {
+        "user": "Tpbradbury",
+        "count": 2,
+        "delta": -23
+      },
+      {
+        "user": "Timwi",
+        "count": 2,
+        "delta": -81
+      },
+      {
+        "user": "Tbhotch",
+        "count": 2,
+        "delta": -370
+      },
+      {
+        "user": "HiLo48",
+        "count": 2,
+        "delta": -943
+      },
+      {
+        "user": "MelbourneStar",
+        "count": 1,
+        "delta": 140467
+      },
+      {
+        "user": "DoorsAjar",
+        "count": 1,
+        "delta": 138922
+      },
+      {
+        "user": "Yintan",
+        "count": 1,
+        "delta": 1519
+      },
+      {
+        "user": "Snotbot",
+        "count": 1,
+        "delta": 392
+      },
+      {
+        "user": "Aghaasadharoon",
+        "count": 1,
+        "delta": 360
+      },
+      {
+        "user": "Robinsyl",
+        "count": 1,
+        "delta": 248
+      },
+      {
+        "user": "Iketsi",
+        "count": 1,
+        "delta": 136
+      },
+      {
+        "user": "Usernamekiran",
+        "count": 1,
+        "delta": 91
+      },
+      {
+        "user": "Glevum",
+        "count": 1,
+        "delta": 82
+      },
+      {
+        "user": "Sowlos",
+        "count": 1,
+        "delta": 48
+      },
+      {
+        "user": "CatJar",
+        "count": 1,
+        "delta": 46
+      },
+      {
+        "user": "Nickst",
+        "count": 1,
+        "delta": 36
+      },
+      {
+        "user": "Technical 13",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "81120906713",
+        "count": 1,
+        "delta": 27
+      },
+      {
+        "user": "Gobonobo",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "Vsmith",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "Brandmeister",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "JackieBot",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Xqbot",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Stas1995",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "CarsracBot",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Frze",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Chris55",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "ArglebargleIV",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Bovlb",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Crzer07",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Mr Stephen",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Rkaup",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Anarchistdy",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Bender235",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Benison",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Defan24",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Eagle3399",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "GregorB",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Lessbread",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "ChrisGualtieri",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Scwlong",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "AlphaZelda",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Gonfer",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Romanski",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "SyncopatorSyncopator",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Boltz6100",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Cadiomals",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Chris857",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Mayumashu",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Nedhenry",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rivertorch",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rursus",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "StephenHudson",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "TheGeneralUser",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Yobot",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Duoduoduo",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Jesant13",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Krj373",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Buffbills7701",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Lindenhurst Liberty",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Johnxsmith",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Redrose64",
+        "count": 1,
+        "delta": -13
+      },
+      {
+        "user": "Rosencrantz1",
+        "count": 1,
+        "delta": -17
+      },
+      {
+        "user": "Timl",
+        "count": 1,
+        "delta": -20
+      },
+      {
+        "user": "CBM",
+        "count": 1,
+        "delta": -22
+      },
+      {
+        "user": "Aquilosion",
+        "count": 1,
+        "delta": -23
+      },
+      {
+        "user": "Fred Bauder",
+        "count": 1,
+        "delta": -29
+      },
+      {
+        "user": "Anachronist",
+        "count": 1,
+        "delta": -30
+      },
+      {
+        "user": "Ponyo",
+        "count": 1,
+        "delta": -32
+      },
+      {
+        "user": "Red Slash",
+        "count": 1,
+        "delta": -47
+      },
+      {
+        "user": "NeilN",
+        "count": 1,
+        "delta": -91
+      },
+      {
+        "user": "Aircorn",
+        "count": 1,
+        "delta": -186
+      },
+      {
+        "user": "ClueBot NG",
+        "count": 1,
+        "delta": -208
+      },
+      {
+        "user": "Scottywong",
+        "count": 1,
+        "delta": -280
+      },
+      {
+        "user": "Ecpiandy",
+        "count": 1,
+        "delta": -330
+      },
+      {
+        "user": "Second Quantization",
+        "count": 1,
+        "delta": -358
+      },
+      {
+        "user": "Soni",
+        "count": 1,
+        "delta": -1169
+      },
+      {
+        "user": "ThomasBeGaming",
+        "count": 1,
+        "delta": -1519
+      },
+      {
+        "user": "FallingGravity",
+        "count": 1,
+        "delta": -3800
+      },
+      {
+        "user": "Maxwell the scribblenaut",
+        "count": 1,
+        "delta": -138922
+      },
+      {
+        "user": "Qalnor",
+        "count": 1,
+        "delta": -140467
+      }
+    ]
+  },
+  {
+    "intervalStart": "2013-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "I'm your Grandma.",
+        "count": 43,
+        "delta": 599
+      },
+      {
+        "user": "Fotaun",
+        "count": 21,
+        "delta": 312
+      },
+      {
+        "user": "Vsmith",
+        "count": 18,
+        "delta": 352
+      },
+      {
+        "user": "Sardanaphalus",
+        "count": 14,
+        "delta": 916
+      },
+      {
+        "user": "Corinne",
+        "count": 12,
+        "delta": 57
+      },
+      {
+        "user": "Drbogdan",
+        "count": 11,
+        "delta": 2594
+      },
+      {
+        "user": "Student7",
+        "count": 11,
+        "delta": 1318
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 10,
+        "delta": -760
+      },
+      {
+        "user": "LlywelynII",
+        "count": 9,
+        "delta": 3941
+      },
+      {
+        "user": "JorisvS",
+        "count": 8,
+        "delta": -443
+      },
+      {
+        "user": "Anonimski",
+        "count": 8,
+        "delta": -674
+      },
+      {
+        "user": "Jaywilson",
+        "count": 6,
+        "delta": 265
+      },
+      {
+        "user": "Nick.mon",
+        "count": 6,
+        "delta": -97
+      },
+      {
+        "user": "NeilN",
+        "count": 6,
+        "delta": -617
+      },
+      {
+        "user": "DrKay",
+        "count": 6,
+        "delta": -2528
+      },
+      {
+        "user": "Dger",
+        "count": 5,
+        "delta": -232
+      },
+      {
+        "user": "Brandmeister",
+        "count": 5,
+        "delta": -716
+      },
+      {
+        "user": "GoingBatty",
+        "count": 4,
+        "delta": 0
+      },
+      {
+        "user": "Tholme",
+        "count": 4,
+        "delta": -124
+      },
+      {
+        "user": "Quantum Burrito",
+        "count": 4,
+        "delta": -148
+      },
+      {
+        "user": "Mikenorton",
+        "count": 4,
+        "delta": -274
+      },
+      {
+        "user": "Cadiomals",
+        "count": 4,
+        "delta": -2037
+      },
+      {
+        "user": "Billybob2002",
+        "count": 3,
+        "delta": 450
+      },
+      {
+        "user": "Exoplanetaryscience",
+        "count": 3,
+        "delta": 198
+      },
+      {
+        "user": "Woodstone",
+        "count": 3,
+        "delta": 50
+      },
+      {
+        "user": "BananaLanguage",
+        "count": 3,
+        "delta": 40
+      },
+      {
+        "user": "Jodosma",
+        "count": 3,
+        "delta": -58
+      },
+      {
+        "user": "Dexbot",
+        "count": 3,
+        "delta": -352
+      },
+      {
+        "user": "Mahusha",
+        "count": 3,
+        "delta": -369
+      },
+      {
+        "user": "HiLo48",
+        "count": 3,
+        "delta": -526
+      },
+      {
+        "user": "Serendipodous",
+        "count": 2,
+        "delta": 812
+      },
+      {
+        "user": "Materialscientist",
+        "count": 2,
+        "delta": 417
+      },
+      {
+        "user": "JeanLucMargot",
+        "count": 2,
+        "delta": 344
+      },
+      {
+        "user": "Saurusaurus",
+        "count": 2,
+        "delta": 153
+      },
+      {
+        "user": "Btljs",
+        "count": 2,
+        "delta": 96
+      },
+      {
+        "user": "Rjwilmsi",
+        "count": 2,
+        "delta": 94
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 2,
+        "delta": 34
+      },
+      {
+        "user": "Arvind asia",
+        "count": 2,
+        "delta": 19
+      },
+      {
+        "user": "Cgx8253",
+        "count": 2,
+        "delta": 6
+      },
+      {
+        "user": "Bender235",
+        "count": 2,
+        "delta": 5
+      },
+      {
+        "user": "Eyesnore",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Khargas",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "SkoreKeep",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Florian Blaschke",
+        "count": 2,
+        "delta": -20
+      },
+      {
+        "user": "Monkbot",
+        "count": 2,
+        "delta": -92
+      },
+      {
+        "user": "Mandruss",
+        "count": 2,
+        "delta": -218
+      },
+      {
+        "user": "IronGargoyle",
+        "count": 1,
+        "delta": 141433
+      },
+      {
+        "user": "Hmains",
+        "count": 1,
+        "delta": 816
+      },
+      {
+        "user": "Jemmasimmons",
+        "count": 1,
+        "delta": 577
+      },
+      {
+        "user": "Evensteven",
+        "count": 1,
+        "delta": 270
+      },
+      {
+        "user": "Pelliesh",
+        "count": 1,
+        "delta": 248
+      },
+      {
+        "user": "Dabit100",
+        "count": 1,
+        "delta": 185
+      },
+      {
+        "user": "Archon 2488",
+        "count": 1,
+        "delta": 107
+      },
+      {
+        "user": "Agyle",
+        "count": 1,
+        "delta": 104
+      },
+      {
+        "user": "DoctorTerrella",
+        "count": 1,
+        "delta": 65
+      },
+      {
+        "user": "Omnipaedista",
+        "count": 1,
+        "delta": 58
+      },
+      {
+        "user": "Double sharp",
+        "count": 1,
+        "delta": 54
+      },
+      {
+        "user": "Kalhause",
+        "count": 1,
+        "delta": 52
+      },
+      {
+        "user": "Eguinto",
+        "count": 1,
+        "delta": 36
+      },
+      {
+        "user": "Geertivp",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "Jason Quinn",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "Forbidden User",
+        "count": 1,
+        "delta": 27
+      },
+      {
+        "user": "GregKaye",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "RichardWeiss",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Jojhutton",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Kendrick7",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "Glorious Engine",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "J 1982",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Theincredibleulyses",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Jfkduihv",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "John of Reading",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "PAGreenwood",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "PBS-AWB",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "K.A.Gesell",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Medium69",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Ptrw08",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Apipia",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "IdreamofJeanie",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Alfonso Márquez",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Dodshe",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Novakalberta",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "CommonsDelinker",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Abitslow",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Phantom in ca",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "AldezD",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Jeppesn",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Jpsi",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Robert Skyhawk",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Scwlong",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "SusanLesch",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Red Slash",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "BG19bot",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Buffbills7701",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "GregorB",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Torchiest",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "FrescoBot",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Trappist the monk",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "ScottM84",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "Lonaowna",
+        "count": 1,
+        "delta": -12
+      },
+      {
+        "user": "Dlazerka",
+        "count": 1,
+        "delta": -20
+      },
+      {
+        "user": "Hqb",
+        "count": 1,
+        "delta": -36
+      },
+      {
+        "user": "Gorthian",
+        "count": 1,
+        "delta": -44
+      },
+      {
+        "user": "Ground Zero",
+        "count": 1,
+        "delta": -45
+      },
+      {
+        "user": "Oldag07",
+        "count": 1,
+        "delta": -51
+      },
+      {
+        "user": "Futura XP",
+        "count": 1,
+        "delta": -54
+      },
+      {
+        "user": "Tom.Reding",
+        "count": 1,
+        "delta": -104
+      },
+      {
+        "user": "Saros136",
+        "count": 1,
+        "delta": -135
+      },
+      {
+        "user": "Nsteffel",
+        "count": 1,
+        "delta": -342
+      },
+      {
+        "user": "Thomas Emilio Davies",
+        "count": 1,
+        "delta": -141433
+      }
+    ]
+  },
+  {
+    "intervalStart": "2014-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "JorisvS",
+        "count": 52,
+        "delta": 247
+      },
+      {
+        "user": "A2soup",
+        "count": 52,
+        "delta": -796
+      },
+      {
+        "user": "Isambard Kingdom",
+        "count": 52,
+        "delta": -2985
+      },
+      {
+        "user": "Praemonitus",
+        "count": 40,
+        "delta": 137
+      },
+      {
+        "user": "Drbogdan",
+        "count": 29,
+        "delta": 5953
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 15,
+        "delta": -1198
+      },
+      {
+        "user": "BatteryIncluded",
+        "count": 12,
+        "delta": 1106
+      },
+      {
+        "user": "Evensteven",
+        "count": 12,
+        "delta": -422
+      },
+      {
+        "user": "GeoWriter",
+        "count": 10,
+        "delta": 87
+      },
+      {
+        "user": "Huntster",
+        "count": 10,
+        "delta": 87
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 9,
+        "delta": -299
+      },
+      {
+        "user": "DrKay",
+        "count": 9,
+        "delta": -4899
+      },
+      {
+        "user": "Finell",
+        "count": 8,
+        "delta": 214
+      },
+      {
+        "user": "Dbfirs",
+        "count": 8,
+        "delta": -26
+      },
+      {
+        "user": "Tetra quark",
+        "count": 8,
+        "delta": -1367
+      },
+      {
+        "user": "DN-boards1",
+        "count": 7,
+        "delta": 1512
+      },
+      {
+        "user": "Lommaren",
+        "count": 6,
+        "delta": 6688
+      },
+      {
+        "user": "Jcpag2012",
+        "count": 6,
+        "delta": 782
+      },
+      {
+        "user": "Yiosie2356",
+        "count": 6,
+        "delta": 693
+      },
+      {
+        "user": "The name",
+        "count": 5,
+        "delta": 2665
+      },
+      {
+        "user": "Exoplanetaryscience",
+        "count": 5,
+        "delta": 143
+      },
+      {
+        "user": "FlightTime",
+        "count": 5,
+        "delta": -987
+      },
+      {
+        "user": "Student7",
+        "count": 4,
+        "delta": 616
+      },
+      {
+        "user": "Saros136",
+        "count": 4,
+        "delta": 430
+      },
+      {
+        "user": "Vectoor",
+        "count": 4,
+        "delta": 370
+      },
+      {
+        "user": "Mr.Publius",
+        "count": 4,
+        "delta": 359
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 4,
+        "delta": 65
+      },
+      {
+        "user": "Thecodingproject",
+        "count": 4,
+        "delta": 44
+      },
+      {
+        "user": "BDS2006",
+        "count": 4,
+        "delta": -23
+      },
+      {
+        "user": "Woodstone",
+        "count": 4,
+        "delta": -37
+      },
+      {
+        "user": "Huritisho",
+        "count": 4,
+        "delta": -217
+      },
+      {
+        "user": "Spacepotato",
+        "count": 3,
+        "delta": 1835
+      },
+      {
+        "user": "Mikenorton",
+        "count": 3,
+        "delta": 189
+      },
+      {
+        "user": "Cynulliad",
+        "count": 3,
+        "delta": 70
+      },
+      {
+        "user": "Davidvillar",
+        "count": 3,
+        "delta": -1
+      },
+      {
+        "user": "Canaima",
+        "count": 3,
+        "delta": -15
+      },
+      {
+        "user": "TheWhistleGag",
+        "count": 3,
+        "delta": -278
+      },
+      {
+        "user": "InedibleHulk",
+        "count": 3,
+        "delta": -1186
+      },
+      {
+        "user": "Rotideypoc41352",
+        "count": 2,
+        "delta": 539
+      },
+      {
+        "user": "JeanLucMargot",
+        "count": 2,
+        "delta": 476
+      },
+      {
+        "user": "MrJJ007",
+        "count": 2,
+        "delta": 403
+      },
+      {
+        "user": "Pine",
+        "count": 2,
+        "delta": 164
+      },
+      {
+        "user": "Materialscientist",
+        "count": 2,
+        "delta": 157
+      },
+      {
+        "user": "Niceguyedc",
+        "count": 2,
+        "delta": 58
+      },
+      {
+        "user": "Mtd2006",
+        "count": 2,
+        "delta": 52
+      },
+      {
+        "user": "Finnusertop",
+        "count": 2,
+        "delta": 47
+      },
+      {
+        "user": "EnigmaLord515",
+        "count": 2,
+        "delta": 42
+      },
+      {
+        "user": "Ehrenkater",
+        "count": 2,
+        "delta": 38
+      },
+      {
+        "user": "Mohamedbmo",
+        "count": 2,
+        "delta": 26
+      },
+      {
+        "user": "Daniellopresti",
+        "count": 2,
+        "delta": 16
+      },
+      {
+        "user": "Sol2y",
+        "count": 2,
+        "delta": 11
+      },
+      {
+        "user": "ShinRyu Forgers",
+        "count": 2,
+        "delta": 10
+      },
+      {
+        "user": "Ibarabi",
+        "count": 2,
+        "delta": 8
+      },
+      {
+        "user": "ST11",
+        "count": 2,
+        "delta": 7
+      },
+      {
+        "user": "Gothaparduskerialldrapolatkh",
+        "count": 2,
+        "delta": 5
+      },
+      {
+        "user": "Faolin42",
+        "count": 2,
+        "delta": -4
+      },
+      {
+        "user": "Rfassbind",
+        "count": 2,
+        "delta": -6
+      },
+      {
+        "user": "Amble",
+        "count": 2,
+        "delta": -11
+      },
+      {
+        "user": "LL221W",
+        "count": 2,
+        "delta": -12
+      },
+      {
+        "user": "Bongwarrior",
+        "count": 2,
+        "delta": -26
+      },
+      {
+        "user": "Yobot",
+        "count": 2,
+        "delta": -31
+      },
+      {
+        "user": "Intelligent Mr Toad",
+        "count": 2,
+        "delta": -84
+      },
+      {
+        "user": "MARTIN WNDRLVND",
+        "count": 2,
+        "delta": -142
+      },
+      {
+        "user": "Edulovers",
+        "count": 2,
+        "delta": -291
+      },
+      {
+        "user": "Unbuttered Parsnip",
+        "count": 2,
+        "delta": -550
+      },
+      {
+        "user": "Josve05a",
+        "count": 1,
+        "delta": 1603
+      },
+      {
+        "user": "Nwbeeson",
+        "count": 1,
+        "delta": 643
+      },
+      {
+        "user": "Jesant13",
+        "count": 1,
+        "delta": 253
+      },
+      {
+        "user": "Deepanshu1707",
+        "count": 1,
+        "delta": 179
+      },
+      {
+        "user": "ChamithN",
+        "count": 1,
+        "delta": 173
+      },
+      {
+        "user": "The Transhumanist",
+        "count": 1,
+        "delta": 140
+      },
+      {
+        "user": "Trappist the monk",
+        "count": 1,
+        "delta": 114
+      },
+      {
+        "user": "Vitreology",
+        "count": 1,
+        "delta": 109
+      },
+      {
+        "user": "Nedim Ardoğa",
+        "count": 1,
+        "delta": 73
+      },
+      {
+        "user": "Mx. Granger",
+        "count": 1,
+        "delta": 56
+      },
+      {
+        "user": "Sigehelmus",
+        "count": 1,
+        "delta": 56
+      },
+      {
+        "user": "Wumbotarian",
+        "count": 1,
+        "delta": 52
+      },
+      {
+        "user": "Mr Black Sheep",
+        "count": 1,
+        "delta": 36
+      },
+      {
+        "user": "Sbmeirow",
+        "count": 1,
+        "delta": 33
+      },
+      {
+        "user": "Nick.mon",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 1,
+        "delta": 31
+      },
+      {
+        "user": "KasparBot",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Thebuck093",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Citation bot",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "Chiswick Chap",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Illegitimate Barrister",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Cerabot~enwiki",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Natg 19",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "PhilipTerryGraham",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Alphathon",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Qwertyus",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Whizz40",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "EoRdE6",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Hunter Kahn",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Lycurgus",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "MarcSmulders",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "SucreRouge",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Jayreen29",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Magioladitis",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Fgnievinski",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Phenylalanine",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "JustAMuggle",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "For12for11aa",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Geniuswikiposter",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Lappspira",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "MightySaiyan",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Zaz-en",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "SovalValtos",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Fritzmann2002",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Frozenprakash",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Ilikesalsa",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "93.136.109.11",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Dger",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Humenni",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Missionedit",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Ptb1997",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Revent",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Vsmith",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Brandmeister",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Poulpy",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rasmus Faber",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "RhinoMind",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rothorpe",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "SandyGeorgia",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Esrever",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "HalloweenNight",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "J.delanoy",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Arjayay",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Dondervogel 2",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Jackmcbarn",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Big Blue Gnu",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Jointed.owl",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Osh33m",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Jimp",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Bender235",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Inyouchuu shoku",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "Charlik",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "NeilN",
+        "count": 1,
+        "delta": -20
+      },
+      {
+        "user": "MartinZ",
+        "count": 1,
+        "delta": -25
+      },
+      {
+        "user": "Lankiveil",
+        "count": 1,
+        "delta": -36
+      },
+      {
+        "user": "Master of Time",
+        "count": 1,
+        "delta": -59
+      },
+      {
+        "user": "Cydebot",
+        "count": 1,
+        "delta": -73
+      },
+      {
+        "user": "CommonsDelinker",
+        "count": 1,
+        "delta": -90
+      },
+      {
+        "user": "Juliana819",
+        "count": 1,
+        "delta": -161
+      },
+      {
+        "user": "Huon",
+        "count": 1,
+        "delta": -490
+      },
+      {
+        "user": "Dr.K.",
+        "count": 1,
+        "delta": -742
+      }
+    ]
+  },
+  {
+    "intervalStart": "2015-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Isambard Kingdom",
+        "count": 114,
+        "delta": -2568
+      },
+      {
+        "user": "Gorthian",
+        "count": 22,
+        "delta": 691
+      },
+      {
+        "user": "Drbogdan",
+        "count": 18,
+        "delta": 1861
+      },
+      {
+        "user": "Huntster",
+        "count": 18,
+        "delta": -3345
+      },
+      {
+        "user": "JorisvS",
+        "count": 15,
+        "delta": -19
+      },
+      {
+        "user": "BatteryIncluded",
+        "count": 12,
+        "delta": -355
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 10,
+        "delta": -245
+      },
+      {
+        "user": "Fotaun",
+        "count": 8,
+        "delta": 929
+      },
+      {
+        "user": "MartinZ",
+        "count": 8,
+        "delta": -67
+      },
+      {
+        "user": "Geodesy2000",
+        "count": 6,
+        "delta": 377
+      },
+      {
+        "user": "Jorge Iani",
+        "count": 6,
+        "delta": 147
+      },
+      {
+        "user": "Jusdafax",
+        "count": 5,
+        "delta": 377
+      },
+      {
+        "user": "Farleyeye",
+        "count": 5,
+        "delta": 80
+      },
+      {
+        "user": "Mikenorton",
+        "count": 5,
+        "delta": 36
+      },
+      {
+        "user": "Dbfirs",
+        "count": 5,
+        "delta": 6
+      },
+      {
+        "user": "Nelsonerico",
+        "count": 5,
+        "delta": -29
+      },
+      {
+        "user": "TwoTwoHello",
+        "count": 5,
+        "delta": -183
+      },
+      {
+        "user": "Spike-from-NH",
+        "count": 4,
+        "delta": 349
+      },
+      {
+        "user": "SucreRouge",
+        "count": 4,
+        "delta": -20
+      },
+      {
+        "user": "A2soup",
+        "count": 4,
+        "delta": -33
+      },
+      {
+        "user": "Kind Tennis Fan",
+        "count": 4,
+        "delta": -1036
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 3,
+        "delta": 291
+      },
+      {
+        "user": "JFG",
+        "count": 3,
+        "delta": 156
+      },
+      {
+        "user": "Luka Russ",
+        "count": 3,
+        "delta": 110
+      },
+      {
+        "user": "Yobot",
+        "count": 3,
+        "delta": 27
+      },
+      {
+        "user": "Paulinho28",
+        "count": 3,
+        "delta": -42
+      },
+      {
+        "user": "Permstrump",
+        "count": 3,
+        "delta": -724
+      },
+      {
+        "user": "Tdadamemd sioz",
+        "count": 2,
+        "delta": 176
+      },
+      {
+        "user": "Pocketthis",
+        "count": 2,
+        "delta": 175
+      },
+      {
+        "user": "W like wiki",
+        "count": 2,
+        "delta": 174
+      },
+      {
+        "user": "Mahusha",
+        "count": 2,
+        "delta": 98
+      },
+      {
+        "user": "Levonscott",
+        "count": 2,
+        "delta": 97
+      },
+      {
+        "user": "Yohoyo",
+        "count": 2,
+        "delta": 94
+      },
+      {
+        "user": "Motivação",
+        "count": 2,
+        "delta": 93
+      },
+      {
+        "user": "Floatjon",
+        "count": 2,
+        "delta": 22
+      },
+      {
+        "user": "Headbomb",
+        "count": 2,
+        "delta": 3
+      },
+      {
+        "user": "RightGot",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Bear-rings",
+        "count": 2,
+        "delta": -30
+      },
+      {
+        "user": "PaleCloudedWhite",
+        "count": 2,
+        "delta": -66
+      },
+      {
+        "user": "DrKay",
+        "count": 2,
+        "delta": -146
+      },
+      {
+        "user": "Mujtaba!",
+        "count": 2,
+        "delta": -169
+      },
+      {
+        "user": "Charlesdrakew",
+        "count": 2,
+        "delta": -182
+      },
+      {
+        "user": "Woodstone",
+        "count": 2,
+        "delta": -218
+      },
+      {
+        "user": "Praemonitus",
+        "count": 2,
+        "delta": -226
+      },
+      {
+        "user": "EeeveeeFrost",
+        "count": 2,
+        "delta": -313
+      },
+      {
+        "user": "老陳",
+        "count": 1,
+        "delta": 1327
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 1,
+        "delta": 1189
+      },
+      {
+        "user": "Mattsabe",
+        "count": 1,
+        "delta": 777
+      },
+      {
+        "user": "Chevvin",
+        "count": 1,
+        "delta": 248
+      },
+      {
+        "user": "Cyberbot II",
+        "count": 1,
+        "delta": 230
+      },
+      {
+        "user": "Titus III",
+        "count": 1,
+        "delta": 185
+      },
+      {
+        "user": "Mr.Publius",
+        "count": 1,
+        "delta": 180
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 1,
+        "delta": 148
+      },
+      {
+        "user": "Sarthakniar",
+        "count": 1,
+        "delta": 147
+      },
+      {
+        "user": "Rjwilmsi",
+        "count": 1,
+        "delta": 144
+      },
+      {
+        "user": "Josve05a",
+        "count": 1,
+        "delta": 140
+      },
+      {
+        "user": "ZerodEgo",
+        "count": 1,
+        "delta": 117
+      },
+      {
+        "user": "Usernamekiran",
+        "count": 1,
+        "delta": 109
+      },
+      {
+        "user": "DocWatson42",
+        "count": 1,
+        "delta": 105
+      },
+      {
+        "user": "Jjfredregill",
+        "count": 1,
+        "delta": 89
+      },
+      {
+        "user": "Jepbdpop",
+        "count": 1,
+        "delta": 78
+      },
+      {
+        "user": "Omanyd",
+        "count": 1,
+        "delta": 70
+      },
+      {
+        "user": "Worldandhistory",
+        "count": 1,
+        "delta": 62
+      },
+      {
+        "user": "Lemondoge",
+        "count": 1,
+        "delta": 58
+      },
+      {
+        "user": "Kcorilol",
+        "count": 1,
+        "delta": 45
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 1,
+        "delta": 31
+      },
+      {
+        "user": "Jeppesn",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Democratics",
+        "count": 1,
+        "delta": 29
+      },
+      {
+        "user": "Weorthe",
+        "count": 1,
+        "delta": 27
+      },
+      {
+        "user": "Boorider7",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "Padgriffin",
+        "count": 1,
+        "delta": 21
+      },
+      {
+        "user": "Bmakailon",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Apuldram",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Joeinwiki",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "Jacklafo",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "JorisEnter",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Kajabla",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "CuriousMind01",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Sunrise",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Archlinux",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Bschandrasgr",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Scrossuk",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Terminator Series 800 Model 101",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Paine Ellsworth",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Joe Kress",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Bender the Bot",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Cgx8253",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "GreenC bot",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Hobbes Novakoff",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Brandmeister",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Brianga",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "CelestialStar14",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Mojo0306",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Mountainhead",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Super ninja2",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Btornado",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Ermahgerd9",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Pmaccabe",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Computer40",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "JJBers",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "DBrant (WMF)",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Woscafrench",
+        "count": 1,
+        "delta": -9
+      },
+      {
+        "user": "Niceguyedc",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "AlexanderLevian",
+        "count": 1,
+        "delta": -20
+      },
+      {
+        "user": "David Levy",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "Kaldari",
+        "count": 1,
+        "delta": -22
+      },
+      {
+        "user": "ClueBot NG",
+        "count": 1,
+        "delta": -23
+      },
+      {
+        "user": "Citation bot",
+        "count": 1,
+        "delta": -27
+      },
+      {
+        "user": "Bender235",
+        "count": 1,
+        "delta": -30
+      },
+      {
+        "user": "Sir Cumference",
+        "count": 1,
+        "delta": -30
+      },
+      {
+        "user": "Turkeybutt JC",
+        "count": 1,
+        "delta": -42
+      },
+      {
+        "user": "MarioProtIV",
+        "count": 1,
+        "delta": -68
+      },
+      {
+        "user": "CitationCleanerBot",
+        "count": 1,
+        "delta": -72
+      },
+      {
+        "user": "Smartse",
+        "count": 1,
+        "delta": -810
+      }
+    ]
+  },
+  {
+    "intervalStart": "2016-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "TheFreeWorld",
+        "count": 20,
+        "delta": 949
+      },
+      {
+        "user": "Bear-rings",
+        "count": 20,
+        "delta": 64
+      },
+      {
+        "user": "Huntster",
+        "count": 17,
+        "delta": -391
+      },
+      {
+        "user": "Drbogdan",
+        "count": 16,
+        "delta": 5467
+      },
+      {
+        "user": "Isambard Kingdom",
+        "count": 13,
+        "delta": 1191
+      },
+      {
+        "user": "Facts707",
+        "count": 12,
+        "delta": 108
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 8,
+        "delta": -50
+      },
+      {
+        "user": "Dbfirs",
+        "count": 7,
+        "delta": 189
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 6,
+        "delta": 1534
+      },
+      {
+        "user": "Zefr",
+        "count": 5,
+        "delta": 2087
+      },
+      {
+        "user": "Iggy the Swan",
+        "count": 5,
+        "delta": 228
+      },
+      {
+        "user": "Navarre0107",
+        "count": 5,
+        "delta": 201
+      },
+      {
+        "user": "A2soup",
+        "count": 5,
+        "delta": -34
+      },
+      {
+        "user": "Double sharp",
+        "count": 5,
+        "delta": -420
+      },
+      {
+        "user": "Sijadthelastpoet",
+        "count": 4,
+        "delta": 182
+      },
+      {
+        "user": "Bender the Bot",
+        "count": 4,
+        "delta": 9
+      },
+      {
+        "user": "MartinZ",
+        "count": 4,
+        "delta": -16
+      },
+      {
+        "user": "Attic Salt",
+        "count": 4,
+        "delta": -71
+      },
+      {
+        "user": "Praemonitus",
+        "count": 3,
+        "delta": 354
+      },
+      {
+        "user": "Pythoncoder",
+        "count": 3,
+        "delta": 248
+      },
+      {
+        "user": "Rjwilmsi",
+        "count": 3,
+        "delta": 220
+      },
+      {
+        "user": "Dlthewave",
+        "count": 3,
+        "delta": 187
+      },
+      {
+        "user": "Mindbuilder",
+        "count": 3,
+        "delta": 125
+      },
+      {
+        "user": "Dao1",
+        "count": 3,
+        "delta": -10
+      },
+      {
+        "user": "力",
+        "count": 3,
+        "delta": -816
+      },
+      {
+        "user": "Chiswick Chap",
+        "count": 3,
+        "delta": -2694
+      },
+      {
+        "user": "Bobbie73",
+        "count": 2,
+        "delta": 235
+      },
+      {
+        "user": "Dr.K.",
+        "count": 2,
+        "delta": 157
+      },
+      {
+        "user": "Ldweisberg",
+        "count": 2,
+        "delta": 72
+      },
+      {
+        "user": "Supertali64",
+        "count": 2,
+        "delta": 62
+      },
+      {
+        "user": "Hddty",
+        "count": 2,
+        "delta": 58
+      },
+      {
+        "user": "The Transhumanist",
+        "count": 2,
+        "delta": 55
+      },
+      {
+        "user": "Fmadd",
+        "count": 2,
+        "delta": 16
+      },
+      {
+        "user": "Headbomb",
+        "count": 2,
+        "delta": 16
+      },
+      {
+        "user": "Someguy432",
+        "count": 2,
+        "delta": 3
+      },
+      {
+        "user": "CheChe",
+        "count": 2,
+        "delta": -5
+      },
+      {
+        "user": "Redom115",
+        "count": 2,
+        "delta": -8
+      },
+      {
+        "user": "Woodstone",
+        "count": 2,
+        "delta": -10
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 2,
+        "delta": -56
+      },
+      {
+        "user": "Srich32977",
+        "count": 2,
+        "delta": -56
+      },
+      {
+        "user": "TwoTwoHello",
+        "count": 2,
+        "delta": -79
+      },
+      {
+        "user": "Kind Tennis Fan",
+        "count": 2,
+        "delta": -341
+      },
+      {
+        "user": "DrKay",
+        "count": 2,
+        "delta": -347
+      },
+      {
+        "user": "ArnoldReinhold",
+        "count": 1,
+        "delta": 163082
+      },
+      {
+        "user": "Spidersmilk",
+        "count": 1,
+        "delta": 2979
+      },
+      {
+        "user": "Prokaryotes",
+        "count": 1,
+        "delta": 298
+      },
+      {
+        "user": "Mareklug",
+        "count": 1,
+        "delta": 207
+      },
+      {
+        "user": "WikiImprovment78",
+        "count": 1,
+        "delta": 197
+      },
+      {
+        "user": "Anthony Appleyard",
+        "count": 1,
+        "delta": 113
+      },
+      {
+        "user": "WolfmanSF",
+        "count": 1,
+        "delta": 112
+      },
+      {
+        "user": "Geographyinitiative",
+        "count": 1,
+        "delta": 107
+      },
+      {
+        "user": "Padgriffin",
+        "count": 1,
+        "delta": 105
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 1,
+        "delta": 95
+      },
+      {
+        "user": "Piledhigheranddeeper",
+        "count": 1,
+        "delta": 79
+      },
+      {
+        "user": "Kellner21",
+        "count": 1,
+        "delta": 73
+      },
+      {
+        "user": "Nemo bis",
+        "count": 1,
+        "delta": 64
+      },
+      {
+        "user": "LuciferZH",
+        "count": 1,
+        "delta": 51
+      },
+      {
+        "user": "TheRedCityXFactor",
+        "count": 1,
+        "delta": 50
+      },
+      {
+        "user": "XeloriaGrand",
+        "count": 1,
+        "delta": 50
+      },
+      {
+        "user": "Drdpw",
+        "count": 1,
+        "delta": 39
+      },
+      {
+        "user": "Lopifalko",
+        "count": 1,
+        "delta": 31
+      },
+      {
+        "user": "SuperTurboChampionshipEdition",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Duncan.Hull",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "TheDragonFire",
+        "count": 1,
+        "delta": 27
+      },
+      {
+        "user": "Owain Knight",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Ubcule",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Rhombuth",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "JeanLucMargot",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "Samantha Ireland",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "Pinguinn",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "KolbertBot",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Jon Kolbert",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Magic links bot",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "The snare",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Ranjitbok",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "JEH",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "NeatNit",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "United Massachusetts",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Rodw",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Tomruen",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Bomb319",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Charlesdrakew",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Magic9mushroom",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Nick.mon",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Red Director",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Wayne Elgin",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "1618033golden",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "G0mx",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Narky Blert",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Rich Farmbrough",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "SuNaW",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Firth m",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "GreenC bot",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Robert1947",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Zmbro",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Computer40",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "PaleCloudedWhite",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Kku",
+        "count": 1,
+        "delta": -13
+      },
+      {
+        "user": "Lightlowemon",
+        "count": 1,
+        "delta": -13
+      },
+      {
+        "user": "TAnthony",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "Mykhal",
+        "count": 1,
+        "delta": -26
+      },
+      {
+        "user": "Citation bot",
+        "count": 1,
+        "delta": -27
+      },
+      {
+        "user": "WhatsUpWorld",
+        "count": 1,
+        "delta": -39
+      },
+      {
+        "user": "Exoplanetaryscience",
+        "count": 1,
+        "delta": -44
+      },
+      {
+        "user": "Saurusaurus",
+        "count": 1,
+        "delta": -51
+      },
+      {
+        "user": "Materialscientist",
+        "count": 1,
+        "delta": -105
+      },
+      {
+        "user": "DVdm",
+        "count": 1,
+        "delta": -235
+      },
+      {
+        "user": "Bongwarrior",
+        "count": 1,
+        "delta": -248
+      },
+      {
+        "user": "Dbachmann",
+        "count": 1,
+        "delta": -1525
+      },
+      {
+        "user": "I am. furhan.",
+        "count": 1,
+        "delta": -2115
+      },
+      {
+        "user": "Iboughttoomanygames",
+        "count": 1,
+        "delta": -163082
+      }
+    ]
+  },
+  {
+    "intervalStart": "2017-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Huntster",
+        "count": 18,
+        "delta": 1229
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 12,
+        "delta": 256
+      },
+      {
+        "user": "AhmadLX",
+        "count": 10,
+        "delta": -100
+      },
+      {
+        "user": "Drbogdan",
+        "count": 8,
+        "delta": -1529
+      },
+      {
+        "user": "ImprovedWikiImprovment",
+        "count": 7,
+        "delta": -7
+      },
+      {
+        "user": "Kenwick",
+        "count": 7,
+        "delta": -48
+      },
+      {
+        "user": "Joe Kress",
+        "count": 6,
+        "delta": 102
+      },
+      {
+        "user": "Magyar25",
+        "count": 6,
+        "delta": 27
+      },
+      {
+        "user": "Drow",
+        "count": 5,
+        "delta": 108
+      },
+      {
+        "user": "HopsonRoad",
+        "count": 4,
+        "delta": -17
+      },
+      {
+        "user": "Gorthian",
+        "count": 4,
+        "delta": -36
+      },
+      {
+        "user": "Keith-264",
+        "count": 4,
+        "delta": -83
+      },
+      {
+        "user": "Bear-rings",
+        "count": 3,
+        "delta": 146
+      },
+      {
+        "user": "Rhinopias",
+        "count": 3,
+        "delta": -58
+      },
+      {
+        "user": "Attic Salt",
+        "count": 3,
+        "delta": -73
+      },
+      {
+        "user": "Martin Gühmann",
+        "count": 3,
+        "delta": -89
+      },
+      {
+        "user": "ClueBot NG",
+        "count": 2,
+        "delta": 169601
+      },
+      {
+        "user": "Katolophyromai",
+        "count": 2,
+        "delta": 1103
+      },
+      {
+        "user": "Citation bot",
+        "count": 2,
+        "delta": 154
+      },
+      {
+        "user": "Joby.CC",
+        "count": 2,
+        "delta": 151
+      },
+      {
+        "user": "Fotaun",
+        "count": 2,
+        "delta": 139
+      },
+      {
+        "user": "Monster boy1",
+        "count": 2,
+        "delta": 136
+      },
+      {
+        "user": "Nemo bis",
+        "count": 2,
+        "delta": 127
+      },
+      {
+        "user": "NetrualEditor",
+        "count": 2,
+        "delta": 97
+      },
+      {
+        "user": "Bibcode Bot",
+        "count": 2,
+        "delta": 58
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 2,
+        "delta": 49
+      },
+      {
+        "user": "KolbertBot",
+        "count": 2,
+        "delta": 2
+      },
+      {
+        "user": "BabbaQ",
+        "count": 2,
+        "delta": -1
+      },
+      {
+        "user": "Mikenorton",
+        "count": 2,
+        "delta": -8
+      },
+      {
+        "user": "Srich32977",
+        "count": 2,
+        "delta": -34
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 2,
+        "delta": -411
+      },
+      {
+        "user": "Scootalmighty",
+        "count": 1,
+        "delta": 270
+      },
+      {
+        "user": "Richard75",
+        "count": 1,
+        "delta": 104
+      },
+      {
+        "user": "ВоенТех",
+        "count": 1,
+        "delta": 103
+      },
+      {
+        "user": "CTO HENRY",
+        "count": 1,
+        "delta": 70
+      },
+      {
+        "user": "Pbsouthwood",
+        "count": 1,
+        "delta": 69
+      },
+      {
+        "user": "Caryncliving",
+        "count": 1,
+        "delta": 68
+      },
+      {
+        "user": "DivermanAU",
+        "count": 1,
+        "delta": 59
+      },
+      {
+        "user": "TheTravelGuide",
+        "count": 1,
+        "delta": 57
+      },
+      {
+        "user": "The Anome",
+        "count": 1,
+        "delta": 56
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 1,
+        "delta": 42
+      },
+      {
+        "user": "Diverentyaseen",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Bomb319",
+        "count": 1,
+        "delta": 24
+      },
+      {
+        "user": "Onceinawhile",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Bbx118",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "CommanderOzEvolved",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Somedifferentstuff",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Beland",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Nov3rd17",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "SophieWhitton",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "Elijah Youngblood",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Armanschwarz",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Oliver Goransson",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Ckchurchyll",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "T.J.M",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Finnusertop",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Sidewinder",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Josebarbosa",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Sbb1413",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Deathmellow",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Abductive",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "七战功成",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Bender the Bot",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "TAnthony",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Unman Seams",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Cactusframe",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "CheChe",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Dlambe3",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Mrmw",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Arlo Barnes",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "NotARabbit",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Ryan8374",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Chiswick Chap",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "TwoTwoHello",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "Dbfirs",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Qzd",
+        "count": 1,
+        "delta": -9
+      },
+      {
+        "user": "42Dice",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "Aeonx",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "Smasongarrison",
+        "count": 1,
+        "delta": -16
+      },
+      {
+        "user": "Headbomb",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 1,
+        "delta": -20
+      },
+      {
+        "user": "Legacypac",
+        "count": 1,
+        "delta": -23
+      },
+      {
+        "user": "Iggy the Swan",
+        "count": 1,
+        "delta": -24
+      },
+      {
+        "user": "Serols",
+        "count": 1,
+        "delta": -26
+      },
+      {
+        "user": "Mean as custard",
+        "count": 1,
+        "delta": -44
+      },
+      {
+        "user": "Miracle Pen",
+        "count": 1,
+        "delta": -56
+      },
+      {
+        "user": "JCW-CleanerBot",
+        "count": 1,
+        "delta": -208
+      },
+      {
+        "user": "Eevin",
+        "count": 1,
+        "delta": -169658
+      }
+    ]
+  },
+  {
+    "intervalStart": "2018-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Dhtwiki",
+        "count": 11,
+        "delta": -23716
+      },
+      {
+        "user": "Tajotep",
+        "count": 7,
+        "delta": 2936
+      },
+      {
+        "user": "Drbogdan",
+        "count": 7,
+        "delta": 309
+      },
+      {
+        "user": "Eivindgh",
+        "count": 6,
+        "delta": 361
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 5,
+        "delta": 1121
+      },
+      {
+        "user": "Zuuur333999",
+        "count": 5,
+        "delta": -105
+      },
+      {
+        "user": "DrKay",
+        "count": 5,
+        "delta": -934
+      },
+      {
+        "user": "Fgnievinski",
+        "count": 4,
+        "delta": 217
+      },
+      {
+        "user": "Mazewaxie",
+        "count": 4,
+        "delta": 196
+      },
+      {
+        "user": "Citation bot",
+        "count": 4,
+        "delta": -872
+      },
+      {
+        "user": "Cosmicseeds",
+        "count": 3,
+        "delta": 871
+      },
+      {
+        "user": "Joe Kress",
+        "count": 3,
+        "delta": 202
+      },
+      {
+        "user": "Mikenorton",
+        "count": 3,
+        "delta": 18
+      },
+      {
+        "user": "Monkbot",
+        "count": 3,
+        "delta": -19
+      },
+      {
+        "user": "Gtmkm98",
+        "count": 2,
+        "delta": 1154
+      },
+      {
+        "user": "X1\\",
+        "count": 2,
+        "delta": 1080
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 2,
+        "delta": 1078
+      },
+      {
+        "user": "Student7",
+        "count": 2,
+        "delta": 811
+      },
+      {
+        "user": "Gorthian",
+        "count": 2,
+        "delta": 198
+      },
+      {
+        "user": "Sbznpoe",
+        "count": 2,
+        "delta": 89
+      },
+      {
+        "user": "Gregory Macbell",
+        "count": 2,
+        "delta": 37
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 2,
+        "delta": 19
+      },
+      {
+        "user": "Bloodofox",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Spyder212",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Zackmann08",
+        "count": 2,
+        "delta": -47
+      },
+      {
+        "user": "AhmadLX",
+        "count": 2,
+        "delta": -52
+      },
+      {
+        "user": "Headbomb",
+        "count": 2,
+        "delta": -1080
+      },
+      {
+        "user": "DuncanHill",
+        "count": 2,
+        "delta": -1121
+      },
+      {
+        "user": "Greyjoy",
+        "count": 1,
+        "delta": 175766
+      },
+      {
+        "user": "Ainz Ooal Gown",
+        "count": 1,
+        "delta": 21921
+      },
+      {
+        "user": "Dabit100",
+        "count": 1,
+        "delta": 625
+      },
+      {
+        "user": "Cedders",
+        "count": 1,
+        "delta": 509
+      },
+      {
+        "user": "Firnanda.Reena",
+        "count": 1,
+        "delta": 352
+      },
+      {
+        "user": "Pawankshonline",
+        "count": 1,
+        "delta": 345
+      },
+      {
+        "user": "Omanyd",
+        "count": 1,
+        "delta": 282
+      },
+      {
+        "user": "Widjididji",
+        "count": 1,
+        "delta": 198
+      },
+      {
+        "user": "TheVeryHappyKoala",
+        "count": 1,
+        "delta": 192
+      },
+      {
+        "user": "Luzomim",
+        "count": 1,
+        "delta": 177
+      },
+      {
+        "user": "Afernand74",
+        "count": 1,
+        "delta": 159
+      },
+      {
+        "user": "Roboting",
+        "count": 1,
+        "delta": 153
+      },
+      {
+        "user": "Bcharles",
+        "count": 1,
+        "delta": 148
+      },
+      {
+        "user": "RL0919",
+        "count": 1,
+        "delta": 112
+      },
+      {
+        "user": "Nemo bis",
+        "count": 1,
+        "delta": 104
+      },
+      {
+        "user": "SUM1",
+        "count": 1,
+        "delta": 103
+      },
+      {
+        "user": "Jack90s15",
+        "count": 1,
+        "delta": 86
+      },
+      {
+        "user": "RockMagnetist (DCO visiting scholar)",
+        "count": 1,
+        "delta": 68
+      },
+      {
+        "user": "Spoonlegs",
+        "count": 1,
+        "delta": 61
+      },
+      {
+        "user": "Nzd",
+        "count": 1,
+        "delta": 57
+      },
+      {
+        "user": "Sansthepunster",
+        "count": 1,
+        "delta": 48
+      },
+      {
+        "user": "Hansen Sebastian's 2nd",
+        "count": 1,
+        "delta": 37
+      },
+      {
+        "user": "Ashutosh Jha",
+        "count": 1,
+        "delta": 29
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 1,
+        "delta": 27
+      },
+      {
+        "user": "Dbachmann",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Oronsay",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "ERAGON",
+        "count": 1,
+        "delta": 24
+      },
+      {
+        "user": "X12503181",
+        "count": 1,
+        "delta": 24
+      },
+      {
+        "user": "VQuakr",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "Earthsound",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Jorge Stolfi",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Sam Sailor",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Teddy707",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "RonBot",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "GreenC bot",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "VochoCuong2904",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Chogg",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "InvalidOS",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "TheDragonFire",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "BrownHairedGirl",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Zanygenius",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "The Anome",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Epa101",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Jprg1966",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Crispie production",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Jason.W.Watkins",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Prahlad balaji",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Oldstone James",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "RedLightningStrike",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Rfassbind",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "CremationLily",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Interstellarity",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Skeptic2",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Tom.Reding",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Johnbod",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Rain drop 45",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Boghog",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Burscrave",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Finnusertop",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Double sharp",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "Qono",
+        "count": 1,
+        "delta": -12
+      },
+      {
+        "user": "Pine",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "The NMI User",
+        "count": 1,
+        "delta": -16
+      },
+      {
+        "user": "Trialpears",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Smeagol 17",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "SporkBot",
+        "count": 1,
+        "delta": -26
+      },
+      {
+        "user": "Vif12vf",
+        "count": 1,
+        "delta": -29
+      },
+      {
+        "user": "Vsmith",
+        "count": 1,
+        "delta": -46
+      },
+      {
+        "user": "Charlesdrakew",
+        "count": 1,
+        "delta": -48
+      },
+      {
+        "user": "Keith o",
+        "count": 1,
+        "delta": -97
+      },
+      {
+        "user": "Rhinopias",
+        "count": 1,
+        "delta": -153
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 1,
+        "delta": -192
+      },
+      {
+        "user": "Praxidicae",
+        "count": 1,
+        "delta": -345
+      },
+      {
+        "user": "Kashawn78",
+        "count": 1,
+        "delta": -1219
+      },
+      {
+        "user": "Spy-cicle",
+        "count": 1,
+        "delta": -4425
+      },
+      {
+        "user": "Jules8527",
+        "count": 1,
+        "delta": -175766
+      }
+    ]
+  },
+  {
+    "intervalStart": "2019-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Femke",
+        "count": 136,
+        "delta": -8284
+      },
+      {
+        "user": "Devonian Wombat",
+        "count": 45,
+        "delta": 3560
+      },
+      {
+        "user": "Mikenorton",
+        "count": 29,
+        "delta": 1483
+      },
+      {
+        "user": "GeoWriter",
+        "count": 25,
+        "delta": 330
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 14,
+        "delta": -253
+      },
+      {
+        "user": "Hanif Al Husaini",
+        "count": 11,
+        "delta": 319
+      },
+      {
+        "user": "RetiredDuke",
+        "count": 10,
+        "delta": 445
+      },
+      {
+        "user": "Chidgk1",
+        "count": 10,
+        "delta": -2154
+      },
+      {
+        "user": "Nsae Comp",
+        "count": 9,
+        "delta": 861
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 8,
+        "delta": 1288
+      },
+      {
+        "user": "Drbogdan",
+        "count": 7,
+        "delta": 5172
+      },
+      {
+        "user": "Citation bot",
+        "count": 6,
+        "delta": 716
+      },
+      {
+        "user": "Zuuur333999",
+        "count": 6,
+        "delta": 689
+      },
+      {
+        "user": "Maxeto0910",
+        "count": 6,
+        "delta": -2
+      },
+      {
+        "user": "Joe Kress",
+        "count": 5,
+        "delta": 48
+      },
+      {
+        "user": "Magyar25",
+        "count": 5,
+        "delta": -47
+      },
+      {
+        "user": "DrKay",
+        "count": 5,
+        "delta": -899
+      },
+      {
+        "user": "Sbb1413",
+        "count": 4,
+        "delta": 17
+      },
+      {
+        "user": "WRChinChin",
+        "count": 4,
+        "delta": 7
+      },
+      {
+        "user": "ConfusedEnoch",
+        "count": 3,
+        "delta": 348
+      },
+      {
+        "user": "OAbot",
+        "count": 3,
+        "delta": 248
+      },
+      {
+        "user": "Bmg721",
+        "count": 3,
+        "delta": 99
+      },
+      {
+        "user": "Renamed user 5097696514",
+        "count": 3,
+        "delta": 91
+      },
+      {
+        "user": "Carlo Colussi",
+        "count": 3,
+        "delta": 69
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 3,
+        "delta": 37
+      },
+      {
+        "user": "John M Wolfson",
+        "count": 3,
+        "delta": 6
+      },
+      {
+        "user": "Woodstone",
+        "count": 3,
+        "delta": -12
+      },
+      {
+        "user": "Erkinalp9035",
+        "count": 3,
+        "delta": -13
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 3,
+        "delta": -695
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 2,
+        "delta": 459
+      },
+      {
+        "user": "Edegonz",
+        "count": 2,
+        "delta": 457
+      },
+      {
+        "user": "John Cummings",
+        "count": 2,
+        "delta": 407
+      },
+      {
+        "user": "Eliko007",
+        "count": 2,
+        "delta": 358
+      },
+      {
+        "user": "EEng",
+        "count": 2,
+        "delta": 44
+      },
+      {
+        "user": "Keresluna",
+        "count": 2,
+        "delta": 43
+      },
+      {
+        "user": "JeffreyLoeber",
+        "count": 2,
+        "delta": 33
+      },
+      {
+        "user": "KConWiki",
+        "count": 2,
+        "delta": 31
+      },
+      {
+        "user": "Narky Blert",
+        "count": 2,
+        "delta": 23
+      },
+      {
+        "user": "Abejschwartz",
+        "count": 2,
+        "delta": 8
+      },
+      {
+        "user": "Bender the Bot",
+        "count": 2,
+        "delta": 2
+      },
+      {
+        "user": "Andrybak",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Brandmeister",
+        "count": 2,
+        "delta": -14
+      },
+      {
+        "user": "Kenwick",
+        "count": 2,
+        "delta": -23
+      },
+      {
+        "user": "Unknowntouncertain",
+        "count": 2,
+        "delta": -72
+      },
+      {
+        "user": "Monkbot",
+        "count": 2,
+        "delta": -91
+      },
+      {
+        "user": "SperxTrix22",
+        "count": 2,
+        "delta": -344
+      },
+      {
+        "user": "Canucklehead",
+        "count": 1,
+        "delta": 10933
+      },
+      {
+        "user": "Fort-Saket",
+        "count": 1,
+        "delta": 5601
+      },
+      {
+        "user": "Afernand74",
+        "count": 1,
+        "delta": 249
+      },
+      {
+        "user": "Kheider",
+        "count": 1,
+        "delta": 183
+      },
+      {
+        "user": "DanCherek",
+        "count": 1,
+        "delta": 172
+      },
+      {
+        "user": "Onceinawhile",
+        "count": 1,
+        "delta": 172
+      },
+      {
+        "user": "蟲蟲飛",
+        "count": 1,
+        "delta": 172
+      },
+      {
+        "user": "Vanished user 9852955",
+        "count": 1,
+        "delta": 131
+      },
+      {
+        "user": "Fgnievinski",
+        "count": 1,
+        "delta": 81
+      },
+      {
+        "user": "Þjarkur",
+        "count": 1,
+        "delta": 76
+      },
+      {
+        "user": "Minemaster1337",
+        "count": 1,
+        "delta": 50
+      },
+      {
+        "user": "The Man in Question",
+        "count": 1,
+        "delta": 47
+      },
+      {
+        "user": "Christophe1946",
+        "count": 1,
+        "delta": 35
+      },
+      {
+        "user": "Delta1156",
+        "count": 1,
+        "delta": 34
+      },
+      {
+        "user": "Prototyperspective",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Ahri6279",
+        "count": 1,
+        "delta": 27
+      },
+      {
+        "user": "Fgrosshans",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "JJMC89 bot III",
+        "count": 1,
+        "delta": 21
+      },
+      {
+        "user": "JoKalliauer",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "YTRK",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "Anita5192",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "ImmortalWizard",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Sugeeth Jayaraj",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Aveh8",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Kreggon",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "RobThomas15",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Atkinson 291",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Dineshswamiin",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Anachronist",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Tony1",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "MagPlex",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Mjzudba",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Richton Shore",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Lucca Mito",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "MusenInvincible",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "HeartlessMind",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Jarred C Lloyd",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Arcorann",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "BHGbot",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "FlaxenHobbit",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Gregory Macbell",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Josqu",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "OlorinakaGandalf",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rebestalic",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Zishhuuu",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Chompy Ace",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Keith D",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "R. G. Checkers",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Eric0928",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Heartfox",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Mike4ty4",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "BernardoSulzbach",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "Doug Weller",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "El C",
+        "count": 1,
+        "delta": -8
+      },
+      {
+        "user": "WikiCleanerBot",
+        "count": 1,
+        "delta": -9
+      },
+      {
+        "user": "Hemiauchenia",
+        "count": 1,
+        "delta": -25
+      },
+      {
+        "user": "NuclearWarfare",
+        "count": 1,
+        "delta": -32
+      },
+      {
+        "user": "Gonnym",
+        "count": 1,
+        "delta": -37
+      },
+      {
+        "user": "Gerald Waldo Luis",
+        "count": 1,
+        "delta": -43
+      },
+      {
+        "user": "Peterwu2019",
+        "count": 1,
+        "delta": -44
+      },
+      {
+        "user": "Plastikspork",
+        "count": 1,
+        "delta": -56
+      },
+      {
+        "user": "Bzweebl",
+        "count": 1,
+        "delta": -85
+      },
+      {
+        "user": "FlightTime",
+        "count": 1,
+        "delta": -95
+      },
+      {
+        "user": "力",
+        "count": 1,
+        "delta": -102
+      },
+      {
+        "user": "GenQuest",
+        "count": 1,
+        "delta": -107
+      },
+      {
+        "user": "Graham Beards",
+        "count": 1,
+        "delta": -128
+      },
+      {
+        "user": "Drchriswilliams",
+        "count": 1,
+        "delta": -267
+      },
+      {
+        "user": "Nillurcheier",
+        "count": 1,
+        "delta": -355
+      },
+      {
+        "user": "Isaidnoway",
+        "count": 1,
+        "delta": -809
+      },
+      {
+        "user": "Sandstein",
+        "count": 1,
+        "delta": -965
+      },
+      {
+        "user": "Deacon Vorbis",
+        "count": 1,
+        "delta": -3225
+      },
+      {
+        "user": "Tbhotch",
+        "count": 1,
+        "delta": -5601
+      },
+      {
+        "user": "Imagine offline",
+        "count": 1,
+        "delta": -10933
+      }
+    ]
+  },
+  {
+    "intervalStart": "2020-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Devonian Wombat",
+        "count": 33,
+        "delta": 2338
+      },
+      {
+        "user": "Citation bot",
+        "count": 15,
+        "delta": -667
+      },
+      {
+        "user": "Femke",
+        "count": 15,
+        "delta": -893
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 12,
+        "delta": 189
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 12,
+        "delta": -98851
+      },
+      {
+        "user": "Osunpokeh",
+        "count": 7,
+        "delta": 3407
+      },
+      {
+        "user": "Keesal",
+        "count": 6,
+        "delta": -441
+      },
+      {
+        "user": "Hexakaidecanitarian",
+        "count": 5,
+        "delta": 37
+      },
+      {
+        "user": "Fgnievinski",
+        "count": 4,
+        "delta": 183
+      },
+      {
+        "user": "OAbot",
+        "count": 4,
+        "delta": 84
+      },
+      {
+        "user": "Panchajanya5",
+        "count": 4,
+        "delta": 42
+      },
+      {
+        "user": "GeoWriter",
+        "count": 4,
+        "delta": 17
+      },
+      {
+        "user": "Mikenorton",
+        "count": 4,
+        "delta": -20
+      },
+      {
+        "user": "Nsae Comp",
+        "count": 3,
+        "delta": 171
+      },
+      {
+        "user": "Abysshark",
+        "count": 3,
+        "delta": 151
+      },
+      {
+        "user": "Kheider",
+        "count": 3,
+        "delta": 151
+      },
+      {
+        "user": "Reedcspurling",
+        "count": 3,
+        "delta": 11
+      },
+      {
+        "user": "Ritenerek",
+        "count": 3,
+        "delta": -19
+      },
+      {
+        "user": "Undid",
+        "count": 3,
+        "delta": -21
+      },
+      {
+        "user": "Mrytzkalmyr",
+        "count": 3,
+        "delta": -43
+      },
+      {
+        "user": "Surtsicna",
+        "count": 3,
+        "delta": -237
+      },
+      {
+        "user": "GodNey",
+        "count": 2,
+        "delta": 26042
+      },
+      {
+        "user": "Bikesrcool",
+        "count": 2,
+        "delta": 287
+      },
+      {
+        "user": "Kehkou",
+        "count": 2,
+        "delta": 136
+      },
+      {
+        "user": "Thrownfootfalls",
+        "count": 2,
+        "delta": 113
+      },
+      {
+        "user": "CiaPan",
+        "count": 2,
+        "delta": 41
+      },
+      {
+        "user": "MarioProtIV",
+        "count": 2,
+        "delta": 16
+      },
+      {
+        "user": "I dream of horses",
+        "count": 2,
+        "delta": 15
+      },
+      {
+        "user": "Michael Barera",
+        "count": 2,
+        "delta": 13
+      },
+      {
+        "user": "Pachu Kannan",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Ravenpuff",
+        "count": 2,
+        "delta": -1
+      },
+      {
+        "user": "Sdkb",
+        "count": 2,
+        "delta": -2
+      },
+      {
+        "user": "Jmchutchinson",
+        "count": 2,
+        "delta": -12
+      },
+      {
+        "user": "Goszei",
+        "count": 2,
+        "delta": -23
+      },
+      {
+        "user": "Wretchskull",
+        "count": 2,
+        "delta": -82
+      },
+      {
+        "user": "Firebrace",
+        "count": 2,
+        "delta": -134
+      },
+      {
+        "user": "DrKay",
+        "count": 2,
+        "delta": -782
+      },
+      {
+        "user": "Yitzilitt",
+        "count": 1,
+        "delta": 26135
+      },
+      {
+        "user": "Horsesizedduck",
+        "count": 1,
+        "delta": 23541
+      },
+      {
+        "user": "CactiStaccingCrane",
+        "count": 1,
+        "delta": 23445
+      },
+      {
+        "user": "Ftrebien",
+        "count": 1,
+        "delta": 456
+      },
+      {
+        "user": "ChristmasNightmare",
+        "count": 1,
+        "delta": 442
+      },
+      {
+        "user": "ContaDeletada1993",
+        "count": 1,
+        "delta": 397
+      },
+      {
+        "user": "DiagramLover",
+        "count": 1,
+        "delta": 159
+      },
+      {
+        "user": "Thanatos666",
+        "count": 1,
+        "delta": 121
+      },
+      {
+        "user": "Kenmayer",
+        "count": 1,
+        "delta": 111
+      },
+      {
+        "user": "Rubix wombat",
+        "count": 1,
+        "delta": 62
+      },
+      {
+        "user": "SnowyCatgirl",
+        "count": 1,
+        "delta": 61
+      },
+      {
+        "user": "GreenC bot",
+        "count": 1,
+        "delta": 57
+      },
+      {
+        "user": "SlugStream",
+        "count": 1,
+        "delta": 40
+      },
+      {
+        "user": "Exoplanetaryscience",
+        "count": 1,
+        "delta": 37
+      },
+      {
+        "user": "Mgkrupa",
+        "count": 1,
+        "delta": 24
+      },
+      {
+        "user": "Finnusertop",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "JsfasdF252",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "RenatUK",
+        "count": 1,
+        "delta": 21
+      },
+      {
+        "user": "Lennart97",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "Bernardwebb357",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Northamerica1000",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Chompy Ace",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "JoeNMLC",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "JurassicClassic767",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "BigRed606",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Rodw",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Cccairooo",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Anggona Era",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Christophe1946",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Nick.mon",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Robin klein",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "CoffeeHawk",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Hayden",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Michaelandsandy",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Maxipups Mamsipupsovich",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "BladeJogger2049",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Cannolis",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Elevedevie",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Meelar",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "StarryNightSky11",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "DianaCLnomad",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "FriedrichKieferer",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "HmmOily",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Piledhigheranddeeper",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Praemonitus",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "YMVD",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Novem Linguae",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Cyrobyte",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Shield543",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Hmusseau",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "JCW-CleanerBot",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Paul August",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Frostly",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "WikiCleanerBot",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "Dineshswamiin",
+        "count": 1,
+        "delta": -16
+      },
+      {
+        "user": "ASploopyPerson",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Ponor",
+        "count": 1,
+        "delta": -22
+      },
+      {
+        "user": "RPH",
+        "count": 1,
+        "delta": -26
+      },
+      {
+        "user": "ObserveOwl",
+        "count": 1,
+        "delta": -62
+      },
+      {
+        "user": "Eric0928",
+        "count": 1,
+        "delta": -77
+      },
+      {
+        "user": "Iodineserpent",
+        "count": 1,
+        "delta": -95
+      },
+      {
+        "user": "Srich32977",
+        "count": 1,
+        "delta": -126
+      },
+      {
+        "user": "JeffUK",
+        "count": 1,
+        "delta": -159
+      },
+      {
+        "user": "Rsjaffe",
+        "count": 1,
+        "delta": -200
+      }
+    ]
+  },
+  {
+    "intervalStart": "2021-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Nsae Comp",
+        "count": 240,
+        "delta": 17063
+      },
+      {
+        "user": "CactiStaccingCrane",
+        "count": 47,
+        "delta": 42135
+      },
+      {
+        "user": "Femke",
+        "count": 35,
+        "delta": -1240
+      },
+      {
+        "user": "GeoWriter",
+        "count": 18,
+        "delta": 907
+      },
+      {
+        "user": "Dsp13",
+        "count": 15,
+        "delta": 696
+      },
+      {
+        "user": "Citation bot",
+        "count": 10,
+        "delta": -457
+      },
+      {
+        "user": "Mikenorton",
+        "count": 8,
+        "delta": -2524
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 6,
+        "delta": 1101
+      },
+      {
+        "user": "Aaron1a12",
+        "count": 6,
+        "delta": 2
+      },
+      {
+        "user": "Jc3s5h",
+        "count": 6,
+        "delta": -139
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 6,
+        "delta": -46966
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 5,
+        "delta": 47
+      },
+      {
+        "user": "Devonian Wombat",
+        "count": 4,
+        "delta": 2
+      },
+      {
+        "user": "Maxeto0910",
+        "count": 4,
+        "delta": -1
+      },
+      {
+        "user": "Finnusertop",
+        "count": 3,
+        "delta": 952
+      },
+      {
+        "user": "Virapaligautam",
+        "count": 3,
+        "delta": 501
+      },
+      {
+        "user": "GreenC bot",
+        "count": 3,
+        "delta": 276
+      },
+      {
+        "user": "Drbogdan",
+        "count": 3,
+        "delta": 187
+      },
+      {
+        "user": "Wikieditor321123",
+        "count": 3,
+        "delta": 139
+      },
+      {
+        "user": "N. Mortimer",
+        "count": 3,
+        "delta": 114
+      },
+      {
+        "user": "Vic Park",
+        "count": 3,
+        "delta": 82
+      },
+      {
+        "user": "Praemonitus",
+        "count": 3,
+        "delta": 51
+      },
+      {
+        "user": "HeyElliott",
+        "count": 3,
+        "delta": 36
+      },
+      {
+        "user": "Chidgk1",
+        "count": 3,
+        "delta": 9
+      },
+      {
+        "user": "CrafterNova",
+        "count": 3,
+        "delta": 6
+      },
+      {
+        "user": "Clayoquot",
+        "count": 3,
+        "delta": -7
+      },
+      {
+        "user": "Vectoor",
+        "count": 3,
+        "delta": -55
+      },
+      {
+        "user": "ValuedSalah11",
+        "count": 3,
+        "delta": -81
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 2,
+        "delta": 703
+      },
+      {
+        "user": "MarioProtIV",
+        "count": 2,
+        "delta": 353
+      },
+      {
+        "user": "Josephwhyman041104",
+        "count": 2,
+        "delta": 207
+      },
+      {
+        "user": "Sciencia58",
+        "count": 2,
+        "delta": 98
+      },
+      {
+        "user": "Bdj22",
+        "count": 2,
+        "delta": 58
+      },
+      {
+        "user": "DFlhb",
+        "count": 2,
+        "delta": 40
+      },
+      {
+        "user": "Rudyon",
+        "count": 2,
+        "delta": 37
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 2,
+        "delta": 15
+      },
+      {
+        "user": "Randomdudewithinternet",
+        "count": 2,
+        "delta": 13
+      },
+      {
+        "user": "SpicyMemes123",
+        "count": 2,
+        "delta": 4
+      },
+      {
+        "user": "JPxG",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "SlashSaveSmash123",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "McSly",
+        "count": 2,
+        "delta": -6
+      },
+      {
+        "user": "Cambalachero",
+        "count": 2,
+        "delta": -14
+      },
+      {
+        "user": "Thrakkx",
+        "count": 2,
+        "delta": -58
+      },
+      {
+        "user": "Davide King",
+        "count": 2,
+        "delta": -72
+      },
+      {
+        "user": "Dawnseeker2000",
+        "count": 2,
+        "delta": -105
+      },
+      {
+        "user": "Vsmith",
+        "count": 2,
+        "delta": -211
+      },
+      {
+        "user": "NebY",
+        "count": 2,
+        "delta": -258
+      },
+      {
+        "user": "Horsesizedduck",
+        "count": 2,
+        "delta": -548
+      },
+      {
+        "user": "Michael7604",
+        "count": 2,
+        "delta": -863
+      },
+      {
+        "user": "Rlink2",
+        "count": 1,
+        "delta": 970
+      },
+      {
+        "user": "IsaiahThompsonMusic",
+        "count": 1,
+        "delta": 685
+      },
+      {
+        "user": "Marsharbt",
+        "count": 1,
+        "delta": 524
+      },
+      {
+        "user": "L-townbound",
+        "count": 1,
+        "delta": 259
+      },
+      {
+        "user": "TheWxResearcher",
+        "count": 1,
+        "delta": 255
+      },
+      {
+        "user": "Aliahmad79",
+        "count": 1,
+        "delta": 151
+      },
+      {
+        "user": "Nigoyyakot",
+        "count": 1,
+        "delta": 117
+      },
+      {
+        "user": "WillisHershey",
+        "count": 1,
+        "delta": 112
+      },
+      {
+        "user": "Pppery",
+        "count": 1,
+        "delta": 103
+      },
+      {
+        "user": "Tofubird",
+        "count": 1,
+        "delta": 95
+      },
+      {
+        "user": "Gibranalnn",
+        "count": 1,
+        "delta": 88
+      },
+      {
+        "user": "CuteAnimeBoyWithoutArms",
+        "count": 1,
+        "delta": 82
+      },
+      {
+        "user": "Brevitate",
+        "count": 1,
+        "delta": 73
+      },
+      {
+        "user": "Aaron Liu",
+        "count": 1,
+        "delta": 64
+      },
+      {
+        "user": "Mammoth500",
+        "count": 1,
+        "delta": 48
+      },
+      {
+        "user": "AwfulReader",
+        "count": 1,
+        "delta": 40
+      },
+      {
+        "user": "Priyasidhika456",
+        "count": 1,
+        "delta": 40
+      },
+      {
+        "user": "Lyndon George",
+        "count": 1,
+        "delta": 38
+      },
+      {
+        "user": "Immeasurable radiance",
+        "count": 1,
+        "delta": 35
+      },
+      {
+        "user": "Keesal",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Bikesrcool",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Neils51",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Professor Penguino",
+        "count": 1,
+        "delta": 12
+      },
+      {
+        "user": "Belbury",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "EMsmile",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "TheTerrificTurtwig",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "ClintDK",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Goszei",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "JuxtaposedJacob",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Lee Vilenski",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Tamzin",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Fgnievinski",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "FinnSoThin",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Hanif Al Husaini",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Titan877",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Theleekycauldron",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "CIN I&II",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Cryptic.rat",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Furrypride2010",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "CalliopeMuse",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "DB1729",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Ehrenkater",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Geopersona",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Embyarby",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "HiLo48",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "User1042",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Fabvill",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Wretchskull",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Spacemarine10",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Bruce1ee",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Faren29",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Kheider",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Furius",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "SammyLikesHistory",
+        "count": 1,
+        "delta": -7
+      },
+      {
+        "user": "Splodman",
+        "count": 1,
+        "delta": -9
+      },
+      {
+        "user": "Maddy from Celeste",
+        "count": 1,
+        "delta": -12
+      },
+      {
+        "user": "SibeliusHicks",
+        "count": 1,
+        "delta": -13
+      },
+      {
+        "user": "ButterCashier",
+        "count": 1,
+        "delta": -15
+      },
+      {
+        "user": "Smasongarrison",
+        "count": 1,
+        "delta": -20
+      },
+      {
+        "user": "Phlsph7",
+        "count": 1,
+        "delta": -24
+      },
+      {
+        "user": "Treetoes023",
+        "count": 1,
+        "delta": -24
+      },
+      {
+        "user": "Nordostsüdwest",
+        "count": 1,
+        "delta": -36
+      },
+      {
+        "user": "Facts707",
+        "count": 1,
+        "delta": -48
+      },
+      {
+        "user": "Just plain Bill",
+        "count": 1,
+        "delta": -48
+      },
+      {
+        "user": "OliveYouBean",
+        "count": 1,
+        "delta": -76
+      },
+      {
+        "user": "ClueBot NG",
+        "count": 1,
+        "delta": -82
+      },
+      {
+        "user": "Twinsday",
+        "count": 1,
+        "delta": -99
+      },
+      {
+        "user": "Pachu Kannan",
+        "count": 1,
+        "delta": -112
+      },
+      {
+        "user": "Velella",
+        "count": 1,
+        "delta": -501
+      },
+      {
+        "user": "Meters",
+        "count": 1,
+        "delta": -685
+      },
+      {
+        "user": "Jbening",
+        "count": 1,
+        "delta": -688
+      },
+      {
+        "user": "Osunpokeh",
+        "count": 1,
+        "delta": -1533
+      }
+    ]
+  },
+  {
+    "intervalStart": "2022-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Nsae Comp",
+        "count": 151,
+        "delta": 6701
+      },
+      {
+        "user": "Keystone18",
+        "count": 22,
+        "delta": 204
+      },
+      {
+        "user": "GeoWriter",
+        "count": 18,
+        "delta": 26
+      },
+      {
+        "user": "CactiStaccingCrane",
+        "count": 13,
+        "delta": -524
+      },
+      {
+        "user": "Vic Park",
+        "count": 11,
+        "delta": 671
+      },
+      {
+        "user": "Citation bot",
+        "count": 10,
+        "delta": 80
+      },
+      {
+        "user": "Devonian Wombat",
+        "count": 8,
+        "delta": -826
+      },
+      {
+        "user": "Quondum",
+        "count": 6,
+        "delta": 23
+      },
+      {
+        "user": "MadeOfAtoms",
+        "count": 6,
+        "delta": -165
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 6,
+        "delta": -49337
+      },
+      {
+        "user": "GreenC bot",
+        "count": 4,
+        "delta": 732
+      },
+      {
+        "user": "Dsp13",
+        "count": 4,
+        "delta": 115
+      },
+      {
+        "user": "000000xd",
+        "count": 4,
+        "delta": 0
+      },
+      {
+        "user": "Mikenorton",
+        "count": 4,
+        "delta": -5
+      },
+      {
+        "user": "Meno25",
+        "count": 4,
+        "delta": -30
+      },
+      {
+        "user": "Homeostasis39",
+        "count": 4,
+        "delta": -446
+      },
+      {
+        "user": "Chaiten1",
+        "count": 4,
+        "delta": -1019
+      },
+      {
+        "user": "Drbogdan",
+        "count": 3,
+        "delta": 2217
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 3,
+        "delta": 1006
+      },
+      {
+        "user": "Danielsltt",
+        "count": 3,
+        "delta": 192
+      },
+      {
+        "user": "OAbot",
+        "count": 3,
+        "delta": 124
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 3,
+        "delta": 49
+      },
+      {
+        "user": "Ayush Suthar",
+        "count": 3,
+        "delta": -129
+      },
+      {
+        "user": "Meters",
+        "count": 2,
+        "delta": 815
+      },
+      {
+        "user": "Wikieditor321123",
+        "count": 2,
+        "delta": 108
+      },
+      {
+        "user": "Ervin111899",
+        "count": 2,
+        "delta": 106
+      },
+      {
+        "user": "HeyElliott",
+        "count": 2,
+        "delta": 55
+      },
+      {
+        "user": "Aza24",
+        "count": 2,
+        "delta": 51
+      },
+      {
+        "user": "ScarletViolet",
+        "count": 2,
+        "delta": 25
+      },
+      {
+        "user": "Frzzl",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Ni'jluuseger",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "Omnipaedista",
+        "count": 2,
+        "delta": 0
+      },
+      {
+        "user": "HiLo48",
+        "count": 2,
+        "delta": -3
+      },
+      {
+        "user": "JJMC89 bot III",
+        "count": 2,
+        "delta": -91
+      },
+      {
+        "user": "Rasnaboy",
+        "count": 2,
+        "delta": -137
+      },
+      {
+        "user": "Macaddct1984",
+        "count": 1,
+        "delta": 197755
+      },
+      {
+        "user": "Referencer12",
+        "count": 1,
+        "delta": 25049
+      },
+      {
+        "user": "Real4jyy",
+        "count": 1,
+        "delta": 24886
+      },
+      {
+        "user": "FandomCereal",
+        "count": 1,
+        "delta": 475
+      },
+      {
+        "user": "Iggy the Swan",
+        "count": 1,
+        "delta": 155
+      },
+      {
+        "user": "BlackholeWA",
+        "count": 1,
+        "delta": 132
+      },
+      {
+        "user": "Amakuru",
+        "count": 1,
+        "delta": 94
+      },
+      {
+        "user": "Josephwhyman041104",
+        "count": 1,
+        "delta": 80
+      },
+      {
+        "user": "Beland",
+        "count": 1,
+        "delta": 45
+      },
+      {
+        "user": "AManWithNoPlan",
+        "count": 1,
+        "delta": 44
+      },
+      {
+        "user": "Finnusertop",
+        "count": 1,
+        "delta": 44
+      },
+      {
+        "user": "GnocchiFan",
+        "count": 1,
+        "delta": 44
+      },
+      {
+        "user": "Tollens",
+        "count": 1,
+        "delta": 38
+      },
+      {
+        "user": "MiracleMiles",
+        "count": 1,
+        "delta": 35
+      },
+      {
+        "user": "Srich32977",
+        "count": 1,
+        "delta": 35
+      },
+      {
+        "user": "Wiknown77",
+        "count": 1,
+        "delta": 35
+      },
+      {
+        "user": "TheEarlyVolcanologist2023",
+        "count": 1,
+        "delta": 34
+      },
+      {
+        "user": "Billjones94",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Vycl1994",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "Guilherme Burn",
+        "count": 1,
+        "delta": 24
+      },
+      {
+        "user": "Evangregorius",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "DecafPotato",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Idkwhattonamemyselv",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Stowsgripe",
+        "count": 1,
+        "delta": 19
+      },
+      {
+        "user": "Wham2001",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Coolbear679",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Jeet Dev",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "A.B.123",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Nardog",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Sdiabhon Sdiamhon",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Apoorva210907",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Sizzlepop1",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "AVDLCZ",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Edskimcgee",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Hold your horses",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Moskstraumen33",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Owenlikescats124",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Poketgh",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Bigbuckalex",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Erutuon",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "EvanBaldonado",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "HTinC23",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Watch Atlas791",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Benison",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Faolin42",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Flag Creator",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Krysalist",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Secular Humanist 2022",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Arjayay",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "John of Reading",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Rockfang",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Throckmorpheus",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Ztimes3",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Bammie73",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Embyarby",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Harbingerdawn",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Jpvinall",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Maxeto0910",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Natsuhata",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Neils51",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "WikiCleanerBot",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Cocobb8",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "KlashyCashyTrashy",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Rajan51",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "TWM03",
+        "count": 1,
+        "delta": -3
+      },
+      {
+        "user": "Box of wolves",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Dag330",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "JamesKnowsJames",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Minorax",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Panamitsu",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "SdkbBot",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Nrco0e",
+        "count": 1,
+        "delta": -10
+      },
+      {
+        "user": "Wikipedialuva",
+        "count": 1,
+        "delta": -11
+      },
+      {
+        "user": "Rkieferbaum",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "TheTerrificTurtwig",
+        "count": 1,
+        "delta": -14
+      },
+      {
+        "user": "BelowTheSun",
+        "count": 1,
+        "delta": -16
+      },
+      {
+        "user": "Thesavagenorwegian",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Theleekycauldron",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "UndercoverClassicist",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "Freedom4U",
+        "count": 1,
+        "delta": -24
+      },
+      {
+        "user": "Levivich",
+        "count": 1,
+        "delta": -24
+      },
+      {
+        "user": "Headbomb",
+        "count": 1,
+        "delta": -25
+      },
+      {
+        "user": "Unknown Temptation",
+        "count": 1,
+        "delta": -28
+      },
+      {
+        "user": "OliveYouBean",
+        "count": 1,
+        "delta": -50
+      },
+      {
+        "user": "PARAKANYAA",
+        "count": 1,
+        "delta": -62
+      },
+      {
+        "user": "Brandmeister",
+        "count": 1,
+        "delta": -75
+      },
+      {
+        "user": "Tpbradbury",
+        "count": 1,
+        "delta": -78
+      },
+      {
+        "user": "OmegaMantis",
+        "count": 1,
+        "delta": -110
+      },
+      {
+        "user": "ViriatoLusitano",
+        "count": 1,
+        "delta": -211
+      },
+      {
+        "user": "Jlwoodwa",
+        "count": 1,
+        "delta": -255
+      },
+      {
+        "user": "FlightTime",
+        "count": 1,
+        "delta": -331
+      },
+      {
+        "user": "Canterbury Tail",
+        "count": 1,
+        "delta": -360
+      },
+      {
+        "user": "RobloxFan23",
+        "count": 1,
+        "delta": -809
+      },
+      {
+        "user": "Saúl Rodrigo Martínez",
+        "count": 1,
+        "delta": -881
+      },
+      {
+        "user": "Velella",
+        "count": 1,
+        "delta": -1017
+      },
+      {
+        "user": "Nemo bis",
+        "count": 1,
+        "delta": -1143
+      },
+      {
+        "user": "Mstabosz",
+        "count": 1,
+        "delta": -197755
+      }
+    ]
+  },
+  {
+    "intervalStart": "2023-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "CactiStaccingCrane",
+        "count": 18,
+        "delta": -5310
+      },
+      {
+        "user": "Remsense",
+        "count": 14,
+        "delta": -620
+      },
+      {
+        "user": "Praemonitus",
+        "count": 10,
+        "delta": 239
+      },
+      {
+        "user": "Nsae Comp",
+        "count": 9,
+        "delta": -218
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 8,
+        "delta": 2439
+      },
+      {
+        "user": "Citation bot",
+        "count": 7,
+        "delta": 221
+      },
+      {
+        "user": "Beland",
+        "count": 6,
+        "delta": -631
+      },
+      {
+        "user": "Boneless Pizza!",
+        "count": 4,
+        "delta": 84
+      },
+      {
+        "user": "Usersnipedname",
+        "count": 4,
+        "delta": 37
+      },
+      {
+        "user": "Jamie Eilat",
+        "count": 4,
+        "delta": -4
+      },
+      {
+        "user": "GeoWriter",
+        "count": 4,
+        "delta": -35
+      },
+      {
+        "user": "Mikenorton",
+        "count": 4,
+        "delta": -495
+      },
+      {
+        "user": "ArkHyena",
+        "count": 3,
+        "delta": 2603
+      },
+      {
+        "user": "T g7",
+        "count": 3,
+        "delta": 418
+      },
+      {
+        "user": "Devonian Wombat",
+        "count": 3,
+        "delta": 184
+      },
+      {
+        "user": "N. Mortimer",
+        "count": 3,
+        "delta": 62
+      },
+      {
+        "user": "Editor314159",
+        "count": 3,
+        "delta": 40
+      },
+      {
+        "user": "Renamed user e56b03251d2294ecb5f071f66ae85273",
+        "count": 3,
+        "delta": 11
+      },
+      {
+        "user": "Mathglot",
+        "count": 3,
+        "delta": 0
+      },
+      {
+        "user": "Zzzs",
+        "count": 3,
+        "delta": -39
+      },
+      {
+        "user": "Dhrm77",
+        "count": 3,
+        "delta": -52
+      },
+      {
+        "user": "Tpbradbury",
+        "count": 3,
+        "delta": -62
+      },
+      {
+        "user": "Thalia the Nerd",
+        "count": 3,
+        "delta": -223098
+      },
+      {
+        "user": "WhyIsNameSoHardOmg- -",
+        "count": 2,
+        "delta": 542
+      },
+      {
+        "user": "IapetusCallistus",
+        "count": 2,
+        "delta": 333
+      },
+      {
+        "user": "OAbot",
+        "count": 2,
+        "delta": 98
+      },
+      {
+        "user": "Jessie Eastland",
+        "count": 2,
+        "delta": 81
+      },
+      {
+        "user": "Durziil89",
+        "count": 2,
+        "delta": 45
+      },
+      {
+        "user": "Bobby Spongington",
+        "count": 2,
+        "delta": 20
+      },
+      {
+        "user": "Kwamikagami",
+        "count": 2,
+        "delta": 20
+      },
+      {
+        "user": "Hellocat99",
+        "count": 2,
+        "delta": 19
+      },
+      {
+        "user": "Matt J. Woods",
+        "count": 2,
+        "delta": -1
+      },
+      {
+        "user": "WhatisMars",
+        "count": 2,
+        "delta": -2
+      },
+      {
+        "user": "HertzDonuts",
+        "count": 2,
+        "delta": -5
+      },
+      {
+        "user": "Sir Cumference",
+        "count": 2,
+        "delta": -15
+      },
+      {
+        "user": "REDACTED403",
+        "count": 2,
+        "delta": -20
+      },
+      {
+        "user": "Lalaithan",
+        "count": 2,
+        "delta": -264
+      },
+      {
+        "user": "LakesideMiners",
+        "count": 1,
+        "delta": 223098
+      },
+      {
+        "user": "CoolieCoolster",
+        "count": 1,
+        "delta": 24563
+      },
+      {
+        "user": "EF5",
+        "count": 1,
+        "delta": 468
+      },
+      {
+        "user": "Novanotes",
+        "count": 1,
+        "delta": 433
+      },
+      {
+        "user": "The great Jay",
+        "count": 1,
+        "delta": 331
+      },
+      {
+        "user": "GoldenHarmony",
+        "count": 1,
+        "delta": 301
+      },
+      {
+        "user": "Mhaerey",
+        "count": 1,
+        "delta": 293
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 1,
+        "delta": 224
+      },
+      {
+        "user": "Dabit100",
+        "count": 1,
+        "delta": 171
+      },
+      {
+        "user": "TealComet",
+        "count": 1,
+        "delta": 105
+      },
+      {
+        "user": "SimplyLouis27",
+        "count": 1,
+        "delta": 86
+      },
+      {
+        "user": "SidP",
+        "count": 1,
+        "delta": 48
+      },
+      {
+        "user": "JimGrassroot",
+        "count": 1,
+        "delta": 37
+      },
+      {
+        "user": "Tenebre Rosso Sangue",
+        "count": 1,
+        "delta": 34
+      },
+      {
+        "user": "Broccoli94171",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "IlyaMikheyev65",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "Jon (WMF)",
+        "count": 1,
+        "delta": 30
+      },
+      {
+        "user": "Iacowriter",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "IznoRepeat",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Thiagovscoelho",
+        "count": 1,
+        "delta": 26
+      },
+      {
+        "user": "Findingmoney100",
+        "count": 1,
+        "delta": 25
+      },
+      {
+        "user": "Griffen2014637",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "JayCubby",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "King Lobclaw",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "Picantho",
+        "count": 1,
+        "delta": 23
+      },
+      {
+        "user": "Ksi olijide bt",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "SSCTH",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "Wikipédien-franco-australien",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Włodzimierz Lewoniewski (UEP)",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "Athrante",
+        "count": 1,
+        "delta": 17
+      },
+      {
+        "user": "Safrolic",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Scrooge Mcduc",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Jonnygrant",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "Howpper",
+        "count": 1,
+        "delta": 13
+      },
+      {
+        "user": "Amshpee",
+        "count": 1,
+        "delta": 11
+      },
+      {
+        "user": "Elsa Strauss",
+        "count": 1,
+        "delta": 9
+      },
+      {
+        "user": "Christophe1946",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "CormacGallagher",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Cyan Burrito",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "MallardQuack",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Nick.mon",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Philimania",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "ReadOnlyAccount",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Sootierlamb682",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "SwensonJ",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "TheFreeWorld",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Wahakadha mustakhdim",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "KlashyCashyTrashy",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Woxof46",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Bookleo",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "GlobalMindSphere",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Geopersona",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "I'llbeyourbeach",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Raja jagiellon",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Tony1",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Wcamp9",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Aaron1a12",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Tc14Hd",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "OmegaMantis",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Ykhwong",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "750h+",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "ArdaOnay2004",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Chitomcgee",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Xeroctic",
+        "count": 1,
+        "delta": -17
+      },
+      {
+        "user": "Moons of Io",
+        "count": 1,
+        "delta": -18
+      },
+      {
+        "user": "Bruce1ee",
+        "count": 1,
+        "delta": -21
+      },
+      {
+        "user": "Fathoms Below",
+        "count": 1,
+        "delta": -23
+      },
+      {
+        "user": "Wasell",
+        "count": 1,
+        "delta": -23
+      },
+      {
+        "user": "Zzuuzz",
+        "count": 1,
+        "delta": -32
+      },
+      {
+        "user": "TheKevsterWiki",
+        "count": 1,
+        "delta": -33
+      },
+      {
+        "user": "Mikcena501",
+        "count": 1,
+        "delta": -37
+      },
+      {
+        "user": "John",
+        "count": 1,
+        "delta": -42
+      },
+      {
+        "user": "CyrusGD",
+        "count": 1,
+        "delta": -48
+      },
+      {
+        "user": "Qwfp",
+        "count": 1,
+        "delta": -74
+      },
+      {
+        "user": "Mododge16",
+        "count": 1,
+        "delta": -79
+      },
+      {
+        "user": "Gaius Cornelius",
+        "count": 1,
+        "delta": -130
+      },
+      {
+        "user": "Chirpy-slirpy-BURPY",
+        "count": 1,
+        "delta": -274
+      },
+      {
+        "user": "Flemmish Nietzsche",
+        "count": 1,
+        "delta": -293
+      },
+      {
+        "user": "StephenMacky1",
+        "count": 1,
+        "delta": -433
+      }
+    ]
+  },
+  {
+    "intervalStart": "2024-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "Remsense",
+        "count": 24,
+        "delta": -666
+      },
+      {
+        "user": "Nsae Comp",
+        "count": 13,
+        "delta": 94
+      },
+      {
+        "user": "Hexad",
+        "count": 12,
+        "delta": -480
+      },
+      {
+        "user": "Tygical",
+        "count": 7,
+        "delta": 262
+      },
+      {
+        "user": "FlightTime",
+        "count": 6,
+        "delta": -61
+      },
+      {
+        "user": "54rt678",
+        "count": 6,
+        "delta": -1173
+      },
+      {
+        "user": "Ohiomanguy",
+        "count": 5,
+        "delta": -15547
+      },
+      {
+        "user": "Belbury",
+        "count": 4,
+        "delta": 15735
+      },
+      {
+        "user": "Panamitsu",
+        "count": 4,
+        "delta": 5467
+      },
+      {
+        "user": "Buaidh",
+        "count": 4,
+        "delta": 100
+      },
+      {
+        "user": "GlobalMindSphere",
+        "count": 4,
+        "delta": 47
+      },
+      {
+        "user": "LateFatherKarma",
+        "count": 4,
+        "delta": -106
+      },
+      {
+        "user": "Citation bot",
+        "count": 4,
+        "delta": -392
+      },
+      {
+        "user": "Mirus255",
+        "count": 4,
+        "delta": -621
+      },
+      {
+        "user": "Kehkou",
+        "count": 3,
+        "delta": 129
+      },
+      {
+        "user": "2600 etc",
+        "count": 3,
+        "delta": 58
+      },
+      {
+        "user": "ArkHyena",
+        "count": 3,
+        "delta": 7
+      },
+      {
+        "user": "WhatADrag07",
+        "count": 3,
+        "delta": -2
+      },
+      {
+        "user": "Yashzx. !",
+        "count": 3,
+        "delta": -55
+      },
+      {
+        "user": "Gingeroscar",
+        "count": 2,
+        "delta": 617
+      },
+      {
+        "user": "Needforsuv",
+        "count": 2,
+        "delta": 194
+      },
+      {
+        "user": "SeldomSeldom",
+        "count": 2,
+        "delta": 47
+      },
+      {
+        "user": "Onemillionthtree",
+        "count": 2,
+        "delta": 23
+      },
+      {
+        "user": "Average Hillbillie",
+        "count": 2,
+        "delta": 11
+      },
+      {
+        "user": "Youonlyliveoncehahahaahahah",
+        "count": 2,
+        "delta": 8
+      },
+      {
+        "user": "IvarTheBoneless123",
+        "count": 2,
+        "delta": 2
+      },
+      {
+        "user": "Dhrm77",
+        "count": 2,
+        "delta": -7
+      },
+      {
+        "user": "GeoWriter",
+        "count": 2,
+        "delta": -11
+      },
+      {
+        "user": "JPxG",
+        "count": 2,
+        "delta": -11
+      },
+      {
+        "user": "Randy Kryn",
+        "count": 2,
+        "delta": -18
+      },
+      {
+        "user": "Ras09191",
+        "count": 2,
+        "delta": -5843
+      },
+      {
+        "user": "Galaxybeing",
+        "count": 1,
+        "delta": 224415
+      },
+      {
+        "user": "CFA",
+        "count": 1,
+        "delta": 223713
+      },
+      {
+        "user": "Emilygracereed1",
+        "count": 1,
+        "delta": 1381
+      },
+      {
+        "user": "Einstein3.1415926535!",
+        "count": 1,
+        "delta": 341
+      },
+      {
+        "user": "PeriodicEditor",
+        "count": 1,
+        "delta": 327
+      },
+      {
+        "user": "HyperShark244",
+        "count": 1,
+        "delta": 287
+      },
+      {
+        "user": "OtterOfPretzels",
+        "count": 1,
+        "delta": 279
+      },
+      {
+        "user": "OAbot",
+        "count": 1,
+        "delta": 198
+      },
+      {
+        "user": "Brent Silby",
+        "count": 1,
+        "delta": 174
+      },
+      {
+        "user": "AncientofDays578",
+        "count": 1,
+        "delta": 151
+      },
+      {
+        "user": "Gfroi",
+        "count": 1,
+        "delta": 99
+      },
+      {
+        "user": "LukeyBear11",
+        "count": 1,
+        "delta": 67
+      },
+      {
+        "user": "Everredwinter",
+        "count": 1,
+        "delta": 66
+      },
+      {
+        "user": "BeastBoy-X",
+        "count": 1,
+        "delta": 59
+      },
+      {
+        "user": "Dumxu",
+        "count": 1,
+        "delta": 48
+      },
+      {
+        "user": "T g7",
+        "count": 1,
+        "delta": 42
+      },
+      {
+        "user": "Uknown character",
+        "count": 1,
+        "delta": 39
+      },
+      {
+        "user": "MisterE727",
+        "count": 1,
+        "delta": 33
+      },
+      {
+        "user": "Humanity Dick",
+        "count": 1,
+        "delta": 32
+      },
+      {
+        "user": "LinguisticsEditorGuy",
+        "count": 1,
+        "delta": 29
+      },
+      {
+        "user": "Poketgh",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "Pppery",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "Prototyperspective",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "SkSlick",
+        "count": 1,
+        "delta": 22
+      },
+      {
+        "user": "Headbomb",
+        "count": 1,
+        "delta": 21
+      },
+      {
+        "user": "Aplucas0703",
+        "count": 1,
+        "delta": 20
+      },
+      {
+        "user": "Anne drew",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "ChaoticVermillion",
+        "count": 1,
+        "delta": 16
+      },
+      {
+        "user": "Arso0628",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "FrancSoisD",
+        "count": 1,
+        "delta": 15
+      },
+      {
+        "user": "Yelps",
+        "count": 1,
+        "delta": 14
+      },
+      {
+        "user": "SonomaJSC",
+        "count": 1,
+        "delta": 10
+      },
+      {
+        "user": "Erichbchk",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "Salmoonlight",
+        "count": 1,
+        "delta": 8
+      },
+      {
+        "user": "DreamRimmer bot II",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Dhtwiki",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "Spacemarioedition",
+        "count": 1,
+        "delta": 6
+      },
+      {
+        "user": "DividedFrame",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Thelifeofan413",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Ira Leviton",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "JustToBeClearIAmNotJoeBiden",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "Bender the Bot",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Devonian Wombat",
+        "count": 1,
+        "delta": 3
+      },
+      {
+        "user": "Armbrust",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Mreci1",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "Blume",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "DanyMations",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Fishy-Finns",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "IMPERlUM",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Screaminghyena",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Anachronist",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Anas1712",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Lahndi Chokra",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Omnipaedista",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "PrimeBOT",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Unis Tankos",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Wamalotpark",
+        "count": 1,
+        "delta": 0
+      },
+      {
+        "user": "Aki123465",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Canterbury Tail",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "TypoEater",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "GreenC bot",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Pilot333",
+        "count": 1,
+        "delta": -2
+      },
+      {
+        "user": "Foxy Woods",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "KiranBOT",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Xexerss",
+        "count": 1,
+        "delta": -4
+      },
+      {
+        "user": "Double sharp",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "Strait",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "TarnishedPath",
+        "count": 1,
+        "delta": -5
+      },
+      {
+        "user": "AllCatsAreGrey",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "HiLo48",
+        "count": 1,
+        "delta": -6
+      },
+      {
+        "user": "Edits4019",
+        "count": 1,
+        "delta": -10
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 1,
+        "delta": -12
+      },
+      {
+        "user": "Xoontor",
+        "count": 1,
+        "delta": -19
+      },
+      {
+        "user": "Lepidux",
+        "count": 1,
+        "delta": -22
+      },
+      {
+        "user": "MarqFJA87",
+        "count": 1,
+        "delta": -22
+      },
+      {
+        "user": "Interstellarity",
+        "count": 1,
+        "delta": -28
+      },
+      {
+        "user": "Nardog",
+        "count": 1,
+        "delta": -29
+      },
+      {
+        "user": "SporkBot",
+        "count": 1,
+        "delta": -30
+      },
+      {
+        "user": "Hadron137",
+        "count": 1,
+        "delta": -53
+      },
+      {
+        "user": "AndyTheGrump",
+        "count": 1,
+        "delta": -67
+      },
+      {
+        "user": "Cyclopia",
+        "count": 1,
+        "delta": -99
+      },
+      {
+        "user": "ALittleClass",
+        "count": 1,
+        "delta": -139
+      },
+      {
+        "user": "Jay8g",
+        "count": 1,
+        "delta": -151
+      },
+      {
+        "user": "DocWatson42",
+        "count": 1,
+        "delta": -156
+      },
+      {
+        "user": "RBB W",
+        "count": 1,
+        "delta": -204
+      },
+      {
+        "user": "MalangSufi",
+        "count": 1,
+        "delta": -287
+      },
+      {
+        "user": "Thirurang Cherusskutty",
+        "count": 1,
+        "delta": -461
+      },
+      {
+        "user": "Yiosie2356",
+        "count": 1,
+        "delta": -544
+      },
+      {
+        "user": "Monkbot",
+        "count": 1,
+        "delta": -795
+      },
+      {
+        "user": "Chicken147",
+        "count": 1,
+        "delta": -223713
+      },
+      {
+        "user": "America1257",
+        "count": 1,
+        "delta": -224415
+      }
+    ]
+  },
+  {
+    "intervalStart": "2025-12-31T23:00:00Z",
+    "userStats": [
+      {
+        "user": "BD2412",
+        "count": 1,
+        "delta": 51
+      },
+      {
+        "user": "Citation bot",
+        "count": 1,
+        "delta": 39
+      },
+      {
+        "user": "Vycl1994",
+        "count": 1,
+        "delta": 31
+      },
+      {
+        "user": "Mhmd786",
+        "count": 1,
+        "delta": 28
+      },
+      {
+        "user": "AnomieBOT",
+        "count": 1,
+        "delta": 18
+      },
+      {
+        "user": "My planet is Homlos",
+        "count": 1,
+        "delta": 7
+      },
+      {
+        "user": "Yourusername789",
+        "count": 1,
+        "delta": 5
+      },
+      {
+        "user": "Lophotrochozoa",
+        "count": 1,
+        "delta": 4
+      },
+      {
+        "user": "WhatADrag07",
+        "count": 1,
+        "delta": 2
+      },
+      {
+        "user": "InternetArchiveBot",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Meltdown627",
+        "count": 1,
+        "delta": 1
+      },
+      {
+        "user": "Jens Ahlström",
+        "count": 1,
+        "delta": -1
+      },
+      {
+        "user": "Chris Capoccia",
+        "count": 1,
+        "delta": -3348
+      }
+    ]
+  }
+]
