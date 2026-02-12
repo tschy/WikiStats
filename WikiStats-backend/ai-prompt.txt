@@ -1,0 +1,10 @@
+
+        Create a GHA pipeline which does the following things
+
+            in the backend: ./gradlew -p WikiStats-backend run --args="--titles=data/articles.txt --limit=200000"
+
+            make sure that the data written in the previous command is available for the next command
+
+            in the frontend: npm run build
+
+            publish the frontend to GitHub pages
