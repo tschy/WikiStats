@@ -20,11 +20,11 @@ export function useWikiStatsData(queryState: FormState, fmt: Intl.NumberFormat) 
       const { article, interval, range } = queryState;
 
       const [previewData, loadedStats] = await Promise.all([
-        fetchJson<PreviewData>(`/data/${article}-preview.json`).catch((err) => {
+        fetchJson<PreviewData>(`/WikiStats/data/${article}-preview.json`).catch((err) => {
           console.warn('Preview failed:', err);
           return null;
         }),
-        fetchJson<StatBucket[]>(`/data/${article}-${interval}.json`)
+        fetchJson<StatBucket[]>(`/WikiStats/data/${article}-${interval}.json`)
       ]);
 
       const ranged = applyRange(loadedStats, range);
