@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx"],"version":"5.9.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/FilterForm.tsx","./src/components/PreviewCard.tsx","./src/components/StatsList.tsx","./src/components/StatusBanner.tsx","./src/components/charts/ChartsPanel.tsx","./src/hooks/useCharts.ts","./src/hooks/useFormState.ts","./src/hooks/useWikiStatsData.ts","./src/lib/wikistats.ts","./src/types/wikistats.ts"],"version":"5.9.3"}

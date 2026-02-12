@@ -1,0 +1,67 @@
+import { useEffect } from 'preact/hooks';
+import Chart from 'chart.js/auto';
+import { buildDatasets } from '../lib/wikistats';
+import type { StatBucket } from '../types/wikistats';
+
+type UseChartsParams = {
+  chartCanvasRef: { current: HTMLCanvasElement | null };
+  deltaCanvasRef: { current: HTMLCanvasElement | null };
+  visibleStats: StatBucket[];
+  topN: number;
+};
+
+export function useCharts({ chartCanvasRef, deltaCanvasRef, visibleStats, topN }: UseChartsParams) {
+  useEffect(() => {
+    const chartCanvas = chartCanvasRef.current;
+    const deltaCanvas = deltaCanvasRef.current;
+
+    if (!chartCanvas || !deltaCanvas) return;
+
+    const labels = visibleStats.map((bucket) => new Date(bucket.intervalStart).toLocaleDateString());
+    const editDatasets = buildDatasets(visibleStats, topN, (u) => u.count || 0, 'edits', 'Total Edits');
+    const deltaDatasets = buildDatasets(visibleStats, topN, (u) => u.delta || 0, 'delta', 'Total Delta');
+
+    const editsChart = new Chart(chartCanvas, {
+      type: 'line',
+      data: { labels, datasets: editDatasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { display: true } },
+        scales: {
+          x: { type: 'category' },
+          y: {
+            type: 'linear',
+            stacked: true,
+            title: { display: true, text: 'Edits pro Intervall' }
+          }
+        }
+      }
+    });
+
+    const deltasChart = new Chart(deltaCanvas, {
+      type: 'line',
+      data: { labels, datasets: deltaDatasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { display: true } },
+        scales: {
+          x: { type: 'category' },
+          y: {
+            type: 'linear',
+            stacked: true,
+            title: { display: true, text: 'Delta pro Intervall' }
+          }
+        }
+      }
+    });
+
+    return () => {
+      editsChart.destroy();
+      deltasChart.destroy();
+    };
+  }, [chartCanvasRef, deltaCanvasRef, topN, visibleStats]);
+}
