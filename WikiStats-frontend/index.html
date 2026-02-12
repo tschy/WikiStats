@@ -6,77 +6,7 @@
     <title>WikiStats</title>
   </head>
   <body>
-    <h1>WikiStats</h1>
-
-    <form id="form">
-      <label>
-        Artikel
-        <select id="article">
-          <option value="earth">Earth</option>
-          <option value="moon">Moon</option>
-          <option value="horse">Horse</option>
-        </select>
-      </label>
-
-      <label>
-        Intervall
-        <select id="interval">
-          <option value="daily">Täglich</option>
-          <option value="weekly" selected>Wöchentlich</option>
-          <option value="monthly">Monatlich</option>
-          <option value="yearly">Jährlich</option>
-        </select>
-      </label>
-
-      <label>
-        Top-N Nutzer
-        <select id="topN">
-          <option value="3">3</option>
-          <option value="5">5</option>
-          <option value="6" selected>6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </label>
-
-      <label>
-        Sichtbare Intervalle
-        <select id="range">
-          <option value="all" selected>Alle</option>
-          <option value="5">Letzte 5</option>
-          <option value="10">Letzte 10</option>
-          <option value="20">Letzte 20</option>
-          <option value="50">Letzte 50</option>
-        </select>
-      </label>
-
-      <button id="loadBtn" type="submit">Laden</button>
-    </form>
-
-    <div id="status" class="ok"></div>
-
-    <div class="chart-wrap">
-      <canvas id="chart"></canvas>
-    </div>
-    <div class="chart-wrap">
-      <canvas id="chartDelta"></canvas>
-    </div>
-
-    <div id="preview">
-      <div id="previewInner">
-        <img id="previewImg" alt="" />
-        <div>
-          <h2 id="previewTitle"></h2>
-          <div id="previewMeta"></div>
-          <div id="previewExtract"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="list">
-      <ul id="dataList"></ul>
-    </div>
-
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
