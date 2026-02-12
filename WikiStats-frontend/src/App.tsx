@@ -1,69 +1,71 @@
-import { useMemo, useRef } from 'preact/hooks';
-import { FilterForm } from './components/FilterForm';
-import { StatusBanner } from './components/StatusBanner';
-import { PreviewCard } from './components/PreviewCard';
-import { StatsList } from './components/StatsList';
-import { ChartsPanel } from './components/charts/ChartsPanel';
-import { useFormState } from './hooks/useFormState';
-import { useWikiStatsData } from './hooks/useWikiStatsData';
-import { useCharts } from './hooks/useCharts';
-import type { Article, Interval } from './types/wikistats';
+import {useMemo, useRef, useState} from 'preact/hooks';
+import {FilterForm} from './components/FilterForm';
+import {StatusBanner} from './components/StatusBanner';
+import {PreviewCard} from './components/PreviewCard';
+import {StatsList} from './components/StatsList';
+import {ChartsPanel} from './components/charts/ChartsPanel';
+import {useWikiStatsData} from './hooks/useWikiStatsData';
+import {useCharts} from './hooks/useCharts';
+import type {Article, FormState, Interval} from './types/wikistats';
+import {restoreFormState} from "./lib/wikistats";
 
 export function App() {
-  const fmt = useMemo(() => new Intl.NumberFormat(undefined), []);
+    const fmt = useMemo(() => new Intl.NumberFormat(undefined), []);
 
-  const { formState, setFormState, queryState, setQueryState, submitFilters } = useFormState();
-  const { status, loading, preview, visibleStats } = useWikiStatsData(queryState, fmt);
+    const [queryState, setQueryState] = useState<FormState>(restoreFormState);
 
-  const chartCanvasRef = useRef<HTMLCanvasElement>(null);
-  const deltaCanvasRef = useRef<HTMLCanvasElement>(null);
+    // useEffect(() => {
+    //     localStorage.setItem('wikistats.form', JSON.stringify(formState));
+    // }, [formState]);
 
-  useCharts({
-    chartCanvasRef,
-    deltaCanvasRef,
-    visibleStats,
-    topN: Number(queryState.topN) || 6
-  });
+    const {status, loading, preview, visibleStats} = useWikiStatsData(queryState, fmt);
 
-  const handleArticleChange = (article: Article) => {
-    setFormState((prev) => ({ ...prev, article }));
-  };
+    const chartCanvasRef = useRef<HTMLCanvasElement>(null);
+    const deltaCanvasRef = useRef<HTMLCanvasElement>(null);
 
-  const handleIntervalChange = (interval: Interval) => {
-    setFormState((prev) => ({ ...prev, interval }));
-  };
+    useCharts({
+        chartCanvasRef,
+        deltaCanvasRef,
+        visibleStats,
+        topN: Number(queryState.topN) || 6
+    });
 
-  const handleTopNChange = (topN: string) => {
-    setFormState((prev) => ({ ...prev, topN }));
-    setQueryState((prev) => ({ ...prev, topN }));
-  };
+    const handleArticleChange = (article: Article) => {
+        setQueryState((prev) => ({...prev, article}));
+    };
 
-  const handleRangeChange = (range: string) => {
-    setFormState((prev) => ({ ...prev, range }));
-    setQueryState((prev) => ({ ...prev, range }));
-  };
+    const handleIntervalChange = (interval: Interval) => {
+        setQueryState((prev) => ({...prev, interval}));
+    };
 
-  return (
-    <>
-      <h1>WikiStats</h1>
+    const handleTopNChange = (topN: string) => {
+        setQueryState((prev) => ({...prev, topN}));
+    };
 
-      <FilterForm
-        formState={formState}
-        loading={loading}
-        onSubmit={submitFilters}
-        onArticleChange={handleArticleChange}
-        onIntervalChange={handleIntervalChange}
-        onTopNChange={handleTopNChange}
-        onRangeChange={handleRangeChange}
-      />
+    const handleRangeChange = (range: string) => {
+        setQueryState((prev) => ({...prev, range}));
+    };
 
-      <StatusBanner status={status} />
+    return (
+        <>
+            <h1>WikiStats</h1>
 
-      <ChartsPanel chartCanvasRef={chartCanvasRef} deltaCanvasRef={deltaCanvasRef} />
+            <FilterForm
+                queryState={queryState}
+                loading={loading}
+                onArticleChange={handleArticleChange}
+                onIntervalChange={handleIntervalChange}
+                onTopNChange={handleTopNChange}
+                onRangeChange={handleRangeChange}
+            />
 
-      <PreviewCard preview={preview} />
+            <StatusBanner status={status}/>
 
-      <StatsList stats={visibleStats} fmt={fmt} />
-    </>
-  );
+            <ChartsPanel chartCanvasRef={chartCanvasRef} deltaCanvasRef={deltaCanvasRef}/>
+
+            <PreviewCard preview={preview}/>
+
+            <StatsList stats={visibleStats} fmt={fmt}/>
+        </>
+    );
 }
