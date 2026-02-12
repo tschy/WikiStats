@@ -22,6 +22,7 @@ export function FilterForm({
             <label>
                 Artikel
                 <select
+                    disabled={loading}
                     value={queryState.article}
                     onChange={(e) => onArticleChange((e.currentTarget as HTMLSelectElement).value as Article)}
                 >
@@ -35,6 +36,7 @@ export function FilterForm({
                 Intervall
                 <select
                     value={queryState.interval}
+                    disabled={loading}
                     onChange={(e) => onIntervalChange((e.currentTarget as HTMLSelectElement).value as Interval)}
                 >
                     <option value="daily">Täglich</option>
@@ -68,9 +70,6 @@ export function FilterForm({
                 </select>
             </label>
 
-            <button type="submit" disabled={loading}>
-                Laden
-            </button>
         </form>
     );
 }
