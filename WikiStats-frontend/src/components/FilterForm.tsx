@@ -1,7 +1,7 @@
 import type {Article, FormState, Interval} from '../types/wikistats';
 
 type FilterFormProps = {
-    queryState: FormState;
+    filters: FormState;
     loading: boolean;
     onArticleChange: (value: Article) => void;
     onIntervalChange: (value: Interval) => void;
@@ -10,7 +10,7 @@ type FilterFormProps = {
 };
 
 export function FilterForm({
-                               queryState,
+                               filters,
                                loading,
                                onArticleChange,
                                onIntervalChange,
@@ -21,9 +21,9 @@ export function FilterForm({
         <form>
             <label>
                 Artikel
-                <select
+                    <select
                     disabled={loading}
-                    value={queryState.article}
+                    value={filters.article}
                     onChange={(e) => onArticleChange((e.currentTarget as HTMLSelectElement).value as Article)}
                 >
                     <option value="earth">Earth</option>
@@ -34,8 +34,8 @@ export function FilterForm({
 
             <label>
                 Intervall
-                <select
-                    value={queryState.interval}
+                    <select
+                    value={filters.interval}
                     disabled={loading}
                     onChange={(e) => onIntervalChange((e.currentTarget as HTMLSelectElement).value as Interval)}
                 >
@@ -48,7 +48,7 @@ export function FilterForm({
 
             <label>
                 Top-N Nutzer
-                <select value={queryState.topN}
+                <select value={filters.topN}
                         onChange={(e) => onTopNChange((e.currentTarget as HTMLSelectElement).value)}>
                     <option value="3">3</option>
                     <option value="5">5</option>
@@ -60,7 +60,7 @@ export function FilterForm({
 
             <label>
                 Sichtbare Intervalle
-                <select value={queryState.range}
+                <select value={filters.range}
                         onChange={(e) => onRangeChange((e.currentTarget as HTMLSelectElement).value)}>
                     <option value="all">Alle</option>
                     <option value="5">Letzte 5</option>

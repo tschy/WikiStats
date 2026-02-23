@@ -7,18 +7,14 @@ import {ChartsPanel} from './components/charts/ChartsPanel';
 import {useWikiStatsData} from './hooks/useWikiStatsData';
 import {useCharts} from './hooks/useCharts';
 import type {Article, FormState, Interval} from './types/wikistats';
-import {restoreFormState} from "./lib/wikistats";
+import { DEFAULT_FORM_STATE } from './types/wikistats';
 
 export function App() {
     const fmt = useMemo(() => new Intl.NumberFormat(undefined), []);
 
-    const [queryState, setQueryState] = useState<FormState>(restoreFormState);
+    const [filters, setFilters] = useState<FormState>(DEFAULT_FORM_STATE);
 
-    // useEffect(() => {
-    //     localStorage.setItem('wikistats.form', JSON.stringify(formState));
-    // }, [formState]);
-
-    const {status, loading, preview, visibleStats} = useWikiStatsData(queryState, fmt);
+    const {status, loading, preview, visibleStats} = useWikiStatsData(filters, fmt);
 
     const chartCanvasRef = useRef<HTMLCanvasElement>(null);
     const deltaCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,23 +23,23 @@ export function App() {
         chartCanvasRef,
         deltaCanvasRef,
         visibleStats,
-        topN: Number(queryState.topN) || 6
+        topN: Number(filters.topN) || 6
     });
 
     const handleArticleChange = (article: Article) => {
-        setQueryState((prev) => ({...prev, article}));
+        setFilters((prev) => ({...prev, article}));
     };
 
     const handleIntervalChange = (interval: Interval) => {
-        setQueryState((prev) => ({...prev, interval}));
+        setFilters((prev) => ({...prev, interval}));
     };
 
     const handleTopNChange = (topN: string) => {
-        setQueryState((prev) => ({...prev, topN}));
+        setFilters((prev) => ({...prev, topN}));
     };
 
     const handleRangeChange = (range: string) => {
-        setQueryState((prev) => ({...prev, range}));
+        setFilters((prev) => ({...prev, range}));
     };
 
     return (
@@ -51,7 +47,7 @@ export function App() {
             <h1>WikiStats</h1>
 
             <FilterForm
-                queryState={queryState}
+                filters={filters}
                 loading={loading}
                 onArticleChange={handleArticleChange}
                 onIntervalChange={handleIntervalChange}

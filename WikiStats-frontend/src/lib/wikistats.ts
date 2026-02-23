@@ -1,23 +1,5 @@
 import type { ChartDataset } from 'chart.js/auto';
-import type { FormState, PreviewData, StatBucket, UserStat } from '../types/wikistats';
-import { DEFAULT_FORM_STATE } from '../types/wikistats';
-
-export function restoreFormState(): FormState {
-  try {
-    const raw = localStorage.getItem('wikistats.form');
-    if (!raw) return DEFAULT_FORM_STATE;
-
-    const state = JSON.parse(raw) as Partial<FormState>;
-    return {
-      article: typeof state.article === 'string' ? state.article : DEFAULT_FORM_STATE.article,
-      interval: typeof state.interval === 'string' ? state.interval : DEFAULT_FORM_STATE.interval,
-      topN: typeof state.topN === 'string' ? state.topN : DEFAULT_FORM_STATE.topN,
-      range: typeof state.range === 'string' ? state.range : DEFAULT_FORM_STATE.range
-    };
-  } catch {
-    return DEFAULT_FORM_STATE;
-  }
-}
+import type { PreviewData, StatBucket, UserStat } from '../types/wikistats';
 
 export function applyRange(stats: StatBucket[], range: string): StatBucket[] {
   if (range === 'all') return stats;
@@ -65,8 +47,8 @@ function colorForUser(index: number, total: number): { border: string; fill: str
   const hue = Math.round((index * 360) / safeTotal);
 
   return {
-    border: `hsl(${hue} 75% 38%)`,
-    fill: `hsl(${hue} 72% 52%)`
+    border: `hsl(${hue} 70% 38%)`,
+    fill: `hsla(${hue} 72% 55% / 0.45)`
   };
 }
 
@@ -103,12 +85,13 @@ export function buildDatasets(
     return {
       label: user,
       data,
-      borderWidth: 1.5,
+      borderWidth: 0,
       borderColor: color.border,
       backgroundColor: color.fill,
       pointRadius: 0,
-      tension: 0.15,
-      fill: true,
+      tension: 0,
+      spanGaps: true,
+      fill: 'stack',
       stack: stackKey
     };
   });
@@ -125,12 +108,13 @@ export function buildDatasets(
     datasets.push({
       label: 'Other',
       data: otherData,
-      borderWidth: 1.5,
-      borderColor: '#b3b3b3',
-      backgroundColor: 'rgb(211,211,211)',
+      borderWidth: 0,
+      borderColor: 'rgb(140,140,140)',
+      backgroundColor: 'rgba(180,180,180,0.45)',
       pointRadius: 0,
-      tension: 0.15,
-      fill: true,
+      tension: 0,
+      spanGaps: true,
+      fill: 'stack',
       stack: stackKey
     });
   }
@@ -139,12 +123,13 @@ export function buildDatasets(
     datasets.push({
       label: totalLabel,
       data: stats.map((bucket) => (bucket.userStats ?? []).reduce((sum, u) => sum + valueSelector(u), 0)),
-      borderWidth: 1.5,
+      borderWidth: 0,
       borderColor: '#1f77b4',
-      backgroundColor: 'rgb(31,119,180)',
+      backgroundColor: 'rgba(31,119,180,0.45)',
       pointRadius: 0,
-      tension: 0.15,
-      fill: true,
+      tension: 0,
+      spanGaps: true,
+      fill: 'stack',
       stack: stackKey
     });
   }

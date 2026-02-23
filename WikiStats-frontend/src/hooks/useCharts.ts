@@ -1,7 +1,10 @@
 import { useEffect } from 'preact/hooks';
 import Chart from 'chart.js/auto';
+import zoomPlugin from 'chartjs-plugin-zoom';
 import { buildDatasets } from '../lib/wikistats';
 import type { StatBucket } from '../types/wikistats';
+
+Chart.register(zoomPlugin);
 
 type UseChartsParams = {
   chartCanvasRef: { current: HTMLCanvasElement | null };
@@ -28,9 +31,18 @@ export function useCharts({ chartCanvasRef, deltaCanvasRef, visibleStats, topN }
         responsive: true,
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
-        plugins: { legend: { display: true } },
+        plugins: {
+          legend: { display: true },
+          zoom: {
+            limits: { x: { min: 0, max: labels.length - 1 } },
+            zoom: {
+              drag: { enabled: true },
+              mode: 'x'
+            }
+          }
+        },
         scales: {
-          x: { type: 'category' },
+          x: { type: 'category', stacked: true },
           y: {
             type: 'linear',
             stacked: true,
@@ -49,7 +61,7 @@ export function useCharts({ chartCanvasRef, deltaCanvasRef, visibleStats, topN }
         interaction: { mode: 'index', intersect: false },
         plugins: { legend: { display: true } },
         scales: {
-          x: { type: 'category' },
+          x: { type: 'category', stacked: true },
           y: {
             type: 'linear',
             stacked: true,

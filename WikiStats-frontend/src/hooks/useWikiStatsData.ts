@@ -6,7 +6,7 @@ import {
 } from '../lib/wikistats';
 import type { FormState, PreviewData, StatBucket, StatusState } from '../types/wikistats';
 
-export function useWikiStatsData(queryState: FormState, fmt: Intl.NumberFormat) {
+export function useWikiStatsData(filters: FormState, fmt: Intl.NumberFormat) {
   const [status, setStatus] = useState<StatusState>({ message: 'Loading…', error: false });
   const [loading, setLoading] = useState(false);
   const [preview, setPreview] = useState<PreviewData | null>(null);
@@ -17,7 +17,7 @@ export function useWikiStatsData(queryState: FormState, fmt: Intl.NumberFormat) 
     setStatus({ message: 'Loading…', error: false });
 
     try {
-      const { article, interval, range } = queryState;
+      const { article, interval, range } = filters;
 
       const [previewData, loadedStats] = await Promise.all([
         fetchJson<PreviewData>(`/WikiStats/data/${article}-preview.json`).catch((err) => {
@@ -41,7 +41,7 @@ export function useWikiStatsData(queryState: FormState, fmt: Intl.NumberFormat) 
     } finally {
       setLoading(false);
     }
-  }, [fmt, queryState]);
+  }, [fmt, filters]);
 
   useEffect(() => {
     void loadData();
