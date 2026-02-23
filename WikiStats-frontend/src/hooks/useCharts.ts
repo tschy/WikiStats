@@ -52,6 +52,9 @@ export function useCharts({ chartCanvasRef, deltaCanvasRef, visibleStats, topN }
       }
     });
 
+    const handleEditsReset = () => editsChart.resetZoom();
+    chartCanvas.addEventListener('dblclick', handleEditsReset);
+
     const deltasChart = new Chart(deltaCanvas, {
       type: 'line',
       data: { labels, datasets: deltaDatasets },
@@ -59,7 +62,16 @@ export function useCharts({ chartCanvasRef, deltaCanvasRef, visibleStats, topN }
         responsive: true,
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
-        plugins: { legend: { display: true } },
+        plugins: {
+          legend: { display: true },
+          zoom: {
+            limits: { x: { min: 0, max: labels.length - 1 } },
+            zoom: {
+              drag: { enabled: true },
+              mode: 'x'
+            }
+          }
+        },
         scales: {
           x: { type: 'category', stacked: true },
           y: {
@@ -71,7 +83,12 @@ export function useCharts({ chartCanvasRef, deltaCanvasRef, visibleStats, topN }
       }
     });
 
+    const handleDeltasReset = () => deltasChart.resetZoom();
+    deltaCanvas.addEventListener('dblclick', handleDeltasReset);
+
     return () => {
+      chartCanvas.removeEventListener('dblclick', handleEditsReset);
+      deltaCanvas.removeEventListener('dblclick', handleDeltasReset);
       editsChart.destroy();
       deltasChart.destroy();
     };
